@@ -1,0 +1,26 @@
+---
+interface Props {
+  variant?: 'ieee' | 'cs' | 'cis' | 'neutral' | 'success';
+  size?: 'sm' | 'md';
+  class?: string;
+}
+
+const { variant = 'neutral', size = 'sm', class: className = '' } = Astro.props;
+
+const variantStyles = {
+  ieee: 'bg-[#00629B]/10 text-[#00629B] border-[#00629B]/25 font-semibold',
+  cs: 'bg-[#FF7900]/10 text-[#D96B00] border-[#FF7900]/30 font-semibold',
+  cis: 'bg-[#00A3E0]/12 text-[#007EA7] border-[#00A3E0]/30 font-semibold',
+  neutral: 'bg-slate-100 text-slate-700 border-slate-200 font-medium',
+  success: 'bg-emerald-50 text-emerald-700 border-emerald-200 font-medium'
+};
+
+const sizeStyles = {
+  sm: 'text-xs px-2.5 py-0.5 tracking-wide',
+  md: 'text-sm px-3.5 py-1 tracking-normal'
+};
+---
+
+<span class={`inline-flex items-center gap-1.5 rounded-full border transition-all duration-200 shadow-xs ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}>
+  <slot />
+</span>

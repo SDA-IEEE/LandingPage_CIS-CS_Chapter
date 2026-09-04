@@ -1,0 +1,292 @@
+---
+import '../styles/global.css';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "IEEE CS & CIS UTB — Building Intelligence. Building Technology.",
+  description = "No solo aprendemos tecnología. La construimos. Capítulo conjunto IEEE Computer Society & Computational Intelligence Society de la Universidad Tecnológica de Bolívar."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logos/ieee-mb-blue.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <Header />
+    
+    <main id="main">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Core Interactive Scripts -->
+    <script is:inline>
+      (function () {
+        "use strict";
+        const header = document.getElementById("header");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuOverlay = document.getElementById("menuOverlay");
+        const menuToggle = document.querySelector(".menu-toggle");
+
+        window.toggleMenu = function () {
+          if (!mobileMenu || !menuOverlay) return;
+          const isOpen = mobileMenu.classList.contains("open");
+          mobileMenu.classList.toggle("open");
+          menuOverlay.classList.toggle("open");
+          if (menuToggle) menuToggle.setAttribute("aria-expanded", String(!isOpen));
+          document.body.style.overflow = !isOpen ? "hidden" : "";
+        };
+
+        window.toggleAccordion = function (headerEl) {
+          const item = headerEl.parentElement;
+          const isOpen = item.classList.contains("open");
+          document
+            .querySelectorAll(".research-accordion-item")
+            .forEach((i) => i.classList.remove("open"));
+          if (!isOpen) item.classList.add("open");
+        };
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!header) return;
+            if (window.scrollY > 60) {
+              header.classList.add("scrolled");
+            } else {
+              header.classList.remove("scrolled");
+            }
+          },
+          { passive: true }
+        );
+
+        // Reveal Observer
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        );
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => revealObserver.observe(el));
+
+        // Timeline Progress
+        const timelineItems = document.querySelectorAll(".timeline-item");
+        const timelineProgress = document.getElementById("timelineProgress");
+        const timelineObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        timelineItems.forEach((item) => timelineObserver.observe(item));
+
+        function updateTimelineProgress() {
+          const timeline = document.querySelector(".events-timeline");
+          if (!timeline || !timelineProgress) return;
+          const rect = timeline.getBoundingClientRect();
+          const windowH = window.innerHeight;
+          const start = rect.top;
+          const end = rect.bottom - windowH;
+          const total = rect.height - windowH;
+          let progress = 0;
+          if (start < windowH && end > 0) {
+            progress = (windowH - start) / total;
+          } else if (end <= 0) {
+            progress = 1;
+          }
+          progress = Math.max(0, Math.min(1, progress));
+          timelineProgress.style.height = progress * 100 + "%";
+        }
+        window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+        updateTimelineProgress();
+
+        // About Storyteller Stage
+        const aboutStories = document.querySelectorAll(".about-story");
+        const aboutImg = document.getElementById("aboutImg");
+        const storyObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const storyNum = entry.target.dataset.story;
+                aboutStories.forEach((s) => s.classList.remove("visible"));
+                entry.target.classList.add("visible");
+                if (aboutImg && storyNum) {
+                  const scale = 1 + parseInt(storyNum, 10) * 0.02;
+                  aboutImg.style.transform = "scale(" + scale + ")";
+                }
+              }
+            });
+          },
+          { threshold: 0.6, rootMargin: "-20% 0px -20% 0px" }
+        );
+        aboutStories.forEach((s) => storyObserver.observe(s));
+
+        // Interactive Research Map
+        const researchNodes = document.querySelectorAll(".research-node");
+        const researchDetailTitle = document.getElementById("researchDetailTitle");
+        const researchDetailDescription = document.getElementById("researchDetailDescription");
+        researchNodes.forEach((node) => {
+          node.addEventListener("click", () => {
+            const title = node.getAttribute("data-line-title");
+            const description = node.getAttribute("data-line-description");
+            if (!title || !description || !researchDetailTitle || !researchDetailDescription) return;
+            researchNodes.forEach((item) => {
+              item.classList.remove("active");
+              item.setAttribute("aria-pressed", "false");
+            });
+            node.classList.add("active");
+            node.setAttribute("aria-pressed", "true");
+            researchDetailTitle.textContent = title;
+            researchDetailDescription.textContent = description;
+          });
+        });
+
+        // Hero Showcase Rotator
+        const heroShowcase = document.getElementById("heroShowcase");
+        if (heroShowcase) {
+          const frontCard = heroShowcase.querySelector("[data-hero-card='front']");
+          const backCard = heroShowcase.querySelector("[data-hero-card='back']");
+          const dots = heroShowcase.querySelectorAll(".hero-dot");
+          const slides = [
+            {
+              image: "/images/hero-community.jpg",
+              alt: "Estudiantes colaborando en proyecto tecnológico",
+              kicker: "Próxima generación",
+              title: "Tecnología con propósito"
+            },
+            {
+              image: "/images/about-research.jpg",
+              alt: "Equipo trabajando en investigación",
+              kicker: "Investigación aplicada",
+              title: "IA para resolver desafíos reales"
+            },
+            {
+              image: "/images/about-devs.jpg",
+              alt: "Desarrolladores construyendo soluciones colaborativas",
+              kicker: "Construcción colaborativa",
+              title: "Código que transforma ideas"
+            }
+          ];
+          let currentIndex = 0;
+          let transitioning = false;
+
+          slides.forEach((slide) => {
+            const im = new Image();
+            im.src = slide.image;
+          });
+
+          function setCardContent(card, slide) {
+            if (!card) return;
+            const img = card.querySelector("img");
+            const kicker = card.querySelector(".hero-card-kicker");
+            const title = card.querySelector("h3");
+            if (img) {
+              img.src = slide.image;
+              img.alt = slide.alt;
+            }
+            if (kicker) kicker.textContent = slide.kicker;
+            if (title) title.textContent = slide.title;
+          }
+
+          function renderShowcase() {
+            const frontSlide = slides[currentIndex];
+            const backSlide = slides[(currentIndex + 1) % slides.length];
+            setCardContent(backCard, backSlide);
+            dots.forEach((dot, index) => {
+              dot.classList.toggle("is-active", index === currentIndex);
+            });
+            if (transitioning) return;
+            transitioning = true;
+            frontCard.classList.add("is-switching");
+            setTimeout(() => {
+              setCardContent(frontCard, frontSlide);
+              window.requestAnimationFrame(() => {
+                frontCard.classList.remove("is-switching");
+              });
+              transitioning = false;
+            }, 480);
+          }
+
+          renderShowcase();
+          window.setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            renderShowcase();
+          }, 5000);
+        }
+
+        // Active Nav Observer
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+                navLinks.forEach((link) => {
+                  link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + id
+                  );
+                });
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+        sections.forEach((s) => sectionObserver.observe(s));
+
+        // Smooth Anchor Click
+        document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href && href.startsWith("#")) {
+              e.preventDefault();
+              const target = document.querySelector(href);
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }
+          });
+        });
+
+        // ESC to close mobile menu
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && mobileMenu && mobileMenu.classList.contains("open")) {
+            window.toggleMenu();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

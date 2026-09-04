@@ -1,0 +1,67 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'cta' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  type?: 'button' | 'submit' | 'reset';
+  target?: string;
+  rel?: string;
+  id?: string;
+  ariaLabel?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  class: className = '',
+  type = 'button',
+  target,
+  rel,
+  id,
+  ariaLabel
+} = Astro.props;
+
+const baseStyles = 'inline-flex items-center justify-center font-heading font-semibold rounded-xl transition-all duration-300 cursor-pointer text-center relative overflow-hidden group select-none active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-offset-2';
+
+const variantStyles = {
+  primary: 'bg-gradient-to-r from-[#00629B] to-[#0084D1] text-white hover:shadow-lg hover:shadow-[#00629B]/30 hover:-translate-y-0.5 border border-blue-400/20 active:translate-y-0',
+  cta: 'bg-gradient-to-r from-[#FF7900] to-[#FFA300] text-white hover:shadow-lg hover:shadow-[#FF7900]/30 hover:-translate-y-0.5 border border-orange-300/30 active:translate-y-0 font-bold',
+  secondary: 'bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 hover:-translate-y-0.5',
+  outline: 'bg-transparent text-[#00629B] border-2 border-[#00629B] hover:bg-[#00629B] hover:text-white hover:shadow-md hover:-translate-y-0.5',
+  ghost: 'bg-transparent text-slate-700 hover:text-[#00629B] hover:bg-blue-50/60'
+};
+
+const sizeStyles = {
+  sm: 'text-xs px-4 py-2 gap-1.5',
+  md: 'text-sm px-5 py-2.5 gap-2',
+  lg: 'text-base px-7 py-3.5 gap-2.5 shadow-md'
+};
+
+const combinedClasses = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={combinedClasses}
+      target={target}
+      rel={rel || (target === '_blank' ? 'noopener noreferrer' : undefined)}
+      id={id}
+      aria-label={ariaLabel}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      type={type}
+      class={combinedClasses}
+      id={id}
+      aria-label={ariaLabel}
+    >
+      <slot />
+    </button>
+  )
+}

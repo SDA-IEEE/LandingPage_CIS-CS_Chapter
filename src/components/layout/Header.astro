@@ -1,0 +1,44 @@
+---
+---
+<header class="header" id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#hero" class="logo-group" aria-label="Inicio IEEE CS & CIS UTB">
+        <img
+          class="logo-image"
+          src="/logos/LogoGeneral.png"
+          alt="IEEE, IEEE Computer Society, IEEE Computational Intelligence Society y Universidad Tecnológica de Bolívar"
+        />
+      </a>
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="#hero" class="nav-link active">Inicio</a>
+        <a href="#about" class="nav-link">Nosotros</a>
+        <a href="#research" class="nav-link">Investigación</a>
+        <a href="#events" class="nav-link">Eventos</a>
+        <a href="#projects" class="nav-link">Proyectos</a>
+        <a href="#team" class="nav-link">Equipo</a>
+        <a href="#join" class="nav-cta">Únete</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="window.toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay" onclick="window.toggleMenu()"></div>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+  <button class="close-menu" onclick="window.toggleMenu()" aria-label="Cerrar menú">
+    &times;
+  </button>
+  <a href="#hero" class="nav-link" onclick="window.toggleMenu()">Inicio</a>
+  <a href="#about" class="nav-link" onclick="window.toggleMenu()">Nosotros</a>
+  <a href="#research" class="nav-link" onclick="window.toggleMenu()">Investigación</a>
+  <a href="#events" class="nav-link" onclick="window.toggleMenu()">Eventos</a>
+  <a href="#projects" class="nav-link" onclick="window.toggleMenu()">Proyectos</a>
+  <a href="#team" class="nav-link" onclick="window.toggleMenu()">Equipo</a>
+  <a href="#join" class="nav-cta" onclick="window.toggleMenu()">Únete</a>
+</nav>

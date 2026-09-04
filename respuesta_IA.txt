@@ -1,0 +1,751 @@
+Sí. De hecho, **creo que esta nueva dirección es mucho mejor que intentar hacer una "mini Apple"**.
+
+La observación del stakeholder me parece muy valiosa, pero creo que ustedes hicieron bien en interpretar **la intención** detrás del ejemplo y no el ejemplo literalmente.
+
+Apple no es interesante solamente porque tenga animaciones. Lo interesante de esas páginas es que **hacen que el usuario experimente el producto**. El producto es el protagonista y la interacción sirve para explicarlo.
+
+En su caso, el "producto" no es un iPhone.
+
+Es **el capítulo, su gente, lo que construyen y lo que son capaces de hacer**.
+
+Por eso yo cambiaría el concepto de:
+
+> **"Una página institucional moderna del capítulo"**
+
+a:
+
+> **"Una experiencia digital que demuestra lo que este capítulo es capaz de construir."**
+
+Y eso puede ser muchísimo más potente.
+
+---
+
+# La clave: que la página demuestre que saben programar
+
+Hay una diferencia enorme entre:
+
+### Página tecnológica
+
+> "Mira qué bonito, tenemos gradientes, partículas y animaciones."
+
+y:
+
+### Página hecha por gente que sabe tecnología
+
+> "La interacción que estás viendo tiene una razón. La navegación, las transiciones, la visualización de proyectos, la forma en que presentamos la información... todo está diseñado y construido deliberadamente."
+
+**Yo buscaría lo segundo.**
+
+Porque si ponemos partículas flotando, líneas de neón, hologramas, 3D por todas partes y animaciones porque sí, el stakeholder podría pensar:
+
+> "Bueno... se ve futurista."
+
+Pero si hacemos una experiencia donde cada interacción tiene propósito, puede pensar:
+
+> **"Wow, estos estudiantes realmente saben construir software."**
+
+---
+
+# Y no necesitamos hacer algo del nivel de Apple
+
+Esto es importantísimo.
+
+Apple puede tener:
+
+* modelos 3D hiperrealistas
+* equipos de fotografía profesionales
+* cientos de personas trabajando en una página
+* animaciones extremadamente sofisticadas
+* WebGL/Three.js
+* assets creados específicamente para cada producto
+* una infraestructura enorme
+
+Ustedes **no necesitan eso**.
+
+Yo apuntaría aproximadamente a:
+
+**70% institucional/profesional + 30% experimental/tecnológico.**
+
+No:
+
+**30% institucional + 70% efectos.**
+
+La página debe poder presentarse perfectamente ante:
+
+* profesores
+* directivos
+* IEEE
+* estudiantes
+* empresas
+* posibles colaboradores
+
+y que todos piensen:
+
+> "Esto se ve profesional."
+
+Pero que un estudiante de ingeniería diga:
+
+> **"Uy, esta página está brutal."**
+
+Ese equilibrio es el objetivo.
+
+---
+
+# Yo cambiaría completamente la filosofía de las animaciones
+
+No quiero que la página esté animándose constantemente.
+
+Quiero que existan **momentos de impacto**.
+
+Por ejemplo:
+
+### Scroll normal
+
+El usuario baja.
+
+Nada exagerado.
+
+### Llega a una sección importante
+
+La interfaz empieza a reaccionar.
+
+Los elementos aparecen.
+
+Una línea se construye.
+
+Una imagen cambia.
+
+Un elemento se desplaza.
+
+### Llega a Proyectos
+
+**BOOM.**
+
+La experiencia cambia.
+
+Un proyecto aparece grande.
+
+El usuario puede explorarlo.
+
+La interfaz responde.
+
+### Continúa
+
+La experiencia vuelve a ser tranquila.
+
+Eso genera algo parecido a un **ritmo cinematográfico**.
+
+---
+
+# Y aquí es donde podemos aprovechar muchísimo que sean CS + CIS
+
+Yo incluso utilizaría el concepto:
+
+# **BUILDING INTELLIGENCE. BUILDING TECHNOLOGY.**
+
+No necesariamente como slogan definitivo, sino como dirección conceptual.
+
+Porque tenemos dos mundos:
+
+**COMPUTER SCIENCE**
+
+```text
+CODE
+SYSTEMS
+SOFTWARE
+ALGORITHMS
+```
+
+y:
+
+**COMPUTATIONAL INTELLIGENCE**
+
+```text
+AI
+MACHINE LEARNING
+DATA
+INTELLIGENCE
+```
+
+Y ambos terminan en:
+
+```text
+                 ┌──────────────┐
+                 │   SOFTWARE   │
+                 │    + IA      │
+                 └──────┬───────┘
+                        ↓
+                  REAL PROJECTS
+                        ↓
+                     IMPACT
+```
+
+Eso puede convertirse en parte de la narrativa visual de la página.
+
+---
+
+# Incluso el Hero que hicimos podría evolucionar
+
+En lugar de simplemente:
+
+> **COMPUTACIÓN INTELIGENTE PARA UN FUTURO MEJOR**
+
+podríamos crear una entrada mucho más inmersiva.
+
+Imagínate que el usuario entra y aparece:
+
+```text
+IEEE
+COMPUTER SOCIETY ×
+COMPUTATIONAL INTELLIGENCE
+
+                    UTB
+```
+
+Después:
+
+### **NO SOLO APRENDEMOS TECNOLOGÍA.**
+
+Pausa.
+
+### **LA CONSTRUIMOS.**
+
+Y mientras aparece esa frase, detrás se va construyendo visualmente una estructura de nodos/código/interfaz.
+
+Después:
+
+> **Un capítulo estudiantil donde Computer Science y Computational Intelligence se encuentran para crear, investigar y construir soluciones reales.**
+
+Y aparecen dos caminos:
+
+**COMPUTER SCIENCE**
+`Software · Algorithms · Systems`
+
+**COMPUTATIONAL INTELLIGENCE**
+`AI · ML · Data`
+
+Ambos convergen visualmente.
+
+**Eso ya cuenta una historia.**
+
+---
+
+# Nosotros debería sentirse como una historia, no como información
+
+Aquí es donde podemos romper el patrón que detectaste anteriormente.
+
+No:
+
+```text
+NOSOTROS
+
+[texto]
+
+[misión] [visión] [valores]
+```
+
+Sino algo como:
+
+### **¿QUIÉNES SOMOS?**
+
+Una fotografía grande de estudiantes trabajando.
+
+Y mientras haces scroll:
+
+> **Somos estudiantes.**
+
+scroll
+
+> **Somos desarrolladores.**
+
+scroll
+
+> **Somos investigadores.**
+
+scroll
+
+> **Somos una comunidad.**
+
+Y finalmente:
+
+# **Somos IEEE CS & CIS UTB.**
+
+No necesitas 20 animaciones.
+
+**La narrativa es la interacción.**
+
+---
+
+# Investigación puede ser una experiencia de exploración
+
+Aquí podemos hacer algo muy bonito sin saturar.
+
+Imagina una especie de **mapa de conocimiento**.
+
+En el centro:
+
+### **COMPUTING**
+
+Y alrededor aparecen:
+
+```text
+        MACHINE LEARNING
+
+              ●
+              │
+   NLP ───── COMPUTING ───── SOFTWARE
+              │
+              ●
+        COMPUTER VISION
+```
+
+El usuario mueve el cursor o hace scroll y las áreas se conectan.
+
+Al seleccionar:
+
+**Machine Learning**
+
+la interfaz transforma la información:
+
+```text
+MACHINE LEARNING
+
+Modelos
+Datos
+Predicción
+Optimización
+
+[Proyectos relacionados]
+```
+
+No necesitamos hacer un videojuego.
+
+Es simplemente una manera **interactiva de explorar información**.
+
+Y ahí sí se siente "wow", pero sigue siendo académico.
+
+---
+
+# Eventos puede ser mucho más físico
+
+En vez de tarjetas:
+
+Podríamos crear una **timeline**.
+
+```text
+2026
+│
+├──── FEB
+│
+├──────── MAR
+│
+├──────────── ABR
+│
+├──────────────── MAY
+│
+└──────────────────── JUN
+```
+
+Al hacer scroll, la línea avanza.
+
+Aparece un evento.
+
+La fotografía ocupa la pantalla.
+
+Información:
+
+> **WORKSHOP**
+>
+> Machine Learning desde cero
+>
+> 28 MAY · UTB
+
+Y continúas.
+
+El siguiente evento aparece.
+
+Eso es inmersivo **sin necesitar efectos innecesarios**.
+
+---
+
+# Pero donde realmente quiero poner el "WOW": PROYECTOS
+
+Esta debería ser probablemente **la sección más espectacular de toda la página**.
+
+Porque es la evidencia de que saben hacer cosas.
+
+Yo haría algo inspirado en un **portfolio tecnológico/case study**.
+
+Por ejemplo:
+
+```text
+                PROYECTOS
+
+        DE LA IDEA AL SOFTWARE
+
+                 ↓
+
+      ┌─────────────────────────────┐
+      │                             │
+      │       PROJECT IMAGE         │
+      │                             │
+      │                             │
+      └─────────────────────────────┘
+
+             PROYECTO 01
+
+        Sistema de gestión...
+
+       React · FastAPI · PostgreSQL
+
+             [EXPLORAR]
+```
+
+Cuando haces scroll, el proyecto puede:
+
+* escalar ligeramente
+* cambiar de imagen
+* revelar información
+* mostrar tecnologías
+* mostrar integrantes
+* mostrar GitHub
+* mostrar una demo
+
+Y luego el siguiente proyecto entra.
+
+Esto es muchísimo más interesante que:
+
+> `[card] [card] [card]`
+
+---
+
+# Incluso podemos mostrar código, pero con muchísimo cuidado
+
+Aquí sí quiero rescatar parte de la idea anterior que no te gustó.
+
+No pondría:
+
+> un editor de código gigante al lado de una gráfica porque "se ve tecnológico".
+
+Eso sí se siente artificial.
+
+Pero podemos usar código **cuando tenga significado**.
+
+Por ejemplo, un proyecto podría mostrar:
+
+```text
+01
+const model = await train(dataset)
+
+02
+const prediction = model.predict(input)
+
+03
+return result
+```
+
+Y al lado:
+
+**"Así funciona nuestro proyecto."**
+
+La animación podría revelar las líneas progresivamente.
+
+Eso sí comunica:
+
+> **Aquí hay software detrás.**
+
+---
+
+# Y hay una idea todavía más potente
+
+## Hacer que la página misma sea una demostración técnica.
+
+No solamente contar:
+
+> "Somos buenos desarrollando software."
+
+Sino demostrarlo.
+
+Por ejemplo:
+
+### Microinteracciones
+
+Cuando pasas sobre elementos:
+
+* el cursor cambia
+* los componentes reaccionan
+* aparecen conexiones
+* las imágenes tienen movimiento sutil
+
+### Transiciones entre secciones
+
+No un simple:
+
+`scroll → aparece sección`
+
+sino:
+
+`elemento → se transforma → se convierte en el siguiente elemento`
+
+### Datos dinámicos
+
+Eventos, proyectos y miembros pueden venir de una estructura de datos real.
+
+### Componentes interactivos
+
+Investigación explorable.
+
+Proyectos navegables.
+
+Timeline de eventos.
+
+Equipo interactivo.
+
+### Performance
+
+Y aquí hay una ironía interesante:
+
+**la página puede tener muchas animaciones y aun así sentirse rápida.**
+
+Eso también demuestra ingeniería.
+
+---
+
+# El diseño visual debe seguir siendo sobrio
+
+Aquí mantendría exactamente la decisión que tomamos anteriormente.
+
+### Color principal
+
+**IEEE Blue**
+
+El azul debe dominar la experiencia.
+
+### Computer Society
+
+**Naranja**
+
+Pero como acento.
+
+No convertir toda una sección en naranja.
+
+### CIS
+
+**Celeste**
+
+También como acento.
+
+### Neutros
+
+Blancos, grises muy claros y azul oscuro.
+
+---
+
+Y **eliminaría casi completamente el neón**.
+
+Nada de:
+
+```text
+🔵🟣🔴🟢
+```
+
+por todas partes.
+
+La tecnología puede expresarse mediante:
+
+* movimiento
+* profundidad
+* tipografía
+* composición
+* interacción
+* fotografía
+* datos
+* código
+* transiciones
+
+No necesitamos veinte colores.
+
+---
+
+# Las fotografías también pueden jugar un papel enorme
+
+Esto creo que puede hacer que el sitio sea mucho más humano.
+
+No quiero que todo sea:
+
+> IA generada + circuitos + cerebro digital.
+
+Porque entonces terminamos pareciendo cualquier startup de IA.
+
+Quiero fotografías **reales del capítulo**:
+
+* estudiantes programando
+* reuniones
+* talleres
+* personas presentando
+* hackathons
+* eventos
+* proyectos
+* profesores
+* integrantes trabajando
+
+Y podemos mezclarlas con gráficos digitales muy sutiles.
+
+Por ejemplo:
+
+**Fotografía real**
+
+*
+
+**una pequeña capa de elementos UI**
+
+*
+
+**animación**
+
+=
+
+muchísimo más auténtico.
+
+---
+
+# La página debería tener "momentos"
+
+Esta sería mi regla principal a partir de ahora.
+
+No quiero que el usuario piense:
+
+> "Está todo bonito."
+
+Quiero que piense:
+
+### Inicio
+
+**"Wow, se ve profesional."**
+
+↓
+
+### Nosotros
+
+**"Ah, ya entiendo quiénes son."**
+
+↓
+
+### Investigación
+
+**"Está interesante cómo presentan esto."**
+
+↓
+
+### Eventos
+
+**"Esto se siente vivo."**
+
+↓
+
+### Proyectos
+
+### **"WOW, estos tipos sí hacen cosas."**
+
+↓
+
+### Equipo
+
+**"Hay personas reales detrás."**
+
+↓
+
+### Join Us
+
+**"Quiero saber cómo entrar."**
+
+Eso es exactamente lo que necesita la página.
+
+---
+
+# Y esto cambia también nuestra definición de "inmersiva"
+
+Para mí:
+
+**Inmersiva ≠ muchos efectos.**
+
+Inmersiva significa:
+
+> **El usuario siente que está recorriendo algo.**
+
+Y ahí podemos utilizar:
+
+**Scroll storytelling**
+
+**Parallax muy sutil**
+
+**Elementos sticky**
+
+**Transformaciones entre secciones**
+
+**Revelado progresivo**
+
+**Hover interactions**
+
+**Transiciones de página/sección**
+
+**Microinteracciones**
+
+**Visualizaciones interactivas**
+
+**Fotografía + movimiento**
+
+**Tipografía cinética en momentos específicos**
+
+Pero siempre preguntando:
+
+> **¿Esto ayuda a contar algo?**
+
+Si la respuesta es no:
+
+**se elimina.**
+
+---
+
+# Mi propuesta final de dirección
+
+Yo llevaría el proyecto hacia esto:
+
+### **IEEE CS & CIS UTB**
+
+### *A student chapter that builds technology.*
+
+Una experiencia web:
+
+**Institucional**
+→ porque representa a IEEE y a la universidad.
+
+**Profesional**
+→ porque puede verla un profesor, empresa o institución.
+
+**Tecnológica**
+→ porque representa Computer Science y CIS.
+
+**Humana**
+→ porque muestra estudiantes reales.
+
+**Interactiva**
+→ porque el usuario explora el contenido.
+
+**Inmersiva**
+→ porque existe una narrativa de principio a fin.
+
+**Técnicamente sofisticada**
+→ porque las interacciones demuestran capacidad de desarrollo.
+
+Y sobre todo:
+
+> **No intentaría impresionar al usuario con la tecnología de la página.**
+>
+> **Haría que la tecnología de la página sirva para demostrar quiénes son ustedes.**
+
+Creo que esa es la diferencia entre una web que simplemente **"se ve moderna"** y una web que hace que alguien diga:
+
+# **"Estos estudiantes saben lo que están haciendo."**
+
+Y honestamente, creo que **ese debería ser ahora el objetivo principal del diseño**.

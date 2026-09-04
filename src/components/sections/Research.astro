@@ -1,0 +1,164 @@
+---
+---
+<section class="section section-surface" id="research">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">Investigación</div>
+      <h2 class="section-title">Mapa de exploración</h2>
+      <p class="section-desc">
+        Líneas de investigación activas que conectan teoría con aplicación. Cada
+        nodo representa una pregunta que estamos respondiendo.
+      </p>
+    </div>
+
+    <div class="research-map reveal reveal-delay-1">
+      <div class="research-map-board">
+        <div class="research-track-label">Ruta de exploración</div>
+        <svg class="research-path" viewBox="0 0 900 520" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M70 370 C220 250, 350 245, 470 300 C590 355, 700 295, 830 155" />
+        </svg>
+
+        <button
+          type="button"
+          class="research-node active"
+          aria-pressed="true"
+          data-line-title="Inteligencia Artificial"
+          data-line-description="Modelos que aprenden, razonan y colaboran para resolver desafíos reales en salud, educación, infraestructura y decisión inteligente."
+          style="--x: 12%; --y: 64%; --tone: var(--ieee-blue);"
+        >
+          <span class="research-node-step">01</span>
+          <span class="research-node-label">Inteligencia Artificial</span>
+        </button>
+        <button
+          type="button"
+          class="research-node"
+          aria-pressed="false"
+          data-line-title="Ciencia de datos"
+          data-line-description="Diseñamos pipelines analíticos y modelos estadísticos para convertir datos complejos en decisiones académicas y de impacto social."
+          style="--x: 37%; --y: 43%; --tone: var(--cis-cyan);"
+        >
+          <span class="research-node-step">02</span>
+          <span class="research-node-label">Ciencia de datos</span>
+        </button>
+        <button
+          type="button"
+          class="research-node"
+          aria-pressed="false"
+          data-line-title="Visión por computadora"
+          data-line-description="Aplicamos detección, segmentación y clasificación visual para construir soluciones en monitoreo, industria y entornos inteligentes."
+          style="--x: 61%; --y: 60%; --tone: var(--cs-orange);"
+        >
+          <span class="research-node-step">03</span>
+          <span class="research-node-label">Visión por computadora</span>
+        </button>
+        <button
+          type="button"
+          class="research-node"
+          aria-pressed="false"
+          data-line-title="Tecnología humana"
+          data-line-description="Exploramos interacción humano-computador y diseño centrado en personas para crear tecnología usable, inclusiva y sostenible."
+          style="--x: 84%; --y: 25%; --tone: #5c8dff;"
+        >
+          <span class="research-node-step">04</span>
+          <span class="research-node-label">Tecnología humana</span>
+        </button>
+      </div>
+
+      <aside class="research-detail-card">
+        <div class="research-detail-header">
+          <span class="research-detail-label">Línea</span>
+          <span class="research-detail-status">Seleccionada</span>
+        </div>
+        <h3 id="researchDetailTitle">Inteligencia Artificial</h3>
+        <p id="researchDetailDescription">
+          Modelos que aprenden, razonan y colaboran para resolver desafíos reales
+          en salud, educación, infraestructura y decisión inteligente.
+        </p>
+        <a href="#projects" class="research-detail-link">
+          Ver proyectos
+          <span aria-hidden="true">↗</span>
+        </a>
+      </aside>
+    </div>
+
+    <div class="research-mobile reveal">
+      <div class="research-accordion-item open">
+        <div class="research-accordion-header" onclick="window.toggleAccordion(this)">
+          <span class="research-accordion-title">Machine Learning</span>
+          <svg class="research-accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </div>
+        <div class="research-accordion-body">
+          <p>
+            Desarrollo de modelos predictivos para problemas locales, optimización
+            de algoritmos genéticos y redes neuronales aplicadas a datos
+            regionales del Caribe colombiano.
+          </p>
+        </div>
+      </div>
+      <div class="research-accordion-item">
+        <div class="research-accordion-header" onclick="window.toggleAccordion(this)">
+          <span class="research-accordion-title">Natural Language Processing</span>
+          <svg class="research-accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </div>
+        <div class="research-accordion-body">
+          <p>
+            Análisis de sentimiento, clasificación de textos y generación de
+            lenguaje aplicado a contextos hispanohablantes y dialectos del Caribe
+            colombiano.
+          </p>
+        </div>
+      </div>
+      <div class="research-accordion-item">
+        <div class="research-accordion-header" onclick="window.toggleAccordion(this)">
+          <span class="research-accordion-title">Computer Vision</span>
+          <svg class="research-accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </div>
+        <div class="research-accordion-body">
+          <p>
+            Detección de objetos, segmentación de imágenes y sistemas de
+            reconocimiento visual para aplicaciones industriales y de seguridad.
+          </p>
+        </div>
+      </div>
+      <div class="research-accordion-item">
+        <div class="research-accordion-header" onclick="window.toggleAccordion(this)">
+          <span class="research-accordion-title">Software Engineering</span>
+          <svg class="research-accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </div>
+        <div class="research-accordion-body">
+          <p>
+            Arquitectura de software, patrones de diseño, calidad de código y
+            desarrollo de sistemas escalables con metodologías ágiles.
+          </p>
+        </div>
+      </div>
+      <div class="research-accordion-item">
+        <div class="research-accordion-header" onclick="window.toggleAccordion(this)">
+          <span class="research-accordion-title">Data Science</span>
+          <svg class="research-accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </div>
+        <div class="research-accordion-body">
+          <p>
+            Visualización de datos, análisis estadístico y pipelines de
+            procesamiento para transformar información en decisiones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
