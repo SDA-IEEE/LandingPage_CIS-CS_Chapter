@@ -1,4 +1,10 @@
 ---
+import { getCollection, render } from 'astro:content';
+
+const allProjects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const featured = allProjects.find((p) => p.data.featured) ?? allProjects[0];
+const otherProjects = allProjects.filter((p) => p.id !== featured?.id);
+const { Content: FeaturedContent } = featured ? await render(featured) : { Content: null };
 ---
 <section class="section section-surface" id="projects">
   <div class="container">
@@ -10,156 +16,89 @@
         study: contexto, solución, tecnologías y equipo.
       </p>
     </div>
-    <div class="projects-showcase">
-      <div class="project-featured reveal">
-        <div class="project-featured-media">
-          <img
-            src="/images/project-platform.jpg"
-            alt="Dashboard de sistema de gestión con gráficos de datos"
-            loading="lazy"
-          />
-          <div class="project-featured-badge">Proyecto Destacado</div>
-        </div>
-        <div class="project-featured-content">
-          <div class="project-number">PROYECTO 01</div>
-          <h3 class="project-title">
-            Sistema de Análisis Predictivo para Agricultura del Caribe
-          </h3>
-          <p class="project-desc">
-            Plataforma web que integra datos climáticos, históricos de cosecha y
-            modelos de machine learning para predecir rendimiento agrícola en la
-            región de Bolívar. Desarrollado en colaboración con el programa de
-            Agronomía de UTB.
-          </p>
-          <div class="project-techs">
-            <span class="project-tech">React</span>
-            <span class="project-tech">FastAPI</span>
-            <span class="project-tech">PostgreSQL</span>
-            <span class="project-tech">TensorFlow</span>
-            <span class="project-tech">Docker</span>
+
+    {featured ? (
+      <div class="projects-showcase">
+        <div class="project-featured reveal">
+          <div class="project-featured-media">
+            <img
+              src={featured.data.image}
+              alt={`Imagen representativa del proyecto ${featured.data.title}`}
+              loading="lazy"
+            />
+            <div class="project-featured-badge">Proyecto Destacado</div>
           </div>
-          <div class="project-links">
-            <a href="#join" class="project-link">
-              Ver demo
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </a>
-            <a href="#join" class="project-link">
-              Documentación
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </a>
+          <div class="project-featured-content">
+            <div class="project-number">PROYECTO 01</div>
+            <h3 class="project-title">{featured.data.title}</h3>
+            <p class="project-desc">{featured.data.tagline}</p>
+            {FeaturedContent && (
+              <div class="project-desc">
+                <FeaturedContent />
+              </div>
+            )}
+            <div class="project-techs">
+              {featured.data.technologies.map((tech) => (
+                <span class="project-tech">{tech}</span>
+              ))}
+            </div>
+            <div class="project-links">
+              {featured.data.repoUrl && (
+                <a href={featured.data.repoUrl} class="project-link" target="_blank" rel="noopener noreferrer">
+                  Ver repositorio
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+              )}
+              {featured.data.demoUrl && (
+                <a href={featured.data.demoUrl} class="project-link" target="_blank" rel="noopener noreferrer">
+                  Ver demo
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+              )}
+            </div>
           </div>
         </div>
+
+        {otherProjects.length > 0 && (
+          <div class="project-grid">
+            {otherProjects.map((project) => (
+              <div class="project-card reveal">
+                <div class="project-card-media">
+                  <img
+                    src={project.data.image}
+                    alt={`Imagen representativa del proyecto ${project.data.title}`}
+                    loading="lazy"
+                  />
+                </div>
+                <div class="project-card-body">
+                  <h4 class="project-card-title">{project.data.title}</h4>
+                  <p class="project-card-desc">{project.data.tagline}</p>
+                  <div class="project-card-meta">
+                    <span class="project-card-tech">{project.data.technologies.join(' · ')}</span>
+                    {project.data.repoUrl && (
+                      <a href={project.data.repoUrl} class="project-card-arrow" target="_blank" rel="noopener noreferrer" aria-label={`Ver repositorio de ${project.data.title}`}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <p class="project-desc reveal" style="text-align:center; margin-top: 32px; opacity: 0.75;">
+          Más proyectos del capítulo próximamente. <a href="#join">Únete</a> para conocerlos primero.
+        </p>
       </div>
-      <div class="project-grid">
-        <div class="project-card reveal">
-          <div class="project-card-media">
-            <img
-              src="/images/project-vision.jpg"
-              alt="Visualización y código de proyecto"
-              loading="lazy"
-            />
-          </div>
-          <div class="project-card-body">
-            <h4 class="project-card-title">
-              Clasificador de Documentos UTB
-            </h4>
-            <p class="project-card-desc">
-              Pipeline de NLP para clasificación automática de documentos
-              institucionales usando transformers y embeddings en español.
-            </p>
-            <div class="project-card-meta">
-              <span class="project-card-tech">Python · HuggingFace · spaCy</span>
-              <span class="project-card-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="project-card reveal reveal-delay-1">
-          <div class="project-card-media">
-            <img
-              src="/images/project-satellite.jpg"
-              alt="Interfaz de procesamiento de datos satelitales"
-              loading="lazy"
-            />
-          </div>
-          <div class="project-card-body">
-            <h4 class="project-card-title">
-              GeoScan: Monitoreo Satelital Urbano
-            </h4>
-            <p class="project-card-desc">
-              Segmentación semántica de imágenes satelitales para análisis de
-              expansión urbana y recursos hídricos en la Bahía de Cartagena.
-            </p>
-            <div class="project-card-meta">
-              <span class="project-card-tech">PyTorch · GDAL · FastAPI</span>
-              <span class="project-card-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="project-card reveal reveal-delay-2">
-          <div class="project-card-media">
-            <img
-              src="/images/about-devs.jpg"
-              alt="Visualización de red y optimización"
-              loading="lazy"
-            />
-          </div>
-          <div class="project-card-body">
-            <h4 class="project-card-title">
-              Optimizador de Rutas de Transporte
-            </h4>
-            <p class="project-card-desc">
-              Algoritmo genético para optimización de rutas de transporte
-              público en Cartagena con restricciones de tiempo real.
-            </p>
-            <div class="project-card-meta">
-              <span class="project-card-tech">Python · OR-Tools · React</span>
-              <span class="project-card-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="project-card reveal reveal-delay-3">
-          <div class="project-card-media">
-            <img
-              src="/images/about-research.jpg"
-              alt="Infraestructura y cloud"
-              loading="lazy"
-            />
-          </div>
-          <div class="project-card-body">
-            <h4 class="project-card-title">
-              Infraestructura como Código UTB
-            </h4>
-            <p class="project-card-desc">
-              Automatización del despliegue de servicios académicos usando
-              Terraform, Ansible y pipelines CI/CD en GitHub Actions.
-            </p>
-            <div class="project-card-meta">
-              <span class="project-card-tech">Terraform · Ansible · AWS</span>
-              <span class="project-card-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    ) : (
+      <p class="project-desc reveal">Proyectos del capítulo próximamente.</p>
+    )}
   </div>
 </section>

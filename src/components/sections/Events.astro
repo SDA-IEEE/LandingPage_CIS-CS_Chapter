@@ -1,4 +1,13 @@
 ---
+import { getCollection } from 'astro:content';
+import { siteConfig } from '../../data/site';
+
+const events = (await getCollection('events')).sort(
+  (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
+);
+
+const monthFormatter = new Intl.DateTimeFormat('es-CO', { month: 'long', year: 'numeric' });
+const formatMonth = (isoDate: string) => monthFormatter.format(new Date(`${isoDate}T00:00:00`));
 ---
 <section class="section" id="events">
   <div class="container">
@@ -10,109 +19,51 @@
         comparte y la comunidad se fortalece.
       </p>
     </div>
-    <div class="events-timeline">
-      <div class="timeline-line">
-        <div class="timeline-progress" id="timelineProgress"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-date">Marzo 2026</div>
-          <h3 class="timeline-title">
-            Workshop: Machine Learning desde cero
-          </h3>
-          <p class="timeline-desc">
-            Taller práctico de introducción a ML con Python, scikit-learn y
-            pandas. Orientado a estudiantes sin experiencia previa en inteligencia
-            artificial.
-          </p>
-          <div class="timeline-meta">
-            <span class="timeline-tag">Taller</span>
-            <span>UTB · Auditorio Principal</span>
-            <span>Presencial</span>
-          </div>
-          <img
-            src="/images/event-workshop.jpg"
-            alt="Estudiantes en un taller de machine learning"
-            class="timeline-image"
-            loading="lazy"
-          />
+
+    {events.length > 0 ? (
+      <div class="events-timeline">
+        <div class="timeline-line">
+          <div class="timeline-progress" id="timelineProgress"></div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-date">Abril 2026</div>
-          <h3 class="timeline-title">IEEE Hackathon: Ciudad Inteligente</h3>
-          <p class="timeline-desc">
-            48 horas de desarrollo intensivo para proponer soluciones tecnológicas
-            a problemas urbanos de Cartagena y Bolívar.
-          </p>
-          <div class="timeline-meta">
-            <span class="timeline-tag" style="background: rgba(232, 119, 34, 0.1); color: var(--cs-orange);">
-              Hackathon
-            </span>
-            <span>UTB · Labs de Ingeniería</span>
-            <span>Presencial</span>
+        {events.map((event) => (
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">{formatMonth(event.data.date)}</div>
+              <h3 class="timeline-title">{event.data.title}</h3>
+              <div class="timeline-meta">
+                <span class="timeline-tag">{event.data.type}</span>
+                {event.data.location && <span>{event.data.location}</span>}
+                <span>{event.data.modality}</span>
+              </div>
+              {event.data.image && (
+                <img
+                  src={event.data.image}
+                  alt={`Imagen del evento ${event.data.title}`}
+                  class="timeline-image"
+                  loading="lazy"
+                />
+              )}
+              {event.data.registrationUrl && (
+                <a href={event.data.registrationUrl} class="project-link" target="_blank" rel="noopener noreferrer">
+                  Inscribirme
+                </a>
+              )}
+            </div>
           </div>
-          <img
-            src="/images/event-hackathon.jpg"
-            alt="Participantes de hackathon trabajando en equipo"
-            class="timeline-image"
-            loading="lazy"
-          />
-        </div>
+        ))}
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-date">Mayo 2026</div>
-          <h3 class="timeline-title">Charla: Ética en IA Generativa</h3>
-          <p class="timeline-desc">
-            Conversatorio con investigadores locales sobre los límites,
-            responsabilidades y oportunidades de los modelos de lenguaje en
-            contextos académicos.
-          </p>
-          <div class="timeline-meta">
-            <span class="timeline-tag" style="background: rgba(0, 169, 224, 0.1); color: var(--cis-cyan);">
-              Charla
-            </span>
-            <span>Online · Zoom</span>
-            <span>Virtual</span>
-          </div>
-          <img
-            src="/images/event-tech-talk.jpg"
-            alt="Auditorio durante una charla tecnológica"
-            class="timeline-image"
-            loading="lazy"
-          />
-        </div>
+    ) : (
+      <div class="reveal" style="text-align:center; padding: 48px 16px;">
+        <p class="section-desc" style="max-width: 560px; margin: 0 auto 20px;">
+          Aún no tenemos eventos programados públicamente. Síguenos en nuestras
+          redes o entra al portal de inscripciones para enterarte apenas se
+          confirme el próximo.
+        </p>
+        <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          Síguenos para enterarte
+        </a>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-date">Junio 2026</div>
-          <h3 class="timeline-title">Demo Day: Proyectos del Semestre</h3>
-          <p class="timeline-desc">
-            Presentación pública de los proyectos desarrollados durante el
-            semestre. Demo funcional, documentación técnica y retroalimentación de
-            la comunidad.
-          </p>
-          <div class="timeline-meta">
-            <span class="timeline-tag" style="background: rgba(10, 22, 40, 0.08); color: var(--dark);">
-              Demo Day
-            </span>
-            <span>UTB · Plaza Central</span>
-            <span>Híbrido</span>
-          </div>
-          <img
-            src="/images/hero-community.jpg"
-            alt="Presentación de proyectos en un demo day universitario"
-            class="timeline-image"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
+    )}
   </div>
 </section>

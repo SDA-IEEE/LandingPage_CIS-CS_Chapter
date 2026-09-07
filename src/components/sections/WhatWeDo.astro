@@ -1,10 +1,13 @@
 ---
+import { getCollection } from 'astro:content';
+
+const lines = (await getCollection('lines')).sort((a, b) => a.data.order - b.data.order);
 ---
 <section class="section section-surface" id="what">
   <div class="container">
     <div class="section-heading reveal">
       <div class="section-label">Qué hacemos</div>
-      <h2 class="section-title">Cuatro áreas. Un propósito.</h2>
+      <h2 class="section-title">Nuestras líneas. Un propósito.</h2>
       <p class="section-desc">
         Convergencia deliberada entre software, inteligencia computacional,
         investigación y comunidad. No actividades aisladas: un ecosistema.
@@ -15,41 +18,13 @@
       <div class="what-center">
         <div class="what-center-text">CS × CIS<br />UTB</div>
       </div>
-      <div class="what-item">
-        <div class="what-number">01</div>
-        <h3 class="what-title">Software & Systems</h3>
-        <p class="what-desc">
-          Diseño, arquitectura y desarrollo de sistemas robustos. Desde
-          aplicaciones web hasta infraestructura distribuida, con énfasis en
-          calidad de código y escalabilidad.
-        </p>
-      </div>
-      <div class="what-item">
-        <div class="what-number">02</div>
-        <h3 class="what-title">AI & Machine Learning</h3>
-        <p class="what-desc">
-          Modelado predictivo, procesamiento de datos y optimización de
-          algoritmos. Aplicamos inteligencia computacional a problemas reales de
-          la región Caribe.
-        </p>
-      </div>
-      <div class="what-item">
-        <div class="what-number">03</div>
-        <h3 class="what-title">Research & Innovation</h3>
-        <p class="what-desc">
-          Líneas de investigación activas en NLP, visión por computadora y
-          sistemas inteligentes. Publicaciones, prototipos y transferencia de
-          conocimiento.
-        </p>
-      </div>
-      <div class="what-item">
-        <div class="what-number">04</div>
-        <h3 class="what-title">Community & Events</h3>
-        <p class="what-desc">
-          Talleres técnicos, hackathons, charlas y mentorías. Construimos una
-          comunidad donde aprender y enseñar ocurren simultáneamente.
-        </p>
-      </div>
+      {lines.map((line) => (
+        <div class="what-item">
+          <div class="what-number" aria-hidden="true">{line.data.icon}</div>
+          <h3 class="what-title">{line.data.title}</h3>
+          <p class="what-desc">{line.data.tagline}</p>
+        </div>
+      ))}
     </div>
   </div>
 </section>

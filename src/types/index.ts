@@ -11,6 +11,10 @@ export interface SiteConfig {
   description: string;
   tagline: string;
   url: string;
+  mission: string;
+  vision: string;
+  visionSource: string;
+  joinUrl: string;
   socials: {
     instagram?: string;
     linkedin?: string;

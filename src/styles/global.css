@@ -911,6 +911,49 @@ ul {
     transform: translateX(-50%) translateY(8px);
   }
 }
+.mission-vision-block {
+  padding: 72px 24px;
+}
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .mission-vision-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px;
+  }
+}
+.mission-vision-item {
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+}
+.mission-vision-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cis-cyan);
+  margin-bottom: 12px;
+}
+.mission-vision-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+.mission-vision-source {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 10px;
+}
+.mission-vision-source a {
+  color: var(--cis-cyan);
+  text-decoration: underline;
+}
 .research-stage {
   position: relative;
   min-height: 100vh;
