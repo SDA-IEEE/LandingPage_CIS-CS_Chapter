@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/sections/Hero.astro';
-import WhatWeDo from '../components/sections/WhatWeDo.astro';
+import AboutUs from '../components/sections/AboutUs.astro';
 import About from '../components/sections/About.astro';
 import Research from '../components/sections/Research.astro';
 import Events from '../components/sections/Events.astro';
 import Projects from '../components/sections/Projects.astro';
 import Team from '../components/sections/Team.astro';
+import ScrollPhrase from '../components/sections/ScrollPhrase.astro';
 import JoinUs from '../components/sections/JoinUs.astro';
 ---
 
@@ -14,10 +15,10 @@ import JoinUs from '../components/sections/JoinUs.astro';
   <!-- 1. Hero: Declaración & Identidad IEEE CS + CIS UTB -->
   <Hero />
 
-  <!-- 2. Qué Hacemos: 4 Áreas & Centro de Convergencia CS x CIS UTB -->
-  <WhatWeDo />
+  <!-- 2. Sobre Nosotros: Misión, Visión, Objetivo & Miembros -->
+  <AboutUs />
 
-  <!-- 3. Nosotros: Sticky Media Stage & Manifiesto Interactivo -->
+  <!-- 3. Manifiesto Interactivo: Sticky Media Stage -->
   <About />
 
   <!-- 4. Investigación: Constelación de Nodos Interactiva & Acordeón Móvil -->
@@ -31,6 +32,9 @@ import JoinUs from '../components/sections/JoinUs.astro';
 
   <!-- 7. Equipo: Personas & Liderazgo con Overlays Interactivos -->
   <Team />
+
+  <!-- 7.5. Frase Dinámica por Scroll (Tipografía Cinética) -->
+  <ScrollPhrase />
 
   <!-- 8. Únete al Capítulo: 3 Pasos de Vinculación & CTA -->
   <JoinUs />

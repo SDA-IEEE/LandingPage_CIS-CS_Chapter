@@ -1,118 +1,1066 @@
 ---
+const events = [
+  {
+    index: 0,
+    date: "Marzo 2026",
+    status: { text: "Cupos Limitados", type: "upcoming" },
+    image: "/images/event-workshop.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
+    alt: "Workshop Machine Learning",
+    tags: [
+      { text: "Taller", primary: true },
+      { text: "UTB - Auditorio" },
+      { text: "Presencial" }
+    ],
+    title: "Workshop: Machine Learning desde cero",
+    desc: "Taller práctico con Python, scikit-learn y pandas enfocado en fundamentos de IA, regresión y clasificación aplicados a casos reales.",
+    footerInfo: "09:00 AM - 01:00 PM",
+    actionText: "Registrarme",
+    actionLink: "#"
+  },
+  {
+    index: 1,
+    date: "Abril 2026",
+    status: { text: "★ Evento Insignia", type: "highlight" },
+    image: "/images/event-hackathon.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80",
+    alt: "Hackathon Ciudad Inteligente",
+    tags: [
+      { text: "Hackathon", primary: true },
+      { text: "UTB - Labs Ing" },
+      { text: "48 Horas" }
+    ],
+    title: "IEEE Hackathon: Ciudad Inteligente",
+    desc: "48 horas de ideación y desarrollo intensivo creando prototipos IoT y plataformas inteligentes para mejorar servicios públicos y resiliencia urbana en Bolívar.",
+    footerInfo: "Premios + Certificado",
+    actionText: "Ver Bases",
+    actionLink: "#"
+  },
+  {
+    index: 2,
+    date: "Mayo 2026",
+    status: { text: "Acceso Libre", type: "upcoming" },
+    image: "/images/event-tech-talk.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1000&q=80",
+    alt: "Charla Ética IA",
+    tags: [
+      { text: "Charla", primary: true },
+      { text: "Online Zoom" },
+      { text: "Virtual" }
+    ],
+    title: "Charla: Ética en IA Generativa",
+    desc: "Panel multidisciplinario con investigadores de la industria debatiendo propiedad intelectual, sesgos algorítmicos y el impacto de los LLMs en ingeniería.",
+    footerInfo: "18:00 COT",
+    actionText: "Enlace Zoom",
+    actionLink: "#"
+  },
+  {
+    index: 3,
+    date: "Junio 2026",
+    status: { text: "Networking", type: "upcoming" },
+    image: "/images/hero-community.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80",
+    alt: "Demo Day",
+    tags: [
+      { text: "Demo Day", primary: true },
+      { text: "Plaza Central" },
+      { text: "Híbrido" }
+    ],
+    title: "Demo Day: Proyectos del Semestre",
+    desc: "Presentación de prototipos funcionales desarrollados por miembros de los semilleros y capítulos técnicos ante docentes e invitados del sector TI.",
+    footerInfo: "Jornada Completa",
+    actionText: "Postular",
+    actionLink: "#"
+  },
+  {
+    index: 4,
+    date: "Julio 2026",
+    status: { text: "Competencia", type: "upcoming" },
+    image: "/images/about-devs.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80",
+    alt: "Bootcamp IEEEXtreme",
+    tags: [
+      { text: "Bootcamp", primary: true },
+      { text: "Edificio A" },
+      { text: "Presencial" }
+    ],
+    title: "Bootcamp Algorítmico IEEEXtreme",
+    desc: "Simulaciones de alta presión y entrenamiento avanzado en estructuras de datos con el fin de clasificar en el ranking mundial IEEEXtreme 20.0.",
+    footerInfo: "Fase Clasificatoria",
+    actionText: "Unirme",
+    actionLink: "#"
+  }
+];
 ---
-<section class="section" id="events">
-  <div class="container">
-    <div class="section-heading reveal">
-      <div class="section-label">Eventos</div>
-      <h2 class="section-title">Una comunidad en movimiento</h2>
-      <p class="section-desc">
-        Talleres, hackathons, charlas y encuentros donde el conocimiento se
-        comparte y la comunidad se fortalece.
-      </p>
+
+<section class="events-wrapper" id="events">
+  <!-- Encabezado Introductorio de Sección -->
+  <div class="events-hero">
+    <div class="hero-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="m9 12 2 2 4-4"></path>
+      </svg>
+      <span>Capítulo Técnico IEEE Computer Society & CIS</span>
     </div>
-    <div class="events-timeline">
-      <div class="timeline-line">
-        <div class="timeline-progress" id="timelineProgress"></div>
+    <h2 class="hero-title">Innovación, código y <span>conocimiento en movimiento.</span></h2>
+    <p class="hero-desc">Explora el calendario oficial de workshops, competencias y actividades formativas de la comunidad estudiantil.</p>
+  </div>
+
+  <!-- SECCIÓN TIMELINE INTERACTIVA -->
+  <div class="timeline-section" id="timelineSection">
+    <div class="timeline-sticky-viewport">
+      
+      <!-- Cabecera de Timeline -->
+      <div class="timeline-header">
+        <div class="timeline-title-wrap">
+          <h3 class="timeline-title-text">Cronograma de Eventos 2026</h3>
+        </div>
+        <div class="timeline-counter-top" id="topCounter">01 / 05</div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-date">Marzo 2026</div>
-          <h3 class="timeline-title">
-            Workshop: Machine Learning desde cero
-          </h3>
-          <p class="timeline-desc">
-            Taller práctico de introducción a ML con Python, scikit-learn y
-            pandas. Orientado a estudiantes sin experiencia previa en inteligencia
-            artificial.
-          </p>
-          <div class="timeline-meta">
-            <span class="timeline-tag">Taller</span>
-            <span>UTB · Auditorio Principal</span>
-            <span>Presencial</span>
-          </div>
-          <img
-            src="/images/event-workshop.jpg"
-            alt="Estudiantes en un taller de machine learning"
-            class="timeline-image"
-            loading="lazy"
-          />
+
+      <!-- Pista y Tarjetas -->
+      <div class="timeline-track-wrapper">
+        <div class="timeline-rail">
+          <div class="timeline-rail-progress" id="railProgress"></div>
+        </div>
+
+        <!-- Flechas laterales Desktop -->
+        <button class="side-arrow prev" id="sidePrev" aria-label="Evento anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+        </button>
+        <button class="side-arrow next" id="sideNext" aria-label="Siguiente evento">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18l6-6-6-6"></path>
+          </svg>
+        </button>
+
+        <div class="timeline-cards-track" id="cardsTrack">
+          {events.map((event) => (
+            <article class={`event-card ${event.index === 0 ? 'is-active' : ''}`} data-index={event.index}>
+              <div class="node-anchor">
+                <div class="node-dot"></div>
+                <div class="node-pulse"></div>
+                <span class="node-date">{event.date}</span>
+              </div>
+              <div class="card-body">
+                <div class="card-media">
+                  <img
+                    src={event.image}
+                    alt={event.alt}
+                    loading="lazy"
+                    onerror={`this.onerror=null;this.src='${event.imageFallback}';`}
+                  />
+                  <span class={`status-badge ${event.status.type}`}>
+                    {event.status.text}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <div class="card-tags">
+                    {event.tags.map((tag) => (
+                      <span class={`tag ${tag.primary ? 'primary' : ''}`}>
+                        {tag.text}
+                      </span>
+                    ))}
+                  </div>
+                  <h4 class="card-title">{event.title}</h4>
+                  <p class="card-desc">{event.desc}</p>
+                </div>
+                <div class="card-footer">
+                  <span class="card-time">{event.footerInfo}</span>
+                  <a href={event.actionLink} class="card-action">
+                    {event.actionText}
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-date">Abril 2026</div>
-          <h3 class="timeline-title">IEEE Hackathon: Ciudad Inteligente</h3>
-          <p class="timeline-desc">
-            48 horas de desarrollo intensivo para proponer soluciones tecnológicas
-            a problemas urbanos de Cartagena y Bolívar.
-          </p>
-          <div class="timeline-meta">
-            <span class="timeline-tag" style="background: rgba(232, 119, 34, 0.1); color: var(--cs-orange);">
-              Hackathon
-            </span>
-            <span>UTB · Labs de Ingeniería</span>
-            <span>Presencial</span>
-          </div>
-          <img
-            src="/images/event-hackathon.jpg"
-            alt="Participantes de hackathon trabajando en equipo"
-            class="timeline-image"
-            loading="lazy"
-          />
+
+      <!-- Dock de Control Inferior -->
+      <div class="timeline-controls-dock">
+        <div class="dock-indicator">
+          <span id="dockActiveDate">MARZO 2026</span>
+        </div>
+
+        <div class="dock-dots" id="dockDots"></div>
+
+        <div class="dock-nav-btns">
+          <button class="nav-btn" id="dockPrev" aria-label="Evento anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button class="nav-btn" id="dockNext" aria-label="Siguiente evento">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-date">Mayo 2026</div>
-          <h3 class="timeline-title">Charla: Ética en IA Generativa</h3>
-          <p class="timeline-desc">
-            Conversatorio con investigadores locales sobre los límites,
-            responsabilidades y oportunidades de los modelos de lenguaje en
-            contextos académicos.
-          </p>
-          <div class="timeline-meta">
-            <span class="timeline-tag" style="background: rgba(0, 169, 224, 0.1); color: var(--cis-cyan);">
-              Charla
-            </span>
-            <span>Online · Zoom</span>
-            <span>Virtual</span>
-          </div>
-          <img
-            src="/images/event-tech-talk.jpg"
-            alt="Auditorio durante una charla tecnológica"
-            class="timeline-image"
-            loading="lazy"
-          />
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-date">Junio 2026</div>
-          <h3 class="timeline-title">Demo Day: Proyectos del Semestre</h3>
-          <p class="timeline-desc">
-            Presentación pública de los proyectos desarrollados durante el
-            semestre. Demo funcional, documentación técnica y retroalimentación de
-            la comunidad.
-          </p>
-          <div class="timeline-meta">
-            <span class="timeline-tag" style="background: rgba(10, 22, 40, 0.08); color: var(--dark);">
-              Demo Day
-            </span>
-            <span>UTB · Plaza Central</span>
-            <span>Híbrido</span>
-          </div>
-          <img
-            src="/images/hero-community.jpg"
-            alt="Presentación de proyectos en un demo day universitario"
-            class="timeline-image"
-            loading="lazy"
-          />
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
+
+<style>
+  :root {
+    --event-bg-base: #F1F5F9;
+    --event-bg-card: #FFFFFF;
+    --event-border-card: #CBD5E1;
+    --event-border-active: #00629B;
+    --event-accent-blue: #00629B;
+    --event-accent-cyan: #0284C7;
+    --event-accent-amber: #B45309;
+    --event-text-main: #0F172A;
+    --event-text-muted: #475569;
+    --event-text-dim: #64748B;
+    --event-line-rail: #CBD5E1;
+    --event-font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --event-font-mono: 'JetBrains Mono', monospace;
+    --event-nav-height: 64px;
+  }
+
+  .events-wrapper {
+    position: relative;
+    background-color: var(--event-bg-base);
+    color: var(--event-text-main);
+    font-family: var(--event-font-sans);
+    border-top: 1px solid #CBD5E1;
+  }
+
+  /* --- Hero Introductorio --- */
+  .events-hero {
+    padding: calc(var(--event-nav-height) + 2rem) 6vw 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--event-font-mono);
+    font-size: 0.78rem;
+    color: var(--event-accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+  }
+
+  .hero-title {
+    font-family: var(--event-font-sans);
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    color: var(--event-text-main);
+  }
+
+  .hero-title span {
+    color: var(--event-accent-blue);
+  }
+
+  .hero-desc {
+    color: var(--event-text-muted);
+    font-size: 1.05rem;
+    max-width: 58ch;
+    line-height: 1.6;
+  }
+
+  /* --- Sección Timeline Sticky --- */
+  .timeline-section {
+    position: relative;
+  }
+
+  .timeline-sticky-viewport {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: calc(var(--event-nav-height) + 1vh);
+    padding-bottom: 2vh;
+  }
+
+  .timeline-header {
+    padding: 0 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .timeline-title-text {
+    font-family: var(--event-font-sans);
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--event-text-main);
+  }
+
+  .timeline-counter-top {
+    font-family: var(--event-font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--event-accent-blue);
+    background: #FFFFFF;
+    padding: 0.35rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid #CBD5E1;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
+  }
+
+  /* Pista y Riel Horizontal */
+  .timeline-track-wrapper {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .timeline-rail {
+    position: absolute;
+    top: clamp(1.2rem, 2.5vh, 1.9rem);
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--event-line-rail);
+    z-index: 1;
+  }
+
+  .timeline-rail-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--event-accent-blue);
+    transition: width 0.1s linear;
+  }
+
+  .timeline-cards-track {
+    display: flex;
+    gap: clamp(2rem, 3.2vw, 3.8rem);
+    padding: 0 6vw;
+    will-change: transform;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* --- Tarjeta de Evento --- */
+  .event-card {
+    position: relative;
+    flex: 0 0 clamp(350px, 34vw, 440px);
+    display: flex;
+    flex-direction: column;
+    transform-origin: center center;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.35s ease;
+    opacity: 0.65;
+    cursor: pointer;
+  }
+
+  .node-anchor {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: clamp(0.6rem, 1.2vh, 1rem);
+    position: relative;
+  }
+
+  .node-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid var(--event-text-dim);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
+  }
+
+  .node-pulse {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(0, 98, 155, 0.2);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 0.4s ease;
+    pointer-events: none;
+  }
+
+  .node-date {
+    font-family: var(--event-font-mono);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--event-accent-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .card-body {
+    background: var(--event-bg-card);
+    border: 1px solid var(--event-border-card);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px -4px rgba(15, 23, 42, 0.08);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-media {
+    position: relative;
+    height: clamp(160px, 22vh, 215px);
+    overflow: hidden;
+    background: #0F172A;
+  }
+
+  .card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .status-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    font-family: var(--event-font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    z-index: 2;
+  }
+
+  .status-badge.upcoming {
+    background: #065F46;
+    color: #ECFDF5;
+  }
+
+  .status-badge.highlight {
+    background: #92400E;
+    color: #FEF3C7;
+  }
+
+  .card-content {
+    padding: clamp(0.9rem, 1.6vh, 1.35rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    background: #FFFFFF;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.22rem 0.55rem;
+    border-radius: 5px;
+    background: #F1F5F9;
+    color: var(--event-text-muted);
+    border: 1px solid #CBD5E1;
+  }
+
+  .tag.primary {
+    background: rgba(0, 98, 155, 0.08);
+    color: var(--event-accent-blue);
+    border-color: rgba(0, 98, 155, 0.3);
+  }
+
+  .card-title {
+    font-family: var(--event-font-sans);
+    font-size: clamp(1.15rem, 1.45vw, 1.32rem);
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--event-text-main);
+    letter-spacing: -0.01em;
+  }
+
+  .card-desc {
+    font-size: 0.88rem;
+    color: var(--event-text-muted);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    padding: 0.8rem clamp(0.9rem, 1.6vh, 1.35rem);
+    border-top: 1px solid #E2E8F0;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-time {
+    font-size: 0.8rem;
+    color: var(--event-text-muted);
+    font-family: var(--event-font-mono);
+  }
+
+  .card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--event-accent-blue);
+    text-decoration: none;
+    transition: gap 0.2s ease, color 0.2s ease;
+  }
+
+  .card-action:hover {
+    gap: 0.65rem;
+    color: var(--event-accent-cyan);
+  }
+
+  .event-card.is-active {
+    opacity: 1;
+    transform: scale(1.04) translateY(-5px);
+    z-index: 10;
+  }
+
+  .event-card.is-active .node-dot {
+    background: var(--event-accent-blue);
+    border-color: #FFFFFF;
+    box-shadow: 0 0 0 2px var(--event-accent-blue);
+  }
+
+  .event-card.is-active .node-pulse {
+    opacity: 1;
+    transform: scale(1.3);
+    animation: ring-pulse 1.8s infinite ease-out;
+  }
+
+  @keyframes ring-pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+
+  .event-card.is-active .card-body {
+    border-color: var(--event-accent-blue);
+    box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.16), 0 0 0 1px var(--event-accent-blue);
+  }
+
+  /* --- Dock de Control Inferior --- */
+  .timeline-controls-dock {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: min(92%, 760px);
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 999px;
+    padding: 0.45rem 0.85rem;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+    z-index: 20;
+  }
+
+  .dock-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .dock-indicator span {
+    font-family: var(--event-font-mono);
+    font-size: 0.86rem;
+    color: var(--event-accent-blue);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .dock-dots {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+  }
+
+  :global(.dock-dots .dock-dot) {
+    position: static !important;
+    display: inline-block !important;
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: #CBD5E1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0;
+    margin: 0;
+    box-shadow: none !important;
+    transform: none !important;
+    flex-shrink: 0;
+  }
+
+  :global(.dock-dots .dock-dot.is-active) {
+    width: 28px;
+    background: #00629B !important;
+    border-radius: 999px;
+  }
+
+  .dock-nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #CBD5E1;
+    background: #F8FAFC;
+    color: var(--event-text-main);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .nav-btn:hover:not(:disabled) {
+    border-color: var(--event-accent-blue);
+    background: #FFFFFF;
+    color: var(--event-accent-blue);
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  /* Flechas laterales para desktop grande */
+  .side-arrow {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    z-index: 25;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: var(--event-text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  }
+
+  .side-arrow.prev { left: 1.5vw; }
+  .side-arrow.next { right: 1.5vw; }
+
+  .side-arrow:hover:not(:disabled) {
+    border-color: var(--event-accent-blue);
+    color: var(--event-accent-blue);
+    background: #F8FAFC;
+  }
+
+  .side-arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (max-width: 1100px) {
+    .side-arrow {
+      display: none;
+    }
+  }
+
+  /* ==========================================================================
+     OPTIMIZACIÓN MÓVIL AMPLIA Y ALTA (<= 640px)
+     ========================================================================== */
+  @media (max-width: 640px) {
+    .events-hero {
+      padding-top: calc(var(--event-nav-height) + 1.2rem);
+      padding-bottom: 2rem;
+    }
+
+    .timeline-sticky-viewport {
+      position: static;
+      height: auto;
+      padding-top: 1rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .timeline-section {
+      height: auto !important;
+    }
+
+    .timeline-header {
+      padding: 0 6vw;
+      margin-bottom: 0.8rem;
+    }
+
+    .timeline-title-text {
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
+
+    .timeline-cards-track {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      padding: 0.8rem 6vw 1.8rem;
+      gap: 1.2rem;
+      transform: none !important;
+      scrollbar-width: none;
+    }
+
+    .timeline-cards-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Tarjeta más ancha y con presencia táctil */
+    .event-card {
+      flex: 0 0 88vw;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      opacity: 0.6;
+      transform: scale(0.97);
+    }
+
+    .node-anchor {
+      margin-bottom: 0.8rem;
+    }
+
+    .node-date {
+      font-size: 0.84rem;
+    }
+
+    .card-media {
+      height: clamp(220px, 30vh, 260px);
+    }
+
+    .status-badge {
+      top: 14px;
+      right: 14px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.72rem;
+    }
+
+    .card-content {
+      padding: 1.35rem 1.25rem 1rem;
+      gap: 0.75rem;
+    }
+
+    .card-tags {
+      gap: 0.45rem;
+    }
+
+    .tag {
+      font-size: 0.74rem;
+      padding: 0.25rem 0.6rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      -webkit-line-clamp: 4;
+    }
+
+    .card-footer {
+      padding: 1rem 1.25rem;
+    }
+
+    .card-action {
+      font-size: 0.88rem;
+    }
+
+    .event-card.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .timeline-rail {
+      display: none;
+    }
+
+    .timeline-controls-dock {
+      width: 90%;
+      margin-top: 1rem;
+      padding: 0.55rem 0.95rem;
+    }
+
+    .dock-indicator span {
+      font-size: 0.82rem;
+    }
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .timeline-sticky-viewport {
+      position: static;
+      height: auto;
+    }
+    .timeline-section {
+      height: auto !important;
+    }
+    .timeline-cards-track {
+      overflow-x: auto;
+      transform: none !important;
+    }
+    .event-card {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  function initEventsTimeline() {
+    const section = document.getElementById('timelineSection');
+    const track = document.getElementById('cardsTrack');
+    if (!section || !track) return;
+
+    const cards = Array.from(track.querySelectorAll<HTMLElement>('.event-card'));
+    const dockDots = document.getElementById('dockDots');
+    const topCounter = document.getElementById('topCounter');
+    const dockActiveDate = document.getElementById('dockActiveDate');
+    const railProgress = document.getElementById('railProgress');
+
+    const dockPrev = document.getElementById('dockPrev') as HTMLButtonElement | null;
+    const dockNext = document.getElementById('dockNext') as HTMLButtonElement | null;
+    const sidePrev = document.getElementById('sidePrev') as HTMLButtonElement | null;
+    const sideNext = document.getElementById('sideNext') as HTMLButtonElement | null;
+
+    const isSmallMobile = () => window.innerWidth <= 640;
+
+    let maxTranslate = 0;
+    let scrollLength = 0;
+    let activeIndex = 0;
+    let ticking = false;
+    let mobileScrollTicking = false;
+
+    function initDots() {
+      if (!dockDots) return;
+      dockDots.innerHTML = '';
+      cards.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = 'dock-dot' + (idx === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', `Ir al evento ${idx + 1}`);
+        dot.addEventListener('click', () => scrollToIndex(idx));
+        dockDots.appendChild(dot);
+      });
+    }
+
+    function calculateDimensions() {
+      if (!section || !track || !railProgress) return;
+      if (isSmallMobile()) {
+        section.style.height = 'auto';
+        track.style.transform = 'none';
+        railProgress.style.width = '100%';
+        return;
+      }
+
+      const trackWidth = track.scrollWidth;
+      const viewportWidth = window.innerWidth;
+      maxTranslate = Math.max(trackWidth - viewportWidth + (viewportWidth * 0.16), 0);
+      scrollLength = maxTranslate * 1.25;
+      section.style.height = `${window.innerHeight + scrollLength}px`;
+    }
+
+    function updateActiveStates(index: number, progress: number) {
+      activeIndex = Math.min(Math.max(index, 0), cards.length - 1);
+
+      cards.forEach((card, idx) => {
+        card.classList.toggle('is-active', idx === activeIndex);
+      });
+
+      if (dockDots) {
+        const dots = dockDots.querySelectorAll('.dock-dot');
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('is-active', idx === activeIndex);
+        });
+      }
+
+      const currentCard = cards[activeIndex];
+      if (currentCard && dockActiveDate) {
+        const dateEl = currentCard.querySelector('.node-date');
+        if (dateEl) {
+          dockActiveDate.textContent = dateEl.textContent?.trim() || '';
+        }
+      }
+
+      if (topCounter) {
+        topCounter.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+      }
+
+      if (!isSmallMobile() && railProgress) {
+        const percent = Math.min(Math.max(progress * 100, 0), 100);
+        railProgress.style.width = `${percent}%`;
+      }
+
+      const isFirst = activeIndex === 0;
+      const isLast = activeIndex === cards.length - 1;
+
+      if (dockPrev) dockPrev.disabled = isFirst;
+      if (sidePrev) sidePrev.disabled = isFirst;
+      if (dockNext) dockNext.disabled = isLast;
+      if (sideNext) sideNext.disabled = isLast;
+    }
+
+    function onWindowScroll() {
+      ticking = false;
+      if (isSmallMobile() || !section || !track) return;
+
+      const rect = section.getBoundingClientRect();
+      const progress = Math.min(Math.max(-rect.top / (scrollLength || 1), 0), 1);
+
+      const currentTranslate = progress * maxTranslate;
+      track.style.transform = `translate3d(-${currentTranslate}px, 0, 0)`;
+
+      const rawIndex = Math.round(progress * (cards.length - 1));
+      updateActiveStates(rawIndex, progress);
+    }
+
+    function onMobileTrackScroll() {
+      if (!isSmallMobile() || mobileScrollTicking || !track) return;
+      mobileScrollTicking = true;
+
+      requestAnimationFrame(() => {
+        const trackRect = track.getBoundingClientRect();
+        const screenCenter = trackRect.left + trackRect.width / 2;
+
+        let closestIndex = 0;
+        let minDistance = Infinity;
+
+        cards.forEach((card, idx) => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const dist = Math.abs(screenCenter - cardCenter);
+
+          if (dist < minDistance) {
+            minDistance = dist;
+            closestIndex = idx;
+          }
+        });
+
+        const progress = closestIndex / Math.max(cards.length - 1, 1);
+        updateActiveStates(closestIndex, progress);
+        mobileScrollTicking = false;
+      });
+    }
+
+    function scrollToIndex(idx: number) {
+      idx = Math.min(Math.max(idx, 0), cards.length - 1);
+
+      if (isSmallMobile()) {
+        cards[idx]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        updateActiveStates(idx, idx / Math.max(cards.length - 1, 1));
+        return;
+      }
+
+      if (!section) return;
+      const targetProgress = idx / Math.max(cards.length - 1, 1);
+      const sectionTop = window.scrollY + section.getBoundingClientRect().top;
+      window.scrollTo({
+        top: sectionTop + (targetProgress * scrollLength),
+        behavior: 'smooth'
+      });
+    }
+
+    const goPrev = () => scrollToIndex(activeIndex - 1);
+    const goNext = () => scrollToIndex(activeIndex + 1);
+
+    dockPrev?.addEventListener('click', goPrev);
+    sidePrev?.addEventListener('click', goPrev);
+    dockNext?.addEventListener('click', goNext);
+    sideNext?.addEventListener('click', goNext);
+
+    cards.forEach((card, i) => {
+      card.addEventListener('click', () => scrollToIndex(i));
+    });
+
+    track.addEventListener('scroll', onMobileTrackScroll, { passive: true });
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(onWindowScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      calculateDimensions();
+      if (isSmallMobile()) {
+        onMobileTrackScroll();
+      } else {
+        onWindowScroll();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const isInViewport = rect.top <= 100 && rect.bottom >= window.innerHeight - 100;
+      if (!isInViewport) return;
+
+      if (e.key === 'ArrowRight') goNext();
+      if (e.key === 'ArrowLeft') goPrev();
+    });
+
+    initDots();
+    calculateDimensions();
+    updateActiveStates(0, 0);
+  }
+
+  // Carga inicial y soporte para transiciones de Astro
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEventsTimeline);
+  } else {
+    initEventsTimeline();
+  }
+  document.addEventListener('astro:page-load', initEventsTimeline);
+</script>

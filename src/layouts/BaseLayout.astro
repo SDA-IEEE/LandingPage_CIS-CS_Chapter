@@ -27,7 +27,7 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -131,26 +131,6 @@ const {
         window.addEventListener("scroll", updateTimelineProgress, { passive: true });
         updateTimelineProgress();
 
-        // About Storyteller Stage
-        const aboutStories = document.querySelectorAll(".about-story");
-        const aboutImg = document.getElementById("aboutImg");
-        const storyObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const storyNum = entry.target.dataset.story;
-                aboutStories.forEach((s) => s.classList.remove("visible"));
-                entry.target.classList.add("visible");
-                if (aboutImg && storyNum) {
-                  const scale = 1 + parseInt(storyNum, 10) * 0.02;
-                  aboutImg.style.transform = "scale(" + scale + ")";
-                }
-              }
-            });
-          },
-          { threshold: 0.6, rootMargin: "-20% 0px -20% 0px" }
-        );
-        aboutStories.forEach((s) => storyObserver.observe(s));
 
         // Interactive Research Map
         const researchNodes = document.querySelectorAll(".research-node");

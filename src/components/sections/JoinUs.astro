@@ -1,58 +1,307 @@
 ---
 ---
+
 <section class="join-section" id="join">
-  <div class="join-bg">
+  <!-- COLUMNA 1 (IZQUIERDA): FOTO CON STIPPLE FOTOGRÁFICO SUAVE -->
+  <div class="join-media-bleed">
     <img
-      src="/images/about-community.jpg"
-      alt="Grupo de estudiantes sonriendo y colaborando"
+      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80"
+      alt="Estudiantes compartiendo y trabajando en equipo"
+      class="join-media-img"
       loading="lazy"
     />
+    <div class="stipple-border-fade"></div>
   </div>
-  <div class="join-overlay"></div>
-  <div class="join-content">
-    <div class="hero-label reveal" style="justify-content: center; margin-bottom: 24px;">
-      <span style="color: var(--cis-cyan);">Join Us</span>
+
+  <!-- VELO TRASLÚCIDO (SOLO EN MÓVIL) -->
+  <div class="mobile-ambient-overlay"></div>
+
+  <!-- COLUMNA 2 (DERECHA): PANEL DE ACCIÓN CENTRADO -->
+  <div class="join-right-col">
+    <div class="join-action-panel">
+      <h2 class="join-title">
+        Un lugar donde nunca construyes <span class="highlight">en solitario</span>.
+      </h2>
+
+      <a
+        href="https://forms.gle/placeholder"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="join-cta"
+      >
+        Únete al capítulo
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
     </div>
-    <h2 class="join-title reveal reveal-delay-1">
-      Construye con nosotros
-    </h2>
-    <p class="join-subtitle reveal reveal-delay-2">
-      No importa si eres principiante o ya tienes experiencia. Si te interesa
-      construir tecnología, investigar y compartir conocimiento, hay un lugar
-      para ti en la Universidad Tecnológica de Bolívar.
-    </p>
-    <div class="join-steps reveal reveal-delay-3">
-      <div class="join-step">
-        <div class="join-step-number">01</div>
-        <div class="join-step-title">Explora</div>
-        <div class="join-step-desc">
-          Conoce nuestros proyectos, eventos y líneas de investigación. Asiste
-          a un taller abierto.
-        </div>
-      </div>
-      <div class="join-step">
-        <div class="join-step-number">02</div>
-        <div class="join-step-title">Conecta</div>
-        <div class="join-step-desc">
-          Únete a nuestro canal de comunicación, presenta tu interés y conoce al
-          equipo.
-        </div>
-      </div>
-      <div class="join-step">
-        <div class="join-step-number">03</div>
-        <div class="join-step-title">Construye</div>
-        <div class="join-step-desc">
-          Elige un proyecto, una línea de investigación o propón uno nuevo.
-          Empieza a contribuir.
-        </div>
-      </div>
-    </div>
-    <a href="https://forms.gle/placeholder" target="_blank" rel="noopener noreferrer" class="join-cta reveal reveal-delay-4">
-      Únete al capítulo
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="5" y1="12" x2="19" y2="12"></line>
-        <polyline points="12 5 19 12 12 19"></polyline>
-      </svg>
-    </a>
   </div>
 </section>
+
+<style>
+  .join-section {
+    --bg-white-scroll: #ffffff;
+    --stipple-tone: #f1f5f9;
+    --bg-pure-white: #ffffff;
+    --text-main: #0f172a;
+    --join-blue: #0284c7;
+    --join-blue-hover: #0369a1;
+
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Plus Jakarta Sans', var(--font-display, sans-serif);
+    scroll-margin-top: 65px;
+  }
+
+  /* ========================================================
+     DESKTOP ( > 900px ): DISOLUCIÓN DE POLVO EXACTA A LA FOTO 2
+     ======================================================== */
+  @media (min-width: 901px) {
+    .join-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      min-height: 100dvh;
+      /* El fondo coincide con el color de los granos en el centro y viaja a blanco a la derecha */
+      background: linear-gradient(
+        90deg,
+        #e9eff6 0%,
+        var(--stipple-tone) 35%,
+        var(--stipple-tone) 52%,
+        #f8fafc 75%,
+        var(--bg-pure-white) 100%
+      );
+    }
+
+    /* COLUMNA IZQUIERDA: IMAGEN CON DIFUMINADO SUAVE */
+    .join-media-bleed {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .join-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center left;
+      display: block;
+      /* Máscara progresiva idéntica a la imagen de referencia 2 */
+      -webkit-mask-image: linear-gradient(
+        to right,
+        #000000 0%,
+        #000000 82%,
+        rgba(0, 0, 0, 0.85) 90%,
+        rgba(0, 0, 0, 0.3) 96%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        #000000 0%,
+        #000000 82%,
+        rgba(0, 0, 0, 0.85) 90%,
+        rgba(0, 0, 0, 0.3) 96%,
+        transparent 100%
+      );
+    }
+
+    /* FRONTAL DE POLVO / STIPPLE ORIGINAL (SIN CORTES VERTICALES) */
+    .stipple-border-fade {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 16%;
+      pointer-events: none;
+      z-index: 2;
+      background-color: var(--stipple-tone);
+      opacity: 0.88;
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 45%, #000000 100%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='stippleNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23stippleNoise)'/%3E%3C/svg%3E");
+      mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 45%, #000000 100%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='stippleNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23stippleNoise)'/%3E%3C/svg%3E");
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+    }
+
+    /* COLUMNA DERECHA: CENTRADO EXACTO */
+    .join-right-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 48px;
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+    }
+
+    .join-action-panel {
+      max-width: 620px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mobile-ambient-overlay {
+      display: none;
+    }
+  }
+
+  /* ========================================================
+     MÓVIL ( <= 900px ): FOTO NÍTIDA CON VELO SUAVE
+     ======================================================== */
+  @media (max-width: 900px) {
+    .join-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: 80px 24px;
+      background-color: #0f172a;
+    }
+
+    .join-media-bleed {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .join-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.8;
+      filter: contrast(1.05) saturate(0.9);
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .stipple-border-fade {
+      display: none;
+    }
+
+    .mobile-ambient-overlay {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.72) 10%,
+        rgba(241, 245, 249, 0.62) 80%
+      );
+      backdrop-filter: blur(1px);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .join-right-col {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .join-action-panel {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* ========================================================
+     TIPOGRAFÍA Y BOTÓN (SIEMPRE CENTRADOS)
+     ======================================================== */
+  .join-title {
+    width: 100%;
+    font-size: clamp(2.3rem, 3.4vw, 4.2rem);
+    font-weight: 900;
+    letter-spacing: -0.035em;
+    line-height: 1.14;
+    color: var(--text-main);
+    text-align: center;
+    text-wrap: balance;
+    margin-bottom: 38px;
+    text-shadow: 0 2px 14px rgba(255, 255, 255, 0.85);
+  }
+
+  .join-title .highlight {
+    color: var(--join-blue);
+  }
+
+  .join-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background-color: var(--join-blue);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.18rem;
+    padding: 20px 48px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 14px 32px -6px rgba(2, 132, 199, 0.45);
+    transition: all 0.25s ease;
+  }
+
+  .join-cta:hover {
+    background-color: var(--join-blue-hover);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 18px 36px -4px rgba(2, 132, 199, 0.55);
+  }
+
+  .join-cta svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.2s ease;
+  }
+
+  .join-cta:hover svg {
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 520px) {
+    .join-section {
+      padding: 60px 20px;
+    }
+    .join-title {
+      font-size: clamp(2rem, 7.5vw, 2.8rem);
+      margin-bottom: 32px;
+    }
+    .join-cta {
+      width: 100%;
+      font-size: 1.05rem;
+      padding: 18px 24px;
+    }
+  }
+</style>

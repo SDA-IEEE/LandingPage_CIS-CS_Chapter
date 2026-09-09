@@ -1,0 +1,430 @@
+---
+---
+
+<section class="about-section-wrapper" id="about" aria-label="Sobre Nosotros">
+  <!-- Anchor alias para #nosotros -->
+  <div id="nosotros" class="scroll-anchor"></div>
+
+  <div class="about-section">
+    <!-- 1. FILA SUPERIOR -->
+    <div class="about-top-grid">
+      <div>
+        <div class="badge-wrapper">
+          <span class="badge-text">Sobre nosotros</span>
+          <div class="badge-line"></div>
+        </div>
+
+        <h2 class="main-title">
+          Somos el capítulo conjunto<br />
+          <span class="highlight-blue">
+            IEEE Computer Society &amp;<br />
+            <span class="nowrap-society">Computational Intelligence Society</span>
+          </span><br />
+          de la Universidad Tecnológica de Bolívar.
+        </h2>
+
+        <p class="main-description">
+          Conectamos teoría, desarrollo de software avanzado e investigación aplicada con el ecosistema tecnológico
+          global.
+        </p>
+      </div>
+
+      <!-- IMAGEN DEL CAPÍTULO IEEE -->
+      <div class="image-showcase">
+        <div class="photo-container">
+          <img src="/images/usuario_ieee.png" alt="Estudiantes miembros del capítulo IEEE UTB" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. FILA INFERIOR -->
+    <div class="about-bottom-grid">
+      <!-- MISIÓN -->
+      <div class="card-mision">
+        <div>
+          <div class="card-header-flex">
+            <div class="icon-bubble">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <div>
+              <span class="card-subtag">Nuestra razón de ser</span>
+              <h3 class="card-heading">Misión</h3>
+            </div>
+          </div>
+
+          <p class="quote-body">
+            "Avanzar en la teoría, práctica y aplicación de la ciencia y la tecnología de la computación y del
+            procesamiento de la información, así como mantener una alta reputación profesional entre sus miembros."
+          </p>
+        </div>
+
+        <div class="bottom-blue-line"></div>
+      </div>
+
+      <!-- VISIÓN Y OBJETIVO -->
+      <div class="right-stack-col">
+        <!-- VISIÓN -->
+        <div class="card-vision">
+          <div class="card-header-flex">
+            <div class="icon-bubble">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <span class="card-subtag">Hacia dónde vamos</span>
+              <h3 class="card-heading">Visión</h3>
+            </div>
+          </div>
+
+          <p class="vision-body">
+            Ser el proveedor líder de información técnica, servicios comunitarios y servicios personalizados para los
+            profesionales de la informática de todo el mundo.
+          </p>
+        </div>
+
+        <!-- NUESTRO OBJETIVO -->
+        <div class="card-objetivo">
+          <div class="card-header-flex" style="margin-bottom: 10px;">
+            <div class="icon-bubble">
+              <svg
+                width="21"
+                height="21"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="objetivo-tag-wrapper">
+                <span class="objetivo-tag">Nuestro objetivo</span>
+                <div class="objetivo-line"></div>
+              </div>
+            </div>
+          </div>
+
+          <p class="objetivo-body">
+            Ser esenciales para la comunidad técnica global y reconocidos universalmente por las contribuciones de los
+            profesionales técnicos en el desarrollo y la aplicación de la tecnología para mejorar las condiciones
+            globales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section-wrapper {
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+    scroll-margin-top: 70px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  }
+
+  .scroll-anchor {
+    position: absolute;
+    top: -70px;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  .about-section {
+    --bg-page: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #edf2f7;
+    --text-main: #0b1528;
+    --text-muted: #64748b;
+    --text-quote: #1e293b;
+    --ieee-blue: #0284c7;
+    --ieee-blue-light: #e0f2fe;
+    --card-objetivo-bg: #f3f8fd;
+    --card-objetivo-border: #e2effa;
+
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    font-family: 'Plus Jakarta Sans', var(--font-display, sans-serif);
+    line-height: 1.5;
+  }
+
+  /* 1. FILA SUPERIOR: TEXTO + ILUSTRACIÓN */
+  .about-top-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+
+  .badge-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .badge-text {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ieee-blue);
+  }
+
+  .badge-line {
+    width: 32px;
+    height: 2px;
+    background-color: var(--ieee-blue);
+    border-radius: 2px;
+  }
+
+  .main-title {
+    font-size: clamp(1.8rem, 2.7vw, 2.5rem);
+    font-weight: 900;
+    letter-spacing: -0.035em;
+    line-height: 1.18;
+    color: var(--text-main);
+    margin-bottom: 20px;
+  }
+
+  .main-title .highlight-blue {
+    color: var(--ieee-blue);
+  }
+
+  .nowrap-society {
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  .main-description {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  /* CONTENEDOR DE LA NUEVA IMAGEN GRÁFICA */
+  .image-showcase {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .photo-container {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 12px 24px rgba(2, 132, 199, 0.08));
+  }
+
+  /* 2. FILA INFERIOR: TARJETAS */
+  .about-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  /* TARJETA MISIÓN (IZQUIERDA) */
+  .card-mision {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 22px;
+    padding: 38px 36px 32px;
+    box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .icon-bubble {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--ieee-blue-light);
+    color: var(--ieee-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-subtag {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ieee-blue);
+    margin-bottom: 3px;
+  }
+
+  .card-heading {
+    font-size: 1.55rem;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--text-main);
+  }
+
+  .quote-body {
+    font-size: 0.98rem;
+    font-weight: 500;
+    line-height: 1.68;
+    color: var(--text-quote);
+    margin-bottom: 28px;
+  }
+
+  .bottom-blue-line {
+    width: 44px;
+    height: 3px;
+    background-color: var(--ieee-blue);
+    border-radius: 2px;
+  }
+
+  /* COLUMNA DERECHA: VISIÓN + OBJETIVO */
+  .right-stack-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card-vision {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 22px;
+    padding: 30px 34px;
+    box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.04);
+  }
+
+  .vision-body {
+    font-size: 0.94rem;
+    font-weight: 500;
+    line-height: 1.62;
+    color: var(--text-muted);
+  }
+
+  .card-objetivo {
+    background-color: var(--card-objetivo-bg);
+    border: 1px solid var(--card-objetivo-border);
+    border-radius: 22px;
+    padding: 24px 30px;
+  }
+
+  .objetivo-tag-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .objetivo-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ieee-blue);
+  }
+
+  .objetivo-line {
+    width: 22px;
+    height: 1.8px;
+    background-color: var(--ieee-blue);
+    border-radius: 1px;
+  }
+
+  .objetivo-body {
+    font-size: 0.91rem;
+    font-weight: 500;
+    line-height: 1.58;
+    color: var(--text-muted);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .about-top-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .image-showcase {
+      justify-content: center;
+    }
+
+    .about-bottom-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .nowrap-society {
+      white-space: normal;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .about-section {
+      padding: 50px 16px;
+    }
+
+    .card-mision,
+    .card-vision,
+    .card-objetivo {
+      padding: 24px 20px;
+    }
+
+    .main-title {
+      font-size: 1.75rem;
+    }
+  }
+</style>
