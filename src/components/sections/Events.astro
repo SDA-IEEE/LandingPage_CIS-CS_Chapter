@@ -1,96 +1,55 @@
 ---
-const events = [
-  {
-    index: 0,
-    date: "Marzo 2026",
-    status: { text: "Cupos Limitados", type: "upcoming" },
-    image: "/images/event-workshop.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
-    alt: "Workshop Machine Learning",
-    tags: [
-      { text: "Taller", primary: true },
-      { text: "UTB - Auditorio" },
-      { text: "Presencial" }
-    ],
-    title: "Workshop: Machine Learning desde cero",
-    desc: "Taller práctico con Python, scikit-learn y pandas enfocado en fundamentos de IA, regresión y clasificación aplicados a casos reales.",
-    footerInfo: "09:00 AM - 01:00 PM",
-    actionText: "Registrarme",
-    actionLink: "#"
-  },
-  {
-    index: 1,
-    date: "Abril 2026",
-    status: { text: "★ Evento Insignia", type: "highlight" },
-    image: "/images/event-hackathon.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80",
-    alt: "Hackathon Ciudad Inteligente",
-    tags: [
-      { text: "Hackathon", primary: true },
-      { text: "UTB - Labs Ing" },
-      { text: "48 Horas" }
-    ],
-    title: "IEEE Hackathon: Ciudad Inteligente",
-    desc: "48 horas de ideación y desarrollo intensivo creando prototipos IoT y plataformas inteligentes para mejorar servicios públicos y resiliencia urbana en Bolívar.",
-    footerInfo: "Premios + Certificado",
-    actionText: "Ver Bases",
-    actionLink: "#"
-  },
-  {
-    index: 2,
-    date: "Mayo 2026",
-    status: { text: "Acceso Libre", type: "upcoming" },
-    image: "/images/event-tech-talk.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1000&q=80",
-    alt: "Charla Ética IA",
-    tags: [
-      { text: "Charla", primary: true },
-      { text: "Online Zoom" },
-      { text: "Virtual" }
-    ],
-    title: "Charla: Ética en IA Generativa",
-    desc: "Panel multidisciplinario con investigadores de la industria debatiendo propiedad intelectual, sesgos algorítmicos y el impacto de los LLMs en ingeniería.",
-    footerInfo: "18:00 COT",
-    actionText: "Enlace Zoom",
-    actionLink: "#"
-  },
-  {
-    index: 3,
-    date: "Junio 2026",
-    status: { text: "Networking", type: "upcoming" },
-    image: "/images/hero-community.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80",
-    alt: "Demo Day",
-    tags: [
-      { text: "Demo Day", primary: true },
-      { text: "Plaza Central" },
-      { text: "Híbrido" }
-    ],
-    title: "Demo Day: Proyectos del Semestre",
-    desc: "Presentación de prototipos funcionales desarrollados por miembros de los semilleros y capítulos técnicos ante docentes e invitados del sector TI.",
-    footerInfo: "Jornada Completa",
-    actionText: "Postular",
-    actionLink: "#"
-  },
-  {
-    index: 4,
-    date: "Julio 2026",
-    status: { text: "Competencia", type: "upcoming" },
-    image: "/images/about-devs.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80",
-    alt: "Bootcamp IEEEXtreme",
-    tags: [
-      { text: "Bootcamp", primary: true },
-      { text: "Edificio A" },
-      { text: "Presencial" }
-    ],
-    title: "Bootcamp Algorítmico IEEEXtreme",
-    desc: "Simulaciones de alta presión y entrenamiento avanzado en estructuras de datos con el fin de clasificar en el ranking mundial IEEEXtreme 20.0.",
-    footerInfo: "Fase Clasificatoria",
-    actionText: "Unirme",
-    actionLink: "#"
-  }
-];
+import { getCollection } from 'astro:content';
+import { siteConfig } from '../../data/site';
+
+// Contenido dinámico: src/content/events/*.md — NUNCA hardcodear eventos aquí.
+// Si no hay eventos reales cargados, se muestra un estado vacío honesto más abajo.
+const rawEvents = (await getCollection('events')).sort(
+  (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
+);
+
+const monthFormatter = new Intl.DateTimeFormat('es-CO', { month: 'long', year: 'numeric' });
+const formatMonth = (isoDate: string) => {
+  const text = monthFormatter.format(new Date(`${isoDate}T00:00:00`));
+  return text.charAt(0).toUpperCase() + text.slice(1);
+};
+
+const statusLabels: Record<string, string> = {
+  upcoming: 'Próximo',
+  featured: '★ Evento Insignia',
+  past: 'Finalizado',
+};
+
+const fallbackImageByType: Record<string, string> = {
+  Workshop: '/images/event-workshop.jpg',
+  'Tech Talk': '/images/event-tech-talk.jpg',
+  Hackathon: '/images/event-hackathon.jpg',
+  Bootcamp: '/images/about-devs.jpg',
+  Panel: '/images/about-research.jpg',
+  'Demo Day': '/images/hero-community.jpg',
+};
+
+const events = rawEvents.map((entry, index) => {
+  const d = entry.data;
+  const tags = [
+    { text: d.type, primary: true },
+    ...(d.location ? [{ text: d.location }] : []),
+    { text: d.modality },
+  ];
+  return {
+    index,
+    date: formatMonth(d.date),
+    status: { text: statusLabels[d.status] ?? 'Próximo', type: d.status },
+    image: d.image || fallbackImageByType[d.type] || '/images/hero-community.jpg',
+    alt: `Imagen del evento ${d.title}`,
+    tags,
+    title: d.title,
+    desc: entry.body?.trim() ?? '',
+    footerInfo: d.time || d.modality,
+    actionText: d.registrationUrl ? 'Inscribirme' : 'Más información',
+    actionLink: d.registrationUrl || '#events',
+  };
+});
 ---
 
 <section class="events-wrapper" id="events">
@@ -107,16 +66,29 @@ const events = [
     <p class="hero-desc">Explora el calendario oficial de workshops, competencias y actividades formativas de la comunidad estudiantil.</p>
   </div>
 
-  <!-- SECCIÓN TIMELINE INTERACTIVA -->
+  {events.length === 0 ? (
+    <div class="events-empty-state">
+      <p>
+        Aún no tenemos eventos programados públicamente. Síguenos en
+        nuestras redes o entra al portal de inscripciones para enterarte
+        apenas se confirme el próximo.
+      </p>
+      {siteConfig.socials.instagram && (
+        <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" class="card-action">
+          Síguenos para enterarte
+        </a>
+      )}
+    </div>
+  ) : (
   <div class="timeline-section" id="timelineSection">
     <div class="timeline-sticky-viewport">
       
       <!-- Cabecera de Timeline -->
       <div class="timeline-header">
         <div class="timeline-title-wrap">
-          <h3 class="timeline-title-text">Cronograma de Eventos 2026</h3>
+          <h3 class="timeline-title-text">Cronograma de Eventos</h3>
         </div>
-        <div class="timeline-counter-top" id="topCounter">01 / 05</div>
+        <div class="timeline-counter-top" id="topCounter">{`01 / ${String(events.length).padStart(2, '0')}`}</div>
       </div>
 
       <!-- Pista y Tarjetas -->
@@ -151,7 +123,6 @@ const events = [
                     src={event.image}
                     alt={event.alt}
                     loading="lazy"
-                    onerror={`this.onerror=null;this.src='${event.imageFallback}';`}
                   />
                   <span class={`status-badge ${event.status.type}`}>
                     {event.status.text}
@@ -186,7 +157,7 @@ const events = [
       <!-- Dock de Control Inferior -->
       <div class="timeline-controls-dock">
         <div class="dock-indicator">
-          <span id="dockActiveDate">MARZO 2026</span>
+          <span id="dockActiveDate">{events[0]?.date.toUpperCase()}</span>
         </div>
 
         <div class="dock-dots" id="dockDots"></div>
@@ -207,6 +178,7 @@ const events = [
 
     </div>
   </div>
+  )}
 </section>
 
 <style>
@@ -277,6 +249,19 @@ const events = [
   }
 
   /* --- Sección Timeline Sticky --- */
+  .events-empty-state {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 6vw 5rem;
+    text-align: center;
+  }
+  .events-empty-state p {
+    color: var(--event-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
   .timeline-section {
     position: relative;
   }

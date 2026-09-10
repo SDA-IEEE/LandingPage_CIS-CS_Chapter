@@ -1,4 +1,5 @@
 ---
+import { siteConfig } from '../../data/site';
 ---
 <footer class="footer">
   <div class="container">
@@ -34,29 +35,35 @@
         <div class="footer-heading">Contacto</div>
         <ul class="footer-links">
           <li>
-            <a href="mailto:ieeecscis@utb.edu.co">
+            <a href={`mailto:${siteConfig.socials.email}`}>
               <span class="footer-contact-logo" aria-hidden="true">@</span>
-              ieeecscis@utb.edu.co
+              {siteConfig.socials.email}
             </a>
           </li>
-          <li>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <span class="footer-contact-logo" aria-hidden="true">IG</span>
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <span class="footer-contact-logo" aria-hidden="true">in</span>
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <span class="footer-contact-logo" aria-hidden="true">GH</span>
-              GitHub
-            </a>
-          </li>
+          {siteConfig.socials.instagram && (
+            <li>
+              <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer">
+                <span class="footer-contact-logo" aria-hidden="true">IG</span>
+                Instagram
+              </a>
+            </li>
+          )}
+          {siteConfig.socials.linkedin && (
+            <li>
+              <a href={siteConfig.socials.linkedin} target="_blank" rel="noopener noreferrer">
+                <span class="footer-contact-logo" aria-hidden="true">in</span>
+                LinkedIn
+              </a>
+            </li>
+          )}
+          {siteConfig.socials.github && (
+            <li>
+              <a href={siteConfig.socials.github} target="_blank" rel="noopener noreferrer">
+                <span class="footer-contact-logo" aria-hidden="true">GH</span>
+                GitHub
+              </a>
+            </li>
+          )}
         </ul>
       </div>
     </div>

@@ -1,51 +1,26 @@
 ---
-const lines = [
-  {
-    num: "01",
-    collapsedTitle: "AI & Agentes",
-    badge: "Línea 01",
-    title: "AI & Agentes",
-    desc: "Modelos autónomos, sistemas multiagente y algoritmos de razonamiento diseñados para colaborar y resolver decisiones complejas.",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-    active: true
-  },
-  {
-    num: "02",
-    collapsedTitle: "Automatización",
-    badge: "Línea 02",
-    title: "Automatización Industrial",
-    desc: "Integración de robótica aplicada, sensores ciberfísicos y sistemas de control inteligente para optimizar procesos reales.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
-    active: false
-  },
-  {
-    num: "03",
-    collapsedTitle: "Visión Artificial",
-    badge: "Línea 03",
-    title: "Visión Artificial",
-    desc: "Procesamiento visual en tiempo real orientado a la detección de objetos, reconocimiento de patrones y análisis de video computacional.",
-    image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1200&q=80",
-    active: false
-  },
-  {
-    num: "04",
-    collapsedTitle: "Data Science",
-    badge: "Línea 04",
-    title: "Data Science",
-    desc: "Extracción de conocimiento accionable mediante analítica predictiva, modelado probabilístico y minería de grandes volúmenes de datos.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    active: false
-  },
-  {
-    num: "05",
-    collapsedTitle: "Software",
-    badge: "Línea 05",
-    title: "Desarrollo de Software",
-    desc: "Construcción de arquitecturas distribuidas, desarrollo web moderno y APIs escalables aplicando buenas prácticas de ingeniería.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-    active: false
-  }
-];
+import { getCollection } from 'astro:content';
+
+// Contenido dinámico: src/content/lines/*.md — NUNCA hardcodear líneas aquí.
+const collapsedTitles: Record<string, string> = {
+  'AI & Agentes': 'AI & Agentes',
+  'Automatización Industrial': 'Automatización',
+  'Visión Artificial': 'Visión Artificial',
+  'Data Science': 'Data Science',
+  'Desarrollo de Software': 'Software',
+};
+
+const lines = (await getCollection('lines'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((entry, index) => ({
+    num: String(index + 1).padStart(2, '0'),
+    collapsedTitle: collapsedTitles[entry.data.title] ?? entry.data.title,
+    badge: `Línea ${String(index + 1).padStart(2, '0')}`,
+    title: entry.data.title,
+    desc: entry.data.tagline,
+    image: entry.data.image,
+    active: index === 0,
+  }));
 ---
 
 <section class="research-section-wrapper" id="research" aria-label="Líneas de investigación">

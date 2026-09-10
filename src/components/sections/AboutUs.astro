@@ -1,4 +1,5 @@
 ---
+import { siteConfig } from '../../data/site';
 ---
 
 <section class="about-section-wrapper" id="about" aria-label="Sobre Nosotros">
@@ -65,10 +66,7 @@
             </div>
           </div>
 
-          <p class="quote-body">
-            "Avanzar en la teoría, práctica y aplicación de la ciencia y la tecnología de la computación y del
-            procesamiento de la información, así como mantener una alta reputación profesional entre sus miembros."
-          </p>
+          <p class="quote-body">"{siteConfig.mission}"</p>
         </div>
 
         <div class="bottom-blue-line"></div>
@@ -100,9 +98,10 @@
             </div>
           </div>
 
-          <p class="vision-body">
-            Ser el proveedor líder de información técnica, servicios comunitarios y servicios personalizados para los
-            profesionales de la informática de todo el mundo.
+          <p class="vision-body">{siteConfig.vision}</p>
+          <p class="vision-source">
+            Adaptada de la visión de{' '}
+            <a href={siteConfig.visionSource} target="_blank" rel="noopener noreferrer">IEEE Computer Society</a>.
           </p>
         </div>
 
@@ -134,11 +133,7 @@
             </div>
           </div>
 
-          <p class="objetivo-body">
-            Ser esenciales para la comunidad técnica global y reconocidos universalmente por las contribuciones de los
-            profesionales técnicos en el desarrollo y la aplicación de la tecnología para mejorar las condiciones
-            globales.
-          </p>
+          <p class="objetivo-body">{siteConfig.visionGoal}</p>
         </div>
       </div>
     </div>
@@ -354,6 +349,18 @@
     font-weight: 500;
     line-height: 1.62;
     color: var(--text-muted);
+  }
+
+  .vision-source {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    opacity: 0.75;
+    margin-top: 10px;
+  }
+
+  .vision-source a {
+    color: var(--ieee-blue);
+    text-decoration: underline;
   }
 
   .card-objetivo {
