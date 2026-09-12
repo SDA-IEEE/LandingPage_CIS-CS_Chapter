@@ -86,9 +86,8 @@
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  gsap.registerPlugin(ScrollTrigger);
 
   function initAboutScrollPin() {
     const aboutSection = document.getElementById("manifiesto");
@@ -97,141 +96,99 @@
     const messages = gsap.utils.toArray<HTMLElement>(".about-scroll-message");
     const bgImg = document.querySelector<HTMLElement>(".about-bg-image");
     const scrollHint = document.getElementById("aboutScrollHint");
+
     if (messages.length === 0) return;
 
-    const totalSteps = messages.length;
-    const stepHeight = () => window.innerHeight; // "1 scroll" = 1 viewport
-    let currentStep = 0;
-    let isAnimating = false;
-    let sectionStartY = 0;
-
-    // Estado inicial: primer mensaje visible, resto oculto
-    gsap.set(messages[0], { opacity: 1, filter: "blur(0px)", scale: 1 });
-    gsap.set(messages.slice(1), { opacity: 0, filter: "blur(18px)", scale: 1.05 });
-    gsap.set(bgImg, { scale: 1 });
-
-    // Pin de la sección. La distancia total = un "viewport" por cada paso.
-    const st = ScrollTrigger.create({
-      trigger: aboutSection,
-      start: "top top",
-      end: () => "+=" + stepHeight() * totalSteps,
-      pin: true,
-      anticipatePin: 1,
-      onEnter: () => { sectionStartY = st.start; },
-      onEnterBack: () => { sectionStartY = st.start; },
-    });
-
-    // --- Animación COMPLETA de un paso (no scrubbed) ---
-    function playStep(nextStep: number, direction: 1 | -1) {
-      if (isAnimating || nextStep < 0 || nextStep > totalSteps - 1) return;
-      isAnimating = true;
-
-      const current = messages[currentStep];
-      const next = messages[nextStep];
-
-      const tl = gsap.timeline({
-        onComplete: () => {
-          currentStep = nextStep;
-          isAnimating = false;
+    // 1. Desvanecer la pista de scroll al iniciar el avance
+    if (scrollHint) {
+      gsap.to(scrollHint, {
+        opacity: 0,
+        y: 15,
+        scrollTrigger: {
+          trigger: aboutSection,
+          start: "top top",
+          end: "+=150",
+          scrub: true,
         },
       });
-
-      // Salida del mensaje actual
-      tl.to(current, {
-        opacity: 0,
-        filter: "blur(18px)",
-        scale: direction === 1 ? 1.05 : 0.95,
-        duration: 0.5,
-        ease: "power2.in",
-      })
-        // Entrada del siguiente mensaje
-        .fromTo(
-          next,
-          { opacity: 0, filter: "blur(18px)", scale: direction === 1 ? 0.95 : 1.05 },
-          { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.6, ease: "power2.out" },
-          "-=0.1"
-        )
-        // Zoom del fondo correspondiente a este paso (progresivo, todo el recorrido = 1.14)
-        .to(
-          bgImg,
-          { scale: 1 + (0.14 * (nextStep + 1)) / totalSteps, ease: "none", duration: 0.9 },
-          0
-        );
-
-      // Ocultar la pista de scroll en cuanto arranca el primer paso
-      if (scrollHint && nextStep === 1) {
-        gsap.to(scrollHint, { opacity: 0, y: 15, duration: 0.4 });
-      }
-
-      // Sincronizar la posición real de scroll con el paso (para que el pin avance/retroceda)
-      gsap.to(window, {
-        scrollTo: { y: sectionStartY + stepHeight() * nextStep },
-        duration: 0.9,
-        ease: "power2.inOut",
-      });
     }
 
-    // --- Interceptar el scroll nativo mientras estamos dentro de la sección pineada ---
-    function isInsideSection() {
-      return st.isActive;
-    }
-
-    function handleWheel(e: WheelEvent) {
-      if (!isInsideSection()) return;
-
-      const goingDown = e.deltaY > 0;
-
-      // Si estamos en el último paso y se sigue bajando, dejamos pasar el scroll
-      // (se libera el pin y continúa hacia la siguiente sección normalmente)
-      if (goingDown && currentStep === totalSteps - 1) return;
-      // Si estamos en el primer paso y se sigue subiendo, dejamos pasar el scroll
-      if (!goingDown && currentStep === 0) return;
-
-      e.preventDefault();
-      if (isAnimating) return;
-
-      if (goingDown) playStep(currentStep + 1, 1);
-      else playStep(currentStep - 1, -1);
-    }
-
-    // Soporte táctil (swipe)
-    let touchStartY = 0;
-    function handleTouchStart(e: TouchEvent) {
-      touchStartY = e.touches[0].clientY;
-    }
-    function handleTouchMove(e: TouchEvent) {
-      if (!isInsideSection()) return;
-      const deltaY = touchStartY - e.touches[0].clientY;
-      const goingDown = deltaY > 0;
-
-      if (goingDown && currentStep === totalSteps - 1) return;
-      if (!goingDown && currentStep === 0) return;
-
-      e.preventDefault();
-      if (isAnimating || Math.abs(deltaY) < 30) return;
-
-      touchStartY = e.touches[0].clientY;
-      if (goingDown) playStep(currentStep + 1, 1);
-      else playStep(currentStep - 1, -1);
-    }
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchmove", handleTouchMove, { passive: false });
-
-    // Limpieza al navegar (Astro SPA)
-    document.addEventListener(
-      "astro:before-swap",
-      () => {
-        window.removeEventListener("wheel", handleWheel);
-        window.removeEventListener("touchstart", handleTouchStart);
-        window.removeEventListener("touchmove", handleTouchMove);
-        st.kill();
+    // 2. Línea de tiempo fijada (Pinned Timeline)
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutSection,
+        start: "top top",
+        end: "+=2600", // Distancia total de scroll
+        pin: true,
+        scrub: 0.4,
+        anticipatePin: 1,
       },
-      { once: true }
-    );
+    });
+
+    // 3. El primer mensaje ya arranca visible en pantalla
+    gsap.set(messages[0], { opacity: 1, filter: "blur(0px)", scale: 1 });
+
+    // 4. Encadenar cada mensaje desde el segundo 0
+    messages.forEach((msg, index) => {
+      const isFirst = index === 0;
+      const isLast = index === messages.length - 1;
+
+      if (isFirst) {
+        // PRIMER MENSAJE:
+        // Pausa inicial para lectura al empezar a scrollear
+        tl.to(msg, { duration: 1.0 })
+          // Desvanecimiento hacia el segundo mensaje
+          .to(msg, {
+            opacity: 0,
+            filter: "blur(18px)",
+            scale: 1.05,
+            duration: 0.8,
+            ease: "power2.in",
+          });
+      } else {
+        // MENSAJES SIGUIENTES:
+        // Entrada (Fade in + Desenfoque a 0)
+        tl.to(msg, {
+          opacity: 1,
+          filter: "blur(0px)",
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+        })
+          // Pausa de lectura
+          .to(msg, {
+            duration: 1.0,
+          })
+          // Salida (Fade out + Desenfoque)
+          .to(msg, {
+            opacity: 0,
+            filter: isLast ? "blur(14px)" : "blur(18px)",
+            scale: isLast ? 1.03 : 1.05,
+            duration: 0.8,
+            ease: "power2.in",
+          });
+      }
+    });
+
+    // 5. ZOOM DEL FONDO: Se añade AQUÍ al final
+    // Al usar tl.duration() y el parámetro '0', abarca exactamente desde el inicio hasta el final de la timeline
+    if (bgImg) {
+      tl.to(
+        bgImg,
+        {
+          scale: 1.14,
+          ease: "none",
+          duration: tl.duration(),
+        },
+        0, // Inicia en t = 0 en paralelo con los textos
+      );
+    }
+
+    // Pequeño margen de gracia antes de soltar la sección hacia "Mapa de exploración"
+    tl.to({}, { duration: 0.3 });
   }
 
+  // Inicializar en carga y soportar navegación SPA/Astro
   initAboutScrollPin();
   document.addEventListener("astro:page-load", initAboutScrollPin);
 </script>
