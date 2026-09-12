@@ -188,28 +188,34 @@
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  gsap.registerPlugin(ScrollTrigger);
 
   function setupLinesAndCharacters(container: HTMLElement) {
     const lines = Array.from(container.querySelectorAll<HTMLElement>(".phrase-line"));
+
     lines.forEach((line) => {
+      // Evitar re-ejecución si ya tiene caracteres divididos
       if (line.querySelector(".char")) return;
+
       const text = line.textContent?.trim() || "";
       line.innerHTML = "";
       const words = text.split(/\s+/);
+
       words.forEach((wordText, wIdx) => {
         if (!wordText) return;
         const wordSpan = document.createElement("span");
         wordSpan.className = "word";
+
         wordText.split("").forEach((letter) => {
           const charSpan = document.createElement("span");
           charSpan.className = "char";
           charSpan.textContent = letter;
           wordSpan.appendChild(charSpan);
         });
+
         line.appendChild(wordSpan);
+
         if (wIdx < words.length - 1) {
           const spaceSpan = document.createElement("span");
           spaceSpan.className = "space";
@@ -224,185 +230,126 @@
     const phrase = document.getElementById("target-phrase");
     const track = document.getElementById("phrase-track");
     const section = document.getElementById("phrase-section");
+
     if (!phrase || !track || !section) return;
 
     setupLinesAndCharacters(phrase);
 
+    const chars = Array.from(track.querySelectorAll<HTMLElement>(".char"));
     const lines = Array.from(track.querySelectorAll<HTMLElement>(".phrase-line"));
-    const totalSteps = lines.length;
 
     const mm = gsap.matchMedia();
-    let cleanupFns: Array<() => void> = [];
 
     // ========================================================
-    // CONTROLADOR GENÉRICO DE PASOS (reemplaza el scrub continuo)
-    // ========================================================
-    function createStepController(opts: {
-      pinDistancePerStep: number;
-      onStepEnter: (index: number, tl: gsap.core.Timeline) => void;
-    }) {
-      let currentStep = 0;
-      let isAnimating = false;
-      let sectionStartY = 0;
-
-      const st = ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: () => "+=" + opts.pinDistancePerStep * totalSteps,
-        pin: true,
-        anticipatePin: 1,
-        onEnter: () => { sectionStartY = st.start; },
-        onEnterBack: () => { sectionStartY = st.start; },
-      });
-
-      function goTo(nextStep: number, direction: 1 | -1) {
-        if (isAnimating || nextStep < 0 || nextStep > totalSteps - 1) return;
-        isAnimating = true;
-
-        const tl = gsap.timeline({
-          onComplete: () => {
-            currentStep = nextStep;
-            isAnimating = false;
-          },
-        });
-
-        opts.onStepEnter(nextStep, tl);
-
-        gsap.to(window, {
-          scrollTo: { y: sectionStartY + opts.pinDistancePerStep * nextStep },
-          duration: 0.7,
-          ease: "power2.inOut",
-        });
-      }
-
-      function handleWheel(e: WheelEvent) {
-        if (!st.isActive) return;
-        const goingDown = e.deltaY > 0;
-        if (goingDown && currentStep === totalSteps - 1) return; // libera scroll normal
-        if (!goingDown && currentStep === 0) return;
-        e.preventDefault();
-        if (isAnimating) return;
-        goTo(currentStep + (goingDown ? 1 : -1), goingDown ? 1 : -1);
-      }
-
-      let touchStartY = 0;
-      function handleTouchStart(e: TouchEvent) { touchStartY = e.touches[0].clientY; }
-      function handleTouchMove(e: TouchEvent) {
-        if (!st.isActive) return;
-        const deltaY = touchStartY - e.touches[0].clientY;
-        const goingDown = deltaY > 0;
-        if (goingDown && currentStep === totalSteps - 1) return;
-        if (!goingDown && currentStep === 0) return;
-        e.preventDefault();
-        if (isAnimating || Math.abs(deltaY) < 30) return;
-        touchStartY = e.touches[0].clientY;
-        goTo(currentStep + (goingDown ? 1 : -1), goingDown ? 1 : -1);
-      }
-
-      window.addEventListener("wheel", handleWheel, { passive: false });
-      window.addEventListener("touchstart", handleTouchStart, { passive: true });
-      window.addEventListener("touchmove", handleTouchMove, { passive: false });
-
-      return () => {
-        window.removeEventListener("wheel", handleWheel);
-        window.removeEventListener("touchstart", handleTouchStart);
-        window.removeEventListener("touchmove", handleTouchMove);
-        st.kill();
-      };
-    }
-
-    // ========================================================
-    // 1. ESCRITORIO (> 768px): PASO = UNA LÍNEA ENTRA + TRACK SE DESPLAZA
+    // 1. ESCRITORIO (> 768px): TIRA HORIZONTAL DINÁMICA
     // ========================================================
     mm.add("(min-width: 769px)", () => {
-      gsap.set(track, { x: () => window.innerWidth * 0.08 });
+      const getStartX = () => window.innerWidth * 0.08;
+      const getEndX = () => -(track.scrollWidth - window.innerWidth + 180);
+      const getDropPointX = () => window.innerWidth * 0.75;
 
-      lines.forEach((line) => {
-        gsap.set(line.querySelectorAll(".char"), {
-          y: -180,
-          opacity: 0,
-        });
-      });
-
-      // Posición x del track necesaria para que cada línea quede centrada al entrar
-      const getStepX = (index: number) => {
-        const line = lines[index];
-        const lineLeft = line.offsetLeft;
-        return window.innerWidth * 0.08 - lineLeft * (index / Math.max(totalSteps - 1, 1));
-      };
-
-      const cleanup = createStepController({
-        pinDistancePerStep: 900,
-        onStepEnter: (index, tl) => {
-          const line = lines[index];
-          const chars = line.querySelectorAll<HTMLElement>(".char");
-
-          tl.to(track, {
-            x: getStepX(index),
-            duration: 0.6,
-            ease: "power2.inOut",
-          }, 0)
-            .to(chars, {
-              y: 0,
-              opacity: 1,
-              rotate: 0,
-              stagger: 0.02,
-              ease: "back.out(2)",
-              duration: 0.35,
-            }, 0.15);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "+=2600",
+          pin: true,
+          scrub: 0.7,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
         },
       });
 
-      cleanupFns.push(cleanup);
+      tl.fromTo(
+        track,
+        { x: () => getStartX() },
+        { x: () => getEndX(), ease: "none", duration: 1 },
+        0
+      );
+
+      const trackInitialLeft = track.getBoundingClientRect().left;
+
+      chars.forEach((char, index) => {
+        const charLeft = char.getBoundingClientRect().left;
+        const charOffset = charLeft - trackInitialLeft;
+
+        const totalTravel = getStartX() - getEndX();
+        let dropTime = (getStartX() + charOffset - getDropPointX()) / totalTravel;
+        dropTime = Math.max(0, Math.min(dropTime, 0.88));
+
+        gsap.set(char, {
+          y: -180,
+          opacity: 0,
+          rotate: index % 2 === 0 ? -12 : 10,
+        });
+
+        tl.to(
+          char,
+          { y: 0, opacity: 1, rotate: 0, ease: "back.out(2)", duration: 0.07 },
+          dropTime
+        );
+      });
+
+      // Margen de pausa de lectura antes de desanclar
+      tl.to({}, { duration: 0.15 });
     });
 
     // ========================================================
-    // 2. MÓVIL (<= 768px): PASO = UNA LÍNEA CAE COMPLETA
+    // 2. MÓVIL (<= 768px): CAÍDA COMPACTA, FLUIDA Y PAUSA DE LECTURA
     // ========================================================
     mm.add("(max-width: 768px)", () => {
-      lines.forEach((line) => {
-        gsap.set(line.querySelectorAll(".char"), {
-          y: -40,
-          opacity: 0,
-          rotate: (i: number) => (i % 2 === 0 ? -5 : 5),
-        });
+      gsap.set(track, { x: 0 });
+
+      const mobileTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "+=1200",
+          pin: true,
+          scrub: 0.5,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
       });
 
-      const cleanup = createStepController({
-        pinDistancePerStep: window.innerHeight * 0.6,
-        onStepEnter: (index, tl) => {
-          const chars = lines[index].querySelectorAll<HTMLElement>(".char");
-          tl.to(chars, {
+      lines.forEach((line, idx) => {
+        const lineChars = line.querySelectorAll<HTMLElement>(".char");
+
+        // Salto de caída elegante y controlado
+        gsap.set(lineChars, {
+          y: -40,
+          opacity: 0,
+          rotate: (i) => (i % 2 === 0 ? -5 : 5),
+        });
+
+        mobileTl.to(
+          lineChars,
+          {
             y: 0,
             opacity: 1,
             rotate: 0,
-            stagger: 0.02,
+            stagger: 0.018,
             ease: "back.out(1.6)",
-            duration: 0.3,
-          });
-        },
+            duration: 0.22,
+          },
+          idx * 0.11
+        );
       });
 
-      cleanupFns.push(cleanup);
+      // Pausa de lectura generosa para que el bloque completo se aprecie antes del scroll a Join Us
+      mobileTl.to({}, { duration: 0.4 });
     });
 
     ScrollTrigger.refresh();
-
-    document.addEventListener(
-      "astro:before-swap",
-      () => {
-        cleanupFns.forEach((fn) => fn());
-        cleanupFns = [];
-      },
-      { once: true }
-    );
   }
 
+  // Inicialización asegurando carga previa de tipografías
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(initResponsiveAnimation);
   } else {
     window.addEventListener("DOMContentLoaded", initResponsiveAnimation);
   }
 
+  // Soporte para Astro View Transitions
   document.addEventListener("astro:page-load", initResponsiveAnimation);
 </script>
