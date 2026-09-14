@@ -18,7 +18,12 @@
 import http from "k6/http";
 import { check, sleep } from "k6";
 import { Rate, Trend } from "k6/metrics";
-import { Options } from "k6/options";
+import type { Options, Response } from "k6";
+
+// Declare k6 globals
+declare const __ENV: Record<string, string>;
+declare const __VU: number;
+declare const __ITER: number;
 
 const BASE_URL = __ENV.BASE_URL || "https://landing-page-cis-cs-chapter.vercel.app/";
 const JOIN_US_PATH = __ENV.JOIN_US_PATH || "/join-us";
@@ -97,8 +102,8 @@ export function scenarioNavegacion() {
   responseTrend.add(res.timings.duration);
 
   const ok = check(res, {
-    "status es 200": (r) => r.status === 200,
-    "respuesta < 3000ms": (r) => r.timings.duration < 3000,
+    "status es 200": (r: Response) => r.status === 200,
+    "respuesta < 3000ms": (r: Response) => r.timings.duration < 3000,
   });
   errorRate.add(!ok);
 
@@ -122,8 +127,8 @@ export function scenarioJoinUs() {
   responseTrend.add(res.timings.duration);
 
   const ok = check(res, {
-    "envío aceptado (2xx)": (r) => r.status >= 200 && r.status < 300,
-    "sin error de servidor (5xx)": (r) => r.status < 500,
+    "envío aceptado (2xx)": (r: Response) => r.status >= 200 && r.status < 300,
+    "sin error de servidor (5xx)": (r: Response) => r.status < 500,
   });
   errorRate.add(!ok);
 
