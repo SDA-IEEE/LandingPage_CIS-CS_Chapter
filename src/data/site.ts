@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
   visionSource: 'https://www.computer.org/about/vision',
   joinUrl: 'https://formulario-ieee-utb.vercel.app/',
   socials: {
-    instagram: 'https://instagram.com/ieeecs_cis_utb',
+    instagram: 'https://www.instagram.com/ieee.cscis.utb?stkn=MWZjdnNrazlhazJlZA==',
     linkedin: 'https://linkedin.com/company/ieeecs-cis-utb',
     github: 'https://github.com/ieee-cs-cis-utb',
     email: 'ieeecscis@utb.edu.co'
