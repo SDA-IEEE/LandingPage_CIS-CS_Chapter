@@ -1,7 +1,12 @@
 ---
+
 ---
 
-<section class="scroll-phrase-section" id="phrase-section" aria-label="Frase motivacional del capítulo">
+<section
+  class="scroll-phrase-section"
+  id="phrase-section"
+  aria-label="Frase motivacional del capítulo"
+>
   <div class="scroll-phrase-pin">
     <div class="scroll-phrase-track" id="phrase-track">
       <h2 class="scroll-phrase-text" id="target-phrase">
@@ -17,13 +22,18 @@
 
 <style>
   /* =========================================================
-     ESTILOS BASE: TEMA CLARO ADAPTADO & EDITORIAL
+     ESTILOS BASE & COMPARTIDOS
      ========================================================= */
   .scroll-phrase-section {
     position: relative;
     width: 100%;
     background: #f8fafc;
-    background: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #f1f5f9 60%, #e2e8f0 100%);
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      #ffffff 0%,
+      #f1f5f9 60%,
+      #e2e8f0 100%
+    );
     border-top: 1px solid rgba(15, 23, 42, 0.08);
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
     overflow: hidden;
@@ -38,9 +48,9 @@
     position: relative;
   }
 
-  /* Halo lumínico sutil para dar profundidad en tema claro */
+  /* Halo lumínico de fondo */
   .scroll-phrase-pin::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     width: 100%;
@@ -55,12 +65,15 @@
     z-index: 1;
   }
 
-  /* Micro-textura de cuadrícula técnica */
+  /* Micro-textura técnica */
   .scroll-phrase-pin::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+    background-image: radial-gradient(
+      rgba(15, 23, 42, 0.045) 1px,
+      transparent 1px
+    );
     background-size: 36px 36px;
     opacity: 0.7;
     pointer-events: none;
@@ -68,7 +81,8 @@
   }
 
   .scroll-phrase-text {
-    font-family: 'Plus Jakarta Sans', var(--font-display, 'Montserrat', sans-serif);
+    font-family:
+      "Plus Jakarta Sans", var(--font-display, "Montserrat", sans-serif);
     font-weight: 900;
     letter-spacing: -0.04em;
     color: #0f172a;
@@ -86,26 +100,38 @@
 
   :global(.scroll-phrase-section .space) {
     display: inline-block;
-    width: 0.3em;
+    width: 0.28em;
   }
 
   :global(.scroll-phrase-section .word) {
-    display: inline-block;
+    display: inline-flex;
+    align-items: baseline;
     white-space: nowrap;
   }
 
-  /* Acento de color CIS Cyan adaptado con contraste y brillo elegante */
+  /* Acento de color CIS Cyan */
   .highlight,
   :global(.scroll-phrase-section .highlight),
-  :global(.scroll-phrase-section .phrase-line.highlight .char) {
+  :global(.scroll-phrase-section .phrase-line.highlight .char),
+  :global(.scroll-phrase-section .word.highlight .char) {
     color: #0084d1 !important;
-    text-shadow: 0 4px 28px rgba(0, 163, 224, 0.35), 0 0 50px rgba(0, 132, 209, 0.2);
+    text-shadow:
+      0 4px 28px rgba(0, 163, 224, 0.35),
+      0 0 50px rgba(0, 132, 209, 0.2);
   }
 
   /* =========================================================
-     DESKTOP (> 768px): TIRA HORIZONTAL CONTINUA
+     DESKTOP (> 768px): TIRA HORIZONTAL & CINÉTICA
      ========================================================= */
   @media (min-width: 769px) {
+    .scroll-phrase-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      margin-top: -45vh;
+      z-index: 5;
+    }
+
     .scroll-phrase-track {
       display: flex;
       align-items: baseline;
@@ -113,32 +139,53 @@
       user-select: none;
       will-change: transform;
       flex-shrink: 0;
-      padding-right: 20vw;
+      padding-right: 0;
     }
+
     .scroll-phrase-text {
-      font-size: clamp(4rem, 9.5vw, 10.5rem);
+      font-size: clamp(5rem, 13vw, 14rem);
       display: inline-flex;
       align-items: baseline;
       flex-shrink: 0;
     }
+
     .phrase-line {
       display: inline-flex;
       align-items: baseline;
       flex-shrink: 0;
     }
+
     .phrase-line:not(:last-child)::after {
-      content: '\00a0';
+      content: "\00a0";
     }
   }
 
   /* =========================================================
-     MÓVIL (<= 768px): BLOQUE EDITORIAL COHESIVO
+     MÓVIL (<= 768px): DISEÑO VERTICAL COMPACTO INTACTO
      ========================================================= */
   @media (max-width: 768px) {
+    :global(.team-phrase-stage) {
+      position: static;
+      height: auto;
+      overflow: visible;
+    }
+
+    :global(.team-phrase-stage #team) {
+      position: static;
+      height: auto;
+      padding: 60px 0;
+      box-shadow: none;
+    }
+
+    .scroll-phrase-section {
+      position: relative;
+    }
+
     .scroll-phrase-pin {
       justify-content: center;
       padding: 40px 20px;
     }
+
     .scroll-phrase-track {
       width: 100%;
       height: 100%;
@@ -146,6 +193,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .scroll-phrase-text {
       height: auto;
       width: 100%;
@@ -156,6 +204,7 @@
       align-items: center;
       text-align: center;
     }
+
     .phrase-line {
       display: flex;
       align-items: center;
@@ -168,7 +217,7 @@
     }
   }
 
-  /* Accesibilidad: movimiento reducido */
+  /* Accesibilidad */
   @media (prefers-reduced-motion: reduce) {
     .scroll-phrase-pin {
       height: auto !important;
@@ -192,12 +241,15 @@
   gsap.registerPlugin(ScrollTrigger);
 
   function setupLinesAndCharacters(container: HTMLElement) {
-    const lines = Array.from(container.querySelectorAll<HTMLElement>(".phrase-line"));
+    const lines = Array.from(
+      container.querySelectorAll<HTMLElement>(".phrase-line"),
+    );
 
     lines.forEach((line) => {
-      // Evitar re-ejecución si ya tiene caracteres divididos
+      // Evitar duplicaciones si ya tiene caracteres divididos
       if (line.querySelector(".char")) return;
 
+      const isHighlight = line.classList.contains("highlight");
       const text = line.textContent?.trim() || "";
       line.innerHTML = "";
       const words = text.split(/\s+/);
@@ -205,11 +257,11 @@
       words.forEach((wordText, wIdx) => {
         if (!wordText) return;
         const wordSpan = document.createElement("span");
-        wordSpan.className = "word";
+        wordSpan.className = `word ${isHighlight ? "highlight" : ""}`;
 
         wordText.split("").forEach((letter) => {
           const charSpan = document.createElement("span");
-          charSpan.className = "char";
+          charSpan.className = `char ${isHighlight ? "highlight" : ""}`;
           charSpan.textContent = letter;
           wordSpan.appendChild(charSpan);
         });
@@ -226,27 +278,42 @@
     });
   }
 
+  // Patrón de entrada vertical de caracteres:
+  // -1 = Cae desde ARRIBA (y: -260px a 0)
+  //  1 = Sube desde ABAJO  (y: +260px a 0)
+  function getDirectionForChar(index: number): number {
+    if (index === 0) return -1; // Primer carácter: Cae desde ARRIBA
+    if (index === 1) return -1; // Segundo carácter: Cae desde ARRIBA
+    if (index === 2) return 1;  // Tercer carácter: Sube desde ABAJO
+    // Caracteres restantes: alternan dinámicamente
+    return index % 2 === 0 ? -1 : 1;
+  }
+
   function initResponsiveAnimation() {
     const phrase = document.getElementById("target-phrase");
     const track = document.getElementById("phrase-track");
     const section = document.getElementById("phrase-section");
+    const team = document.getElementById("team");
+    const stage = document.getElementById("team-phrase-stage");
 
     if (!phrase || !track || !section) return;
 
     setupLinesAndCharacters(phrase);
 
     const chars = Array.from(track.querySelectorAll<HTMLElement>(".char"));
-    const lines = Array.from(track.querySelectorAll<HTMLElement>(".phrase-line"));
+    const lines = Array.from(
+      track.querySelectorAll<HTMLElement>(".phrase-line"),
+    );
 
     const mm = gsap.matchMedia();
 
     // ========================================================
-    // 1. ESCRITORIO (> 768px): TIRA HORIZONTAL DINÁMICA
+    // 1. ESCRITORIO (> 768px): TIRA HORIZONTAL DINÁMICA & CINÉTICA
     // ========================================================
     mm.add("(min-width: 769px)", () => {
-      const getStartX = () => window.innerWidth * 0.08;
-      const getEndX = () => -(track.scrollWidth - window.innerWidth + 180);
-      const getDropPointX = () => window.innerWidth * 0.75;
+      const getStartX = () => window.innerWidth * 0.8;
+      const getEndX = () => -(track.scrollWidth - window.innerWidth * 0.38);
+      const horizDuration = 5.0;
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -254,7 +321,7 @@
           start: "top top",
           end: "+=2600",
           pin: true,
-          scrub: 0.7,
+          scrub: 0.8,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
@@ -263,39 +330,48 @@
       tl.fromTo(
         track,
         { x: () => getStartX() },
-        { x: () => getEndX(), ease: "none", duration: 1 },
-        0
+        { x: () => getEndX(), ease: "none", duration: horizDuration },
+        0,
       );
 
+      // Coreografía de entrada letra por letra (Eje Y + Opacidad + Rotación)
+      gsap.set(track, { x: 0 });
       const trackInitialLeft = track.getBoundingClientRect().left;
+      const totalTrackWidth = track.scrollWidth;
 
       chars.forEach((char, index) => {
         const charLeft = char.getBoundingClientRect().left;
         const charOffset = charLeft - trackInitialLeft;
+        const progressRatio = Math.max(
+          0,
+          Math.min(charOffset / (totalTrackWidth || 1), 1),
+        );
 
-        const totalTravel = getStartX() - getEndX();
-        let dropTime = (getStartX() + charOffset - getDropPointX()) / totalTravel;
-        dropTime = Math.max(0, Math.min(dropTime, 0.88));
+        const dir = getDirectionForChar(index);
+        const startY = dir * 260; // Salto desde ARRIBA (-260px) o ABAJO (+260px)
+        const charStartTime = progressRatio * (horizDuration * 0.82);
 
-        gsap.set(char, {
-          y: -180,
-          opacity: 0,
-          rotate: index % 2 === 0 ? -12 : 10,
-        });
-
-        tl.to(
+        tl.fromTo(
           char,
-          { y: 0, opacity: 1, rotate: 0, ease: "back.out(2)", duration: 0.07 },
-          dropTime
+          {
+            y: startY,
+            opacity: 0,
+            rotate: dir === -1 ? -12 : 12,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            rotate: 0,
+            ease: "power2.out",
+            duration: 0.45,
+          },
+          charStartTime,
         );
       });
-
-      // Margen de pausa de lectura antes de desanclar
-      tl.to({}, { duration: 0.15 });
     });
 
     // ========================================================
-    // 2. MÓVIL (<= 768px): CAÍDA COMPACTA, FLUIDA Y PAUSA DE LECTURA
+    // 2. MÓVIL (<= 768px): CONSERVA TU CONFIGURACIÓN ACTUAL
     // ========================================================
     mm.add("(max-width: 768px)", () => {
       gsap.set(track, { x: 0 });
@@ -315,7 +391,6 @@
       lines.forEach((line, idx) => {
         const lineChars = line.querySelectorAll<HTMLElement>(".char");
 
-        // Salto de caída elegante y controlado
         gsap.set(lineChars, {
           y: -40,
           opacity: 0,
@@ -332,24 +407,21 @@
             ease: "back.out(1.6)",
             duration: 0.22,
           },
-          idx * 0.11
+          idx * 0.11,
         );
       });
 
-      // Pausa de lectura generosa para que el bloque completo se aprecie antes del scroll a Join Us
       mobileTl.to({}, { duration: 0.4 });
     });
 
     ScrollTrigger.refresh();
   }
 
-  // Inicialización asegurando carga previa de tipografías
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(initResponsiveAnimation);
   } else {
     window.addEventListener("DOMContentLoaded", initResponsiveAnimation);
   }
 
-  // Soporte para Astro View Transitions
   document.addEventListener("astro:page-load", initResponsiveAnimation);
 </script>

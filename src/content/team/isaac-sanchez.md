@@ -4,7 +4,7 @@ role: Tesorero
 order: 3
 category: Liderazgo
 focus: ["Gestión financiera del capítulo"]
-image: /images/member-3.jpg
+image: /images/presidente.png
 ---
 
 Responsable de la gestión financiera y administrativa del capítulo.

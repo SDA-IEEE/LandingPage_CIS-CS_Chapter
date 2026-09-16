@@ -4,7 +4,7 @@ role: Presidente
 order: 1
 category: Liderazgo
 focus: ["Liderazgo del capítulo", "Representación institucional"]
-image: /images/member-1.jpg
+image: /images/presidente.png
 featured: true
 ---
 

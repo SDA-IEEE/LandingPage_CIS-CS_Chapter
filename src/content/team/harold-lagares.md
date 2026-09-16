@@ -4,7 +4,7 @@ role: Vicepresidente
 order: 2
 category: Liderazgo
 focus: ["Coordinación del capítulo"]
-image: /images/member-2.jpg
+image: /images/vicepresidente.png
 ---
 
 Apoya la dirección del capítulo y la coordinación general de sus actividades.

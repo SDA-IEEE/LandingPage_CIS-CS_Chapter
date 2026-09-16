@@ -2,65 +2,196 @@
 import { getCollection } from 'astro:content';
 
 const members = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
-const [featuredMember, ...restMembers] = members;
-const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3'];
+const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'reveal-delay-4', 'reveal-delay-1'];
 ---
+
 <section class="section section-dark" id="team">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="section-label">Comité</div>
+      <span class="team-label">Comité directivo</span>
       <h2 class="section-title">Personas antes que organigrama</h2>
       <p class="section-desc">
         Quienes construyen la comunidad. Comité directivo del capítulo IEEE
         Computer Society &amp; Computational Intelligence Society UTB.
       </p>
     </div>
-    <div class="team-grid">
-      {featuredMember && (
-        <div class="team-card featured-member reveal">
-          <div class="team-card-media">
-            <img
-              src={featuredMember.data.image}
-              alt={`Foto de ${featuredMember.data.name}, ${featuredMember.data.role} del capítulo`}
-              loading="lazy"
-            />
-            <div class="team-card-overlay">
-              <div class="team-card-name">{featuredMember.data.name}</div>
-              <div class="team-card-role">{featuredMember.data.role}</div>
-              {featuredMember.data.focus.length > 0 && (
-                <div class="team-card-focus">{featuredMember.data.focus.join(' · ')}</div>
-              )}
-            </div>
-          </div>
-          <div class="team-card-info">
-            <div class="team-card-name-static">{featuredMember.data.name}</div>
-            <div class="team-card-role-static">{featuredMember.data.role}</div>
-          </div>
-        </div>
-      )}
 
-      {restMembers.map((member, index) => (
-        <div class={`team-card reveal ${delayClasses[index % delayClasses.length]}`}>
-          <div class="team-card-media">
+    <div class="team-grid">
+      {members.map((member, index) => (
+        <div class={`team-speaker-card reveal ${delayClasses[index % delayClasses.length]}`}>
+          <div class="team-avatar-capsule">
+            <div class="team-avatar-ambient"></div>
             <img
               src={member.data.image}
               alt={`Foto de ${member.data.name}, ${member.data.role} del capítulo`}
+              class="team-avatar-img"
               loading="lazy"
             />
-            <div class="team-card-overlay">
-              <div class="team-card-name">{member.data.name}</div>
-              <div class="team-card-role">{member.data.role}</div>
-              {member.data.focus.length > 0 && (
-                <div class="team-card-focus">{member.data.focus.join(' · ')}</div>
-              )}
-            </div>
           </div>
-          <div class="team-card-info">
-            <div class="team-card-name-static">{member.data.name}</div>
-            <div class="team-card-role-static">{member.data.role}</div>
+
+          <div class="team-speaker-info">
+            <span class="team-speaker-role">{member.data.role}</span>
+            <h3 class="team-speaker-name">{member.data.name}</h3>
+            {member.data.focus.length > 0 && (
+              <p class="team-speaker-desc">{member.data.focus.join(' · ')}</p>
+            )}
           </div>
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<style>
+  #team {
+    position: relative;
+    width: 100%;
+    background: var(--dark, #0a1628);
+    padding: 130px 0 140px;
+    z-index: 10;
+  }
+
+  @media (min-width: 1024px) {
+    #team {
+      padding: 150px 0 170px;
+    }
+  }
+
+  /* Etiqueta superior de la sección (texto plano, sin caja) */
+  .team-label {
+    display: inline-block;
+    font-family: var(--font-display, "Montserrat", sans-serif);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cis-cyan, #00a9e0);
+    margin-bottom: 14px;
+  }
+
+  /* Grilla responsive de los 5 integrantes */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+  }
+
+  @media (min-width: 520px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .team-grid {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+  }
+
+  /* Tarjeta de cada integrante */
+  .team-speaker-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.45s var(--transition-smooth, cubic-bezier(0.25, 0.46, 0.45, 0.94));
+  }
+
+  .team-speaker-card:hover {
+    transform: translateY(-8px);
+  }
+
+  /* Cápsula redondeada azul para el retrato (inspirada en la referencia) */
+  .team-avatar-capsule {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.34;
+    border-radius: 36px;
+    overflow: hidden;
+    background: linear-gradient(175deg, #00629b 0%, #004572 60%, #003052 100%);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 169, 224, 0.22);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: box-shadow 0.45s var(--transition-smooth, cubic-bezier(0.25, 0.46, 0.45, 0.94)),
+                border-color 0.45s var(--transition-smooth, cubic-bezier(0.25, 0.46, 0.45, 0.94));
+  }
+
+  .team-speaker-card:hover .team-avatar-capsule {
+    box-shadow: 0 20px 48px rgba(0, 98, 155, 0.45), 0 0 0 1.5px rgba(0, 169, 224, 0.6);
+  }
+
+  /* Imagen dentro de la cápsula: sin filtros, a todo color natural y con máxima presencia */
+  .team-avatar-img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    transform: scale(1.25) translateY(2%);
+    transform-origin: center 25%;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .team-speaker-card:hover .team-avatar-img {
+    transform: scale(1.3) translateY(2%);
+  }
+
+  /* Halo lumínico sutil superior dentro de la cápsula (detrás del miembro) */
+  .team-avatar-ambient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 15%, rgba(0, 169, 224, 0.25) 0%, transparent 65%);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .team-speaker-card:hover .team-avatar-ambient {
+    opacity: 0.5;
+  }
+
+  /* Metadatos y tipografía debajo de la cápsula */
+  .team-speaker-info {
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team-speaker-role {
+    font-family: var(--font-display, "Montserrat", sans-serif);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cis-cyan, #00a9e0);
+    margin-bottom: 6px;
+  }
+
+  .team-speaker-name {
+    font-family: var(--font-display, "Montserrat", sans-serif);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--white, #ffffff);
+    line-height: 1.25;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .team-speaker-desc {
+    font-family: var(--font-body, "Open Sans", sans-serif);
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.62);
+    margin: 0;
+  }
+</style>

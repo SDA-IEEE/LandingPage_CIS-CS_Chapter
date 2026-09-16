@@ -1,8 +1,8 @@
 ---
-import '../styles/global.css';
-import Header from '../components/layout/Header.astro';
-import Footer from '../components/layout/Footer.astro';
-import { siteConfig } from '../data/site';
+import "../styles/global.css";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import { siteConfig } from "../data/site";
 
 interface Props {
   title?: string;
@@ -21,18 +21,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? siteConfig.url);
 const socialImageURL = new URL(image, Astro.site ?? siteConfig.url);
 
 const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'CollegiateProgram',
+  "@context": "https://schema.org",
+  "@type": "CollegiateProgram",
   name: siteConfig.name,
   alternateName: siteConfig.shortName,
   description: siteConfig.description,
   url: siteConfig.url,
   parentOrganization: {
-    '@type': 'CollegeOrUniversity',
+    "@type": "CollegeOrUniversity",
     name: siteConfig.university,
   },
   sameAs: Object.values(siteConfig.socials).filter(
-    (value): value is string => typeof value === 'string' && value.startsWith('http')
+    (value): value is string =>
+      typeof value === "string" && value.startsWith("http"),
   ),
 };
 ---
@@ -64,7 +65,11 @@ const organizationJsonLd = {
     <meta name="twitter:image" content={socialImageURL} />
 
     <!-- Structured data -->
-    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} is:inline />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(organizationJsonLd)}
+      is:inline
+    />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,9 +80,8 @@ const organizationJsonLd = {
     />
   </head>
   <body>
-    <a href="#main" class="skip-link">Saltar al contenido</a>
     <Header />
-    
+
     <main id="main">
       <slot />
     </main>
@@ -98,7 +102,8 @@ const organizationJsonLd = {
           const isOpen = mobileMenu.classList.contains("open");
           mobileMenu.classList.toggle("open");
           menuOverlay.classList.toggle("open");
-          if (menuToggle) menuToggle.setAttribute("aria-expanded", String(!isOpen));
+          if (menuToggle)
+            menuToggle.setAttribute("aria-expanded", String(!isOpen));
           document.body.style.overflow = !isOpen ? "hidden" : "";
         };
 
@@ -121,7 +126,7 @@ const organizationJsonLd = {
               header.classList.remove("scrolled");
             }
           },
-          { passive: true }
+          { passive: true },
         );
 
         // Reveal Observer
@@ -133,7 +138,7 @@ const organizationJsonLd = {
               }
             });
           },
-          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
         );
         document
           .querySelectorAll(".reveal")
@@ -150,7 +155,7 @@ const organizationJsonLd = {
               }
             });
           },
-          { threshold: 0.2 }
+          { threshold: 0.2 },
         );
         timelineItems.forEach((item) => timelineObserver.observe(item));
 
@@ -171,19 +176,30 @@ const organizationJsonLd = {
           progress = Math.max(0, Math.min(1, progress));
           timelineProgress.style.height = progress * 100 + "%";
         }
-        window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+        window.addEventListener("scroll", updateTimelineProgress, {
+          passive: true,
+        });
         updateTimelineProgress();
-
 
         // Interactive Research Map
         const researchNodes = document.querySelectorAll(".research-node");
-        const researchDetailTitle = document.getElementById("researchDetailTitle");
-        const researchDetailDescription = document.getElementById("researchDetailDescription");
+        const researchDetailTitle = document.getElementById(
+          "researchDetailTitle",
+        );
+        const researchDetailDescription = document.getElementById(
+          "researchDetailDescription",
+        );
         researchNodes.forEach((node) => {
           node.addEventListener("click", () => {
             const title = node.getAttribute("data-line-title");
             const description = node.getAttribute("data-line-description");
-            if (!title || !description || !researchDetailTitle || !researchDetailDescription) return;
+            if (
+              !title ||
+              !description ||
+              !researchDetailTitle ||
+              !researchDetailDescription
+            )
+              return;
             researchNodes.forEach((item) => {
               item.classList.remove("active");
               item.setAttribute("aria-pressed", "false");
@@ -198,28 +214,32 @@ const organizationJsonLd = {
         // Hero Showcase Rotator
         const heroShowcase = document.getElementById("heroShowcase");
         if (heroShowcase) {
-          const frontCard = heroShowcase.querySelector("[data-hero-card='front']");
-          const backCard = heroShowcase.querySelector("[data-hero-card='back']");
+          const frontCard = heroShowcase.querySelector(
+            "[data-hero-card='front']",
+          );
+          const backCard = heroShowcase.querySelector(
+            "[data-hero-card='back']",
+          );
           const dots = heroShowcase.querySelectorAll(".hero-dot");
           const slides = [
             {
               image: "/images/hero-community.jpg",
               alt: "Estudiantes colaborando en proyecto tecnológico",
               kicker: "Próxima generación",
-              title: "Tecnología con propósito"
+              title: "Tecnología con propósito",
             },
             {
               image: "/images/about-research.jpg",
               alt: "Equipo trabajando en investigación",
               kicker: "Investigación aplicada",
-              title: "IA para resolver desafíos reales"
+              title: "IA para resolver desafíos reales",
             },
             {
               image: "/images/about-devs.jpg",
               alt: "Desarrolladores construyendo soluciones colaborativas",
               kicker: "Construcción colaborativa",
-              title: "Código que transforma ideas"
-            }
+              title: "Código que transforma ideas",
+            },
           ];
           let currentIndex = 0;
           let transitioning = false;
@@ -279,13 +299,13 @@ const organizationJsonLd = {
                 navLinks.forEach((link) => {
                   link.classList.toggle(
                     "active",
-                    link.getAttribute("href") === "#" + id
+                    link.getAttribute("href") === "#" + id,
                   );
                 });
               }
             });
           },
-          { threshold: 0.3 }
+          { threshold: 0.3 },
         );
         sections.forEach((s) => sectionObserver.observe(s));
 
@@ -305,7 +325,11 @@ const organizationJsonLd = {
 
         // ESC to close mobile menu
         document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && mobileMenu && mobileMenu.classList.contains("open")) {
+          if (
+            e.key === "Escape" &&
+            mobileMenu &&
+            mobileMenu.classList.contains("open")
+          ) {
             window.toggleMenu();
           }
         });

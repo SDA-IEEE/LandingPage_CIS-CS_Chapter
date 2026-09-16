@@ -31,14 +31,18 @@
 <div class="menu-overlay" id="menuOverlay" onclick="window.toggleMenu()"></div>
 
 <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
-  <button class="close-menu" onclick="window.toggleMenu()" aria-label="Cerrar menú">
-    &times;
-  </button>
-  <a href="#hero" class="nav-link" onclick="window.toggleMenu()">Inicio</a>
-  <a href="#about" class="nav-link" onclick="window.toggleMenu()">Nosotros</a>
-  <a href="#research" class="nav-link" onclick="window.toggleMenu()">Investigación</a>
-  <a href="#events" class="nav-link" onclick="window.toggleMenu()">Eventos</a>
-  <a href="#projects" class="nav-link" onclick="window.toggleMenu()">Proyectos</a>
-  <a href="#team" class="nav-link" onclick="window.toggleMenu()">Equipo</a>
-  <a href="#join" class="nav-cta" onclick="window.toggleMenu()">Únete</a>
+  <div class="mobile-menu-top">
+    <button class="close-menu" onclick="window.toggleMenu()" aria-label="Cerrar menú">
+      &times;
+    </button>
+  </div>
+  <div class="mobile-menu-links">
+    <a href="#hero" class="nav-link" onclick="window.toggleMenu()">Inicio</a>
+    <a href="#about" class="nav-link" onclick="window.toggleMenu()">Nosotros</a>
+    <a href="#research" class="nav-link" onclick="window.toggleMenu()">Investigación</a>
+    <a href="#events" class="nav-link" onclick="window.toggleMenu()">Eventos</a>
+    <a href="#projects" class="nav-link" onclick="window.toggleMenu()">Proyectos</a>
+    <a href="#team" class="nav-link" onclick="window.toggleMenu()">Equipo</a>
+  </div>
+  <a href="#join" class="nav-cta" onclick="window.toggleMenu()">Únete al capítulo</a>
 </nav>
