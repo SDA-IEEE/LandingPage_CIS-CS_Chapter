@@ -2,6 +2,6 @@
 title: "Automatización Industrial"
 icon: "⚙️"
 tagline: "Sistemas de control y automatización aplicados a procesos industriales."
-image: "/images/project-platform.jpg"
+image: "/images/Automatizacion.jpg"
 order: 2
 ---

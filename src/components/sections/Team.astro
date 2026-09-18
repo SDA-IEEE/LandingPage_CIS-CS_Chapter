@@ -21,6 +21,7 @@ const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'rev
         <div class={`team-speaker-card reveal ${delayClasses[index % delayClasses.length]}`}>
           <div class="team-avatar-capsule">
             <div class="team-avatar-ambient"></div>
+            <div class="team-spotlight" aria-hidden="true"></div>
             <img
               src={member.data.image}
               alt={`Foto de ${member.data.name}, ${member.data.role} del capítulo`}
@@ -69,16 +70,15 @@ const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'rev
     margin-bottom: 14px;
   }
 
-  /* Grilla responsive de los 5 integrantes */
+  /* Grilla responsive de los 5 integrantes (2 por fila desde móvil) */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   @media (min-width: 520px) {
     .team-grid {
-      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
   }
@@ -94,6 +94,34 @@ const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'rev
     .team-grid {
       grid-template-columns: repeat(5, 1fr);
       gap: 20px;
+    }
+  }
+
+  /* Compactación en móvil (dos tarjetas por fila) */
+  @media (max-width: 520px) {
+    .team-avatar-capsule {
+      border-radius: 20px;
+    }
+
+    .team-speaker-info {
+      padding-top: 12px;
+    }
+
+    .team-speaker-role {
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
+    }
+
+    .team-speaker-name {
+      font-size: 0.98rem;
+    }
+
+    .team-speaker-desc {
+      font-size: 0.72rem;
+    }
+
+    #team {
+      padding: 80px 0 90px;
     }
   }
 
@@ -160,6 +188,27 @@ const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'rev
     opacity: 0.5;
   }
 
+  /* Spotlight interactivo: brillo que sigue el cursor (se activa con hover) */
+  .team-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      340px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(0, 169, 224, 0.34) 0%,
+      rgba(121, 203, 245, 0.1) 45%,
+      transparent 68%
+    );
+    mix-blend-mode: screen;
+    transition: opacity 0.35s ease;
+  }
+
+  .team-speaker-card:hover .team-spotlight {
+    opacity: 1;
+  }
+
   /* Metadatos y tipografía debajo de la cápsula */
   .team-speaker-info {
     padding-top: 18px;
@@ -195,3 +244,29 @@ const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'rev
     margin: 0;
   }
 </style>
+
+<script>
+  function setupTeamSpotlights() {
+    const cards = document.querySelectorAll<HTMLElement>('.team-speaker-card');
+    cards.forEach((card) => {
+      const capsule = card.querySelector<HTMLElement>('.team-avatar-capsule');
+      const spot = card.querySelector<HTMLElement>('.team-spotlight');
+      if (!capsule || !spot) return;
+
+      card.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = capsule.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        spot.style.setProperty('--mx', `${x}%`);
+        spot.style.setProperty('--my', `${y}%`);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTeamSpotlights);
+  } else {
+    setupTeamSpotlights();
+  }
+  document.addEventListener('astro:page-load', setupTeamSpotlights);
+</script>

@@ -246,10 +246,19 @@ const lines = (await getCollection('lines'))
     }
 
     .accordion-item.active {
-      height: 440px; /* Altura desplegada estable */
+      height: 400px; /* Altura desplegada estable */
       border-radius: 26px;
       box-shadow: 0 14px 34px -8px rgba(15, 23, 42, 0.18);
       cursor: default;
+    }
+
+    /* En táctil no debe escalarse la imagen al tocar */
+    .accordion-item:hover .item-bg {
+      transform: none;
+    }
+
+    .item-bg {
+      object-position: center 28%;
     }
 
     /* Barra de la cápsula colapsada */

@@ -20,6 +20,10 @@ const { Content: FeaturedContent } = featured ? await render(featured) : { Conte
     {featured ? (
       <div class="projects-showcase">
         <div class="project-featured reveal">
+          <div class="project-featured-content project-head">
+            <div class="project-number">PROYECTO 01</div>
+            <h3 class="project-title">{featured.data.title}</h3>
+          </div>
           <div class="project-featured-media">
             <img
               src={featured.data.image}
@@ -28,9 +32,7 @@ const { Content: FeaturedContent } = featured ? await render(featured) : { Conte
             />
             <div class="project-featured-badge">Proyecto Destacado</div>
           </div>
-          <div class="project-featured-content">
-            <div class="project-number">PROYECTO 01</div>
-            <h3 class="project-title">{featured.data.title}</h3>
+          <div class="project-featured-content project-body">
             <p class="project-desc">{featured.data.tagline}</p>
             {FeaturedContent && (
               <div class="project-desc">

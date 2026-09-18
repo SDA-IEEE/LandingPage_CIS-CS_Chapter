@@ -2,6 +2,6 @@
 title: "Desarrollo de Software"
 icon: "💻"
 tagline: "Diseño, arquitectura y desarrollo de sistemas robustos y escalables."
-image: "/images/about-community.jpg"
+image: "/images/Desarrollo_De_Software.jpg"
 order: 4
 ---

@@ -2,6 +2,6 @@
 title: "AI & Agentes"
 icon: "🤖"
 tagline: "Modelos y sistemas multiagente aplicados a problemas reales."
-image: "/images/about-research.jpg"
+image: "/images/Artificial_Intelligence.jpg"
 order: 1
 ---

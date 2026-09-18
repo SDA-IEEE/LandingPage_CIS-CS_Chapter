@@ -40,6 +40,68 @@ import { siteConfig } from '../../data/site';
 
     <!-- 2. FILA INFERIOR -->
     <div class="about-bottom-grid">
+      <!-- VISIÓN -->
+      <div class="card-vision">
+        <div class="card-header-flex">
+          <div class="icon-bubble">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <div>
+            <span class="card-subtag">Hacia dónde vamos</span>
+            <h3 class="card-heading">Visión</h3>
+          </div>
+        </div>
+
+        <p class="vision-body">{siteConfig.vision}</p>
+        <p class="vision-source">
+          Adaptada de la visión de{' '}
+          <a href={siteConfig.visionSource} target="_blank" rel="noopener noreferrer">IEEE Computer Society</a>.
+        </p>
+      </div>
+
+      <!-- NUESTRO OBJETIVO -->
+      <div class="card-objetivo">
+        <div class="card-header-flex objetivo-header">
+          <div class="icon-bubble">
+            <svg
+              width="21"
+              height="21"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="objetivo-tag-wrapper">
+              <span class="objetivo-tag">Nuestro objetivo</span>
+              <div class="objetivo-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="objetivo-body">{siteConfig.visionGoal}</p>
+      </div>
+
       <!-- MISIÓN -->
       <div class="card-mision">
         <div>
@@ -70,71 +132,6 @@ import { siteConfig } from '../../data/site';
         </div>
 
         <div class="bottom-blue-line"></div>
-      </div>
-
-      <!-- VISIÓN Y OBJETIVO -->
-      <div class="right-stack-col">
-        <!-- VISIÓN -->
-        <div class="card-vision">
-          <div class="card-header-flex">
-            <div class="icon-bubble">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-            </div>
-            <div>
-              <span class="card-subtag">Hacia dónde vamos</span>
-              <h3 class="card-heading">Visión</h3>
-            </div>
-          </div>
-
-          <p class="vision-body">{siteConfig.vision}</p>
-          <p class="vision-source">
-            Adaptada de la visión de{' '}
-            <a href={siteConfig.visionSource} target="_blank" rel="noopener noreferrer">IEEE Computer Society</a>.
-          </p>
-        </div>
-
-        <!-- NUESTRO OBJETIVO -->
-        <div class="card-objetivo">
-          <div class="card-header-flex" style="margin-bottom: 10px;">
-            <div class="icon-bubble">
-              <svg
-                width="21"
-                height="21"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <div>
-              <div class="objetivo-tag-wrapper">
-                <span class="objetivo-tag">Nuestro objetivo</span>
-                <div class="objetivo-line"></div>
-              </div>
-            </div>
-          </div>
-
-          <p class="objetivo-body">{siteConfig.visionGoal}</p>
-        </div>
       </div>
     </div>
   </div>
@@ -167,8 +164,6 @@ import { siteConfig } from '../../data/site';
     --text-quote: #1e293b;
     --ieee-blue: #0284c7;
     --ieee-blue-light: #e0f2fe;
-    --card-objetivo-bg: #f3f8fd;
-    --card-objetivo-border: #e2effa;
 
     max-width: 1280px;
     margin: 0 auto;
@@ -257,21 +252,21 @@ import { siteConfig } from '../../data/site';
     filter: drop-shadow(0 12px 24px rgba(2, 132, 199, 0.08));
   }
 
-  /* 2. FILA INFERIOR: TARJETAS */
+  /* 2. FILA INFERIOR: VISIÓN | OBJETIVOS | MISIÓN */
   .about-bottom-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     align-items: stretch;
   }
 
-  /* TARJETA MISIÓN (IZQUIERDA) */
+  /* TARJETA MISIÓN (DERECHA) */
   .card-mision {
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1px solid #d3dfea;
     border-radius: 22px;
     padding: 38px 36px 32px;
-    box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -320,6 +315,7 @@ import { siteConfig } from '../../data/site';
     line-height: 1.68;
     color: var(--text-quote);
     margin-bottom: 28px;
+    text-align: justify;
   }
 
   .bottom-blue-line {
@@ -329,26 +325,30 @@ import { siteConfig } from '../../data/site';
     border-radius: 2px;
   }
 
-  /* COLUMNA DERECHA: VISIÓN + OBJETIVO */
-  .right-stack-col {
+  /* COLUMNA CENTRAL: NUESTRO OBJETIVO (TEXTO CENTRADO SIN CAJA) */
+  .card-objetivo {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 24px 8px;
   }
 
   .card-vision {
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1px solid #d3dfea;
     border-radius: 22px;
     padding: 30px 34px;
-    box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.1);
   }
 
   .vision-body {
-    font-size: 0.94rem;
+    font-size: 0.98rem;
     font-weight: 500;
-    line-height: 1.62;
-    color: var(--text-muted);
+    line-height: 1.68;
+    color: var(--text-quote);
+    text-align: justify;
   }
 
   .vision-source {
@@ -363,16 +363,15 @@ import { siteConfig } from '../../data/site';
     text-decoration: underline;
   }
 
-  .card-objetivo {
-    background-color: var(--card-objetivo-bg);
-    border: 1px solid var(--card-objetivo-border);
-    border-radius: 22px;
-    padding: 24px 30px;
+  .objetivo-header {
+    justify-content: center;
+    margin-bottom: 10px;
   }
 
   .objetivo-tag-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     margin-bottom: 8px;
   }
@@ -393,10 +392,12 @@ import { siteConfig } from '../../data/site';
   }
 
   .objetivo-body {
-    font-size: 0.91rem;
+    font-size: 0.98rem;
     font-weight: 500;
-    line-height: 1.58;
-    color: var(--text-muted);
+    line-height: 1.68;
+    color: var(--text-quote);
+    text-align: center;
+    max-width: 340px;
   }
 
   /* RESPONSIVE */

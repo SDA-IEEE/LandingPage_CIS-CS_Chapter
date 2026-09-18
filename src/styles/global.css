@@ -153,14 +153,21 @@ ul {
 .logo-group {
   display: flex;
   align-items: center;
+  gap: 18px;
   min-width: 0;
   flex-shrink: 1;
 }
 
+.logo-group a {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .logo-image {
   display: block;
-  width: min(470px, 48vw);
-  height: auto;
+  height: 38px;
+  width: auto;
   object-fit: contain;
   transition: filter 0.4s var(--transition-smooth);
 }
@@ -184,14 +191,32 @@ ul {
 }
 
 @media (max-width: 1320px) {
+  .logo-group {
+    gap: 14px;
+  }
+
   .logo-image {
-    width: min(430px, 42vw);
+    height: 34px;
   }
 }
 
 @media (max-width: 1023px) {
+  .logo-group {
+    gap: 12px;
+  }
+
   .logo-image {
-    width: min(360px, 70vw);
+    height: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo-group {
+    gap: 10px;
+  }
+
+  .logo-image {
+    height: 24px;
   }
 }
 
@@ -481,6 +506,18 @@ ul {
 @media (max-width: 1024px) {
   .hero>.container {
     padding: 0 clamp(1rem, 4vw, 2rem);
+    margin-top: 0;
+  }
+
+  .hero {
+    align-items: flex-start;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding-top: 104px;
+    padding-bottom: 60px;
   }
 }
 
@@ -644,14 +681,17 @@ ul {
   border-radius: 8px;
   background: transparent;
   color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   cursor: pointer;
   transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-secondary:hover {
   border-color: var(--white);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero-showcase {
@@ -1050,10 +1090,14 @@ ul {
 
 .project-featured {
   position: relative;
-  min-height: 80vh;
+  min-height: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 48px;
+  grid-template-areas:
+    "head"
+    "media"
+    "body";
+  gap: 24px;
   align-items: center;
   margin-bottom: 80px;
 }
@@ -1061,7 +1105,30 @@ ul {
 @media (min-width: 1024px) {
   .project-featured {
     grid-template-columns: 1.2fr 1fr;
-    min-height: 70vh;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "media head"
+      "media body";
+    gap: 48px;
+    align-items: stretch;
+    align-content: start;
+    min-height: 0;
+  }
+
+  .project-featured-content.project-head {
+    grid-area: head;
+  }
+
+  .project-featured-media {
+    grid-area: media;
+    height: 100%;
+  }
+
+  .project-featured-content.project-body {
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -1081,7 +1148,7 @@ ul {
 
 @media (min-width: 1024px) {
   .project-featured-media img {
-    height: 500px;
+    height: 100%;
   }
 }
 
@@ -1131,6 +1198,10 @@ ul {
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 24px;
+}
+
+.project-body .project-desc {
+  text-align: justify;
 }
 
 .project-techs {
@@ -1512,7 +1583,25 @@ ul {
   }
 
   .hero-content {
-    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-title,
+  .hero-subtitle {
+    text-align: left;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 
   .about-text-inner {
@@ -1529,6 +1618,71 @@ ul {
 
   .research-mobile {
     display: block !important;
+  }
+
+  .project-featured {
+    grid-template-areas:
+      "head"
+      "media"
+      "body";
+    gap: 24px;
+    min-height: 0;
+    margin-bottom: 48px;
+  }
+
+  .project-featured-media img {
+    height: 260px;
+  }
+
+  .project-head {
+    padding-bottom: 0;
+  }
+
+  .footer {
+    padding: 40px 0 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+    margin-bottom: 32px;
+  }
+
+  .footer-grid > div:first-child,
+  .footer-grid > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-desc {
+    max-width: 100%;
+  }
+
+  .footer-heading {
+    margin-bottom: 10px;
+  }
+
+  .footer-links li {
+    margin-bottom: 6px;
+  }
+
+  .footer-links a {
+    font-size: 0.83rem;
+  }
+
+  .footer-bottom {
+    padding-top: 24px;
+    gap: 12px;
+  }
+
+  .footer-copyright {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .footer-legal {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
