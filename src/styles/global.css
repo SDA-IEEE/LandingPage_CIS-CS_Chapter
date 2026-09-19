@@ -153,7 +153,7 @@ ul {
 .logo-group {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   min-width: 0;
   flex-shrink: 1;
 }
@@ -164,16 +164,49 @@ ul {
   flex-shrink: 0;
 }
 
+.logo-divider {
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.28);
+  flex-shrink: 0;
+  transition: background 0.4s var(--transition-smooth);
+}
+
+.header.scrolled .logo-divider {
+  background: rgba(15, 23, 42, 0.2);
+}
+
 .logo-image {
   display: block;
-  height: 38px;
   width: auto;
   object-fit: contain;
   transition: filter 0.4s var(--transition-smooth);
 }
 
+.logo-ieee {
+  height: 32px;
+}
+
+.logo-cs {
+  height: 36px;
+}
+
+.logo-cis {
+  height: 36px;
+}
+
+.logo-utb-desktop {
+  display: block !important;
+  height: 36px;
+}
+
+.logo-utb-mobile {
+  display: none !important;
+}
+
 .header:not(.scrolled) .logo-image {
-  filter: grayscale(1) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .nav-desktop {
@@ -195,28 +228,109 @@ ul {
     gap: 14px;
   }
 
-  .logo-image {
-    height: 34px;
+  .logo-ieee {
+    height: 29px;
+  }
+
+  .logo-cs {
+    height: 33px;
+  }
+
+  .logo-cis {
+    height: 33px;
+  }
+
+  .logo-utb-desktop {
+    height: 33px;
+  }
+
+  .logo-divider {
+    height: 20px;
   }
 }
 
 @media (max-width: 1023px) {
   .logo-group {
-    gap: 12px;
+    gap: 10px;
   }
 
-  .logo-image {
-    height: 28px;
+  .logo-ieee {
+    height: 26px;
+  }
+
+  .logo-cs {
+    height: 30px;
+  }
+
+  .logo-cis {
+    height: 30px;
+  }
+
+  .logo-utb-desktop {
+    height: 30px;
+  }
+
+  .logo-divider {
+    height: 18px;
   }
 }
 
 @media (max-width: 767px) {
-  .logo-group {
-    gap: 10px;
+  .logo-utb-desktop {
+    display: none !important;
   }
 
-  .logo-image {
+  .logo-utb-mobile {
+    display: block !important;
+    height: 42px !important;
+  }
+
+  .logo-ieee {
     height: 24px;
+  }
+
+  .logo-cs {
+    height: 27px;
+  }
+
+  .logo-cis {
+    height: 27px;
+  }
+
+  .logo-group {
+    gap: 8px;
+    max-width: calc(100% - 44px);
+  }
+
+  .logo-divider {
+    height: 18px;
+  }
+}
+
+@media (max-width: 440px) {
+  .logo-ieee {
+    height: 22px;
+  }
+
+  .logo-cs {
+    height: 25px;
+  }
+
+  .logo-cis {
+    height: 25px;
+  }
+
+  .logo-utb-mobile {
+    height: 38px !important;
+  }
+
+  .logo-group {
+    gap: 6px;
+    max-width: calc(100% - 42px);
+  }
+
+  .logo-divider {
+    height: 16px;
   }
 }
 
@@ -299,6 +413,10 @@ ul {
   border: none;
   cursor: pointer;
   padding: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+  position: relative;
+  z-index: 10;
 }
 
 @media (min-width: 1024px) {

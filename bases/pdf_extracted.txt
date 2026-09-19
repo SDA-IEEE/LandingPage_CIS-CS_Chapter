@@ -1,0 +1,1135 @@
+=== Page 1 ===
+IEEE Brand Identit y
+G U I D E L I N E S
+How to use the IEEE Design System and Sub-Brand Architecture
+These guidelines provide an overview of who we are and how
+we represent IEEE to the world. They include best practices that
+all employees, volunteers, and external partners must follow
+when representing IEEE in any capacity.
+Q1 2025 | brand-experience.ieee.org | 1
+=== Page 2 ===
+1.0 IEEE Brand Identity Guidelines
+Welcome
+1.2 IEEE Master Brand
+IEEE Master Brand Variations
+IEEE Tagline Usage
+I-E-E-E Text Usage
+Minimum Size
+Clear Space
+Limited Space
+With Other Logos & Identifiers
+This document is interactive. Use the navigation and links provided to easily explore
+Background Control
+each section and find information about the brand.
+Incorrect Usage
+1.3 Font Family
+1.4 Color Palette
+IEEE Brand Identity ............ 3 IEEE Sub-Brand Architecture ... 20
+1.5 Imagery
+Explains how to use the IEEE Design Defines the relationship and outlines best
+1.6 IEEE Wedge Element
+System—the IEEE Master Brand, color practices for corporate, in-name, prefix,
+palette, fonts, the IEEE wedge, and images— geographic, and individual branding.
+1.7 IEEE Master Brand Placement
+to build brand value. Use these guidelines to create and
+Print Collateral
+maintain a unified IEEE family of brands.
+Large Format
+Digital Collateral
+Video
+Social Media
+1.8 Gallery
+Print Collateral
+Digital Collateral Need help?
+The IEEE Brand team
+2.0 IEEE Sub-Brand Architecture is here to help you
+understand the brand
+3.0 File Format Reference
+and create successful
+communications.
+4.0 Contact and Resources
+Q1 2025 | brand-experience.ieee.org | 2
+=== Page 3 ===
+Our Mission Who We Are Brand Elements
+IEEE’s core purpose is to foster IEEE is the world’s largest technical professional The IEEE Brand is much more than a logo. It is expressed through every point of
+technological innovation and excellence organization and is a public charity dedicated to interaction a person has with IEEE, from the brochure members read before they join
+for the benefit of humanity. advancing technology for the benefit of humanity. to the conversations with volunteers or staff at an IEEE conference.
+A recognized global leader in fostering world-
+Consistent visual association of the IEEE Brand increases recognition and trust.
+Our Vision
+changing technologies, IEEE has been helping
+Using the IEEE Master Brand and other design elements appropriately sends a clear
+IEEE will be essential to the global drive technology forward for over 140 years.
+message: You are connected with advancing technology for the benefit of humanity.
+technical community and to technical
+Brand Voice The brand identity guidelines and the IEEE design system provide a coherent framework
+professionals everywhere, and
+for communications:
+be universally recognized for the IEEE represents many different people and
+contributions of technology and of ideas, all striving for the same goal of advancing
+technical professionals in improving technology for humanity. Our messaging
+global conditions. embodies our vision of improving global
+conditions through the contributions of technology
+Our Path Forward and technical professionals. Formata Adobe Caslon Pro
+Calibri
+As outlined in our strategic plan, IEEE will
+All communications should reflect IEEE as
+foster a collaborative environment that is Open Sans
+a respected source for global innovation. Cambria
+open, inclusive, and free of bias and will
+View specific content and copy guidelines.
+continue to sustain the strength, reach,
+and vitality of our organization for future
+generations.
+WELCOME
+Q1 2025 | brand-experience.ieee.org | 3
+=== Page 4 ===
+IEEE Master Brand IEEE Master Brand without tagline IEEE Master Brand with Tagline
+Variations
+The IEEE Master Brand logo must be used on
+all IEEE print and digital experiences.
+Entities within the corporate branding model
+do not have their own unique logo and
+display the IEEE Master Brand. IEEE sub-
+brands with their own logo or wordmark must
+still use the IEEE Master Brand, but it can be
+less prominent.
+Using the IEEE Master Brand by entities other
+than IEEE and its organizational units (OU)
+is prohibited without the express written
+permission of IEEE. An IEEE OU wishing to
+partner with a non-IEEE entity must ensure The IEEE Master Brand consists of the IEEE diamond-shaped icon (the “kite”) The IEEE Master Brand with the tagline is recommended for use on all
+that appropriate wording regarding the followed by the letters I-E-E-E. corporate-level materials.
+proper or prohibited use of the IEEE Master
+Brand and/or logo is included in any formal
+agreement(s) between the parties.
+The IEEE “kite”
+Color Variations
+The IEEE “kite” can only be used on its own for membership grade indicators (e.g., pins, digital badges, etc.).
+The IEEE Master Brand can only
+Direct all questions regarding individual uses cases to the IEEE Brand team.
+be represented in three colors:
+IEEE blue, black, or white.
+IEEE blue must be used in all corporate-
+level communications. Black or white logo
+options are recommended on all sub-brand
+applications and/or when IEEE blue cannot
+be used.
+NO ✘ NO ✘ NO ✘ NO ✘
+Print: Pantone 3015 C or process color
+equivalent should be used. Do NOT use the kite symbol on its own. The kite Do NOT fill in the inside of the kite symbol. Do NOT use any parts of the kite symbol or Do NOT place another graphic or icon inside
+symbol and letters I-E-E-E MUST stay together. IEEE Master Brand as separate icon elements. of the kite symbol.
+Digital: RGB and hexadecimal (web-safe)
+equivalents of IEEE blue should be used for
+presentations, websites, and other digital
+applications.
+Q1 2025 | brand-experience.ieee.org | 4
+=== Page 5 ===
+IEEE Tagline Usage I-E-E-E Text Usage
+The IEEE tagline, Advancing Technology for Humanity, was created in 2009 to commemorate the Follow the guidelines below to ensure consistent and proper representation of the IEEE name across
+125th anniversary of the organization. These four words reflect the IEEE mission and vision, positioning all materials.
+statement, and brand promise. The IEEE tagline can not be altered in any way.
+colon
+IEEE is the world’s largest technical professional organization and is a public charity
+IEEE: Advancing Technology for Humanity®
+Register dedicated to advancing technological innovation and excellence for the benefit of humanity.
+trademark
+symbol
+When used in a sentence, title, or name, the letters “IEEE” should always appear in uppercase.
+The IEEE Master Brand should appear separately or elsewhere on the page.
+YES ✔ YES ✔
+Approved IEEE Master Brand with The only approved exception (shown above) is as text, such as when the tagline
+tagline variation. is used in an email signature. A colon must separate the “I-E-E-E” from the tagline,
+“Advancing Technology for Humanity.”
+As the philanthropic partner of IEEE, the IEEE Foundation translates the values
+of our members and donors into social impact.
+Incorrect Usage
+The letters I-E-E-E can be shown in any of the IEEE-approved fonts and should follow the same font as the name or title.
+Advancing
+Advancing Technology for Technology
+Humanity and all Mankind for Humanity IEEE Xplore® Digital Library is a research database for discovery and access to journal articles,
+conference proceedings, technical standards, and related materials on computer science,
+NO ✘ NO ✘ NO ✘ electrical engineering and electronics, and allied fields.
+Do NOT alter the IEEE tagline in any Do NOT use the IEEE tagline when Do NOT alter or change the prescribed
+way. It can not be applied to any sub- another logo or brand mark with tagline size and position of the IEEE tagline IEEE must always be used in the title of an IEEE product, service, publication, or platform, such as IEEE Collabratec®,
+brand logo, nor can a variation of this exists. In this case, the IEEE Master Brand when using the IEEE Master Brand IEEE Xplore® digital library, or IEEE Photonics Journal.
+tagline be used. without tagline should be used instead. with tagline variation.
+The IEEE KIET Student Branch (IEEE KIET SB) is the local institute level part of the
+IEEE Uttar Pradesh Section. It consists of IEEE professionals and Student members who
+share technical interests and geographical proximity.
+Advancing Technology for Humanity
+NO ✘ NO ✘ When using copy such as “IEEE XXXX Section or IEEE XXXX Student Branch, only the letters “IEEE” should be used
+Do NOT use the IEEE tagline treatment Do NOT apply the tagline to any (not the IEEE Master Brand).
+from the IEEE Master Brand without the sub-brand or external logo or mark.
+kite and I-E-E-E.
+Q1 2025 | brand-experience.ieee.org | 5
+=== Page 6 ===
+Minimum Size & Clear Space Limited Space
+The minimum size requirement ensures that the IEEE Master Brand is legible and that the kite does When there is limited or constrained space and the minimum size and/or clear space cannot be met,
+not become illegible. the following exceptions are permitted:
+Clear space ensures that the type treatment does not compete with other images, graphics, and text.
+1 The IEEE Master Brand must appear in web ads posted on external sites; it is not required
+Do not place any text, images, or graphics inside the clear space.
+for ads posted on internal IEEE-branded sites.
+Print: Equal to or greater than “1x” the height See IEEE Digital Guidelines for minimum size and 2 On digital ads where one measurement is at or smaller than 60 px, the IEEE Master Brand
+of the IEEE Master Brand on all sides. clear space requirements in web application. may be reduced in size.
+Digital & Promotional Items: Equal to or 3 On promotional giveaways, the IEEE Master Brand should be placed as large as possible
+greater than “½x” the height of the IEEE Master within the given space. The kite should not fill in.
+Brand on all sides.
+Minimum Size Clear Space
+2
+1x
+½x
+PRINT
+.875 inches wide (22.225 millimeters)
+1
+DIGITAL
+100 pixels wide
+2
+3
+Q1 2025 | brand-experience.ieee.org | 6
+=== Page 7 ===
+IEEE Master Brand Lock-Up with Tagline Lock-Up without Tagline 1x
+½x
+with Logos
+& Identifiers
+The IEEE Master Brand must have equal
+or greater prominence to other identifiers
+and logos while adhering to minimum size
+and clear space requirements. Do NOT
+manipulate the IEEE Master Brand in
+any way when creating a lockup with
+another logo. Lock-Up with External Partner Text Treatment
+A vertical or horizontal rule should be used to
+delineate between the IEEE Master Brand and
+logo/identifier.
+The clear space should be equal to or greater
+than “½x” for digital use and “1x” for print, on
+both sides of the vertical or horizontal rule.
+Exception: The equal or greater prominence
+rule does not apply to the headers of IEEE
+sub-sites, where the site identifier (or logo)
+must be larger than the IEEE Master Brand Anniversary Marks
+for navigation purposes. See IEEE Digital
+Guidelines for site identifier instructions. Several considerations must be made when creating or using a special anniversary mark, and all marks must be approved by the Brand team.
+At the start of any such projects, submit a Brand Inquiry.
+Q1 2025 | brand-experience.ieee.org | 7
+=== Page 8 ===
+Background Control
+Maintain maximum visibility by keeping a high contrast between the background and IEEE Master Brand. Use the blue or black IEEE Master Brand on a light background. Use the white IEEE Master Brand
+on a dark background. When placing the IEEE Master Brand over an image, adjust the position of the image or retouch the area as needed to maintain maximum visibility.
+YES ✔ NO ✘ YES ✔ YES ✔ NO ✘ NO ✘
+Blue IEEE Master Brand on a White IEEE Master Brand on light back- Black IEEE Master Brand on a White IEEE Master Brand Black IEEE Master Brand on IEEE Master Brand on
+light background. ground with insufficient contrast. light background. on a dark background. a dark background. a complicated background.
+Incorrect Usage
+IEEE Master Brand configurations and usage outside of established specifications and guidelines damage the IEEE Brand and can reduce its value over time. Modifications and/or distortions are strictly prohibited.
+The IEEE Master Brand can only be reproduced in IEEE blue, black, or white.
+XXXX Section or Event
+NO ✘ NO ✘ NO ✘ NO ✘ NO ✘ NO ✘
+Do NOT rearrange, reconfigure, or Do NOT distort, stretch, or manipulate. Do NOT rotate or place at an angle. Do NOT change colors. Do NOT use graphic effects or outlines. Do NOT add lines above or
+change the size. below or put in a container shape.
+NO ✘ NO ✘ NO ✘ NO ✘ NO ✘
+Watermarks are only permitted on video A pattern is only permitted on a Do NOT crop out the kite and use the Do NOT fill in the inside of the kite symbol . Do NOT use the kite symbol on it’s own.
+applications. All other uses are prohibited. step-and-repeat banner. All other uses letters “I-E-E-E” on their own. The kite symbol and letters I-E-E-E MUST
+are prohibited. stay together.
+Q1 2025 | brand-experience.ieee.org | 8
+=== Page 9 ===
+Font Family
+The IEEE font family has been carefully chosen for ease of communication, legibility, flexibility, and adaptability with the other design elements.
+Primary Fonts Secondary Fonts
+Formata Calibri Open Sans
+Adobe Caslon Pro
+Use predominantly on all print Use this font on screen-based Use is permissible for screen-based Use sparingly, only for headlines Use sparingly for letters.
+applications. This typeface is available applications and Microsoft Word applications, including websites, or titles. Cambria
+in many weights and styles that are documents. Open Sans can be web ads, email, and digital slide
+essential to create distinction across used as an alternative because it is presentations.
+all communications. compatible for web and digital use.
+The professional The professional The professional The professional
+home for the engineering home for the engineering home for the engineering
+home for the engineering
+The professional
+and technology and technology and technology
+and technology
+home for the engineering
+community worldwide. community worldwide. community worldwide.
+community worldwide. and technology
+community worldwide.
+Formata Regular Calibri Regular Open Sans Regular Adobe Caslon Pro Regular
+Cambria Regular
+World’s largest World’s largest World’s largest World’s largest
+World’s largest
+technical professional technical professional technical professional technical professional
+technical professional
+organization organization organization organization
+organization
+Need help?
+The IEEE Brand team
+Formata Medium Italic Calibri Bold Open Sans Bold Adobe Caslon Pro Bold Cambria Bold
+is here help you
+understand the brand
+to create successful
+communications.
+Reminder:
+Purchase and download
+Formata and Adobe Caslon Pro
+for proper licensing use.
+Q1 2025 | brand-experience.ieee.org | 9
+=== Page 10 ===
+Color Palette
+IEEE blue (PMS 3015 C) was chosen for its IEEE 100% Pantone 3015C Cyan 100% Pantone Cyan Teal 100% Pantone 320C Dark 100% Pantone 322C
+printing reliability and must be used on all Blue CMYK 100, 35, 3, 21 CMYK 100, 0, 0, 0 CMYK 96, 0, 31, 2 Teal CMYK 97, 9, 39, 34
+75% 75% 75% 75%
+corporate-wide communications. This color RGB 0, 98, 155 RGB 0, 181, 226 RGB 0, 156, 166 RGB 0, 115, 119
+can be used as a background color, for type 50% HEX 00629B 50% HEX 00B5E2 50% HEX 009CA6 50% HEX 007377
+emphasis, or for shape definition. RAL 5007 RAL 5024 RAL 5018 RAL 5021
+25% 25% 25% 25%
+The full color palette consists of a range of
+bright and dark colors, developed to bring Dark 100% Green 100% Olive 100% Bright 100%
+Pantone 3425C Pantone 348C Pantone 370C Pantone 368C
+the IEEE’s personality to life as a vibrant and Green Green Green
+CMYK 93, 13, 85, 44 CMYK 96, 2,100,12 CMYK 62, 1, 100, 25 CMYK 65, 0, 100, 0
+forward-thinking organization. 75% 75% 75% 75%
+RGB 0, 99, 65 RGB 0, 132, 61 RGB 101, 141, 27 RGB 120, 190, 32
+• Tinted colors are allowed but should 50% HEX 006341 50% HEX 00843D 50% HEX 658D1B 50% HEX 78BE20
+RAL 6016 RAL 6037 RAL 6018 RAL 6018
+not be lower than 10%. When printing,
+25% 25% 25% 25%
+make sure the tinted color is visible.
+• T o ensure legibility, always check that 100% 100% 100% 100%
+Yellow Pantone 109C Dark Pantone 123C Orange Pantone 137C Dark Pantone 158C
+the background color provides sufficient CMYK 0, 9, 100, 0 Yellow CMYK 0, 19, 89, 0 CMYK 0, 41, 100, 0 Orange CMYK 0, 62, 95, 0
+75% 75% 75% 75%
+contrast. The recommended font color RGB 255, 209, 0 RGB 255, 199, 44 RGB 255, 163, 0 RGB 232, 119, 34
+is indicated in the color name label 50% HEX FFD100 50% HEX FFC72C 50% HEX FFA300 50% HEX E87722
+and adheres to WCAG AA contrast RAL 1018 RAL 1018 RAL 1003 RAL 2011
+25% 25% 25% 25%
+ratio standards.
+• F or web content, the WebAIM Contrast 100% 100% 100% 100%
+Red Pantone 200C Dark Pantone 208C Purple Pantone 254C Dark Pantone 2612C
+Checker is a free tool for checking color CMYK 3, 100, 0, 12 Red CMYK 15, 100, 37, 45 CMYK 48, 96, 0, 0 Purple CMYK 67, 100, 0, 5
+75% 75% 75% 75%
+contrast.
+RGB 186, 12, 47 RGB 134, 32, 65 RGB 152, 29, 151 RGB 119, 37, 131
+50% HEX BA0C2F 50% HEX 861F41 50% HEX 981D97 50% HEX 772583
+Use Pantone (PMS) Spot colors when printing with RAL 3027 RAL 4002 RAL 4006 RAL 4006
+25% 25% 25% 25%
+more than four colors or fewer than three colors.
+Use CMYK colors when 4-color printing is available.
+100% 100% 100% 100%
+Use RGB colors for screen-based applications, Dark Pantone 295C Black Pantone Black 6 C Gray Pantone Cool Gray 9C White
+CMYK 0, 0, 0, 0
+presentations, HTML emails, and television monitors. Blue 75% CMYK 100, 69, 8, 54 75% CMYK 0, 0, 0, 100 75% CMYK 30, 22, 17, 57 RGB 255, 255, 255
+RGB 0, 40, 85 RGB 0, 0, 0 RGB 117, 120, 123
+Use Hexadecimal colors when creating websites and any HEX FFFFFF
+related applications, such as banner advertisements. 50% HEX 002855 50% HEX 000000 50% HEX 75787B
+RAL 9016
+RAL 5026 RAL 9017 RAL 9023
+Use RAL colors for the European equivalent of 25% 25% 25%
+Pantone (PMS) colors for applications in signage and
+facility installations.
+Colors on-screen may vary.
+Q1 2025 | brand-experience.ieee.org | 10
+=== Page 11 ===
+Imagery
+IEEE has six image themes or pillars
+that represent the IEEE Brand: people,
+technology, knowledge, connections,
+global, and history, as well as IEEE
+members and areas of expertise.
+Whenever possible, use original photographs
+that you own the copyright for. When
+original photographs are not available, stock
+photography and abstract or vector artwork
+are acceptable as long as they follow the
+IEEE Imagery Guidelines. Using images
+without permission, proper attribution, and/or
+appropriate license (i.e., taken from a website
+or Google search results) is prohibited.
+When selecting images:
+• H ighlight diversity in the IEEE marketplace
+through age, gender, race, dress, country of
+origin, and job responsibility.
+• L ook for opportunities to tell a story and help
+the audience engage with the message.
+• K eep in mind the IEEE Diversity Statement
+when looking at the overall feel of selected
+images.
+• I mages should be cropped to eliminate
+unnecessary detail and clarify the
+core message.
+• F ull-color images should be bright and
+energetic with unique perspectives
+and angles.
+Stock photography websites where royalty-free images can be sourced:
+IEEE is not responsible if you download and use an image without the appropriate license or Paid stock collections: Free stock collections:
+copyright permission. IEEE’s current policy is that generative AI images may not be used for Adobe Stock Pexels
+external, commercial purposes. iStock Pixabay
+Shutterstock Unsplash
+Q1 2025 | brand-experience.ieee.org | 11
+=== Page 12 ===
+Wedge Element
+WITH IEEE
+IEEE
+You Can Achieve Great Things.
+Based on the graphic style of the IEEE Engage
+Master Brand kite emblem, the wedge
+element creates a unique and dynamic
+A unique program ELEVATE your BROADEN your network
+designed to support business profile with global experts
+communications system. The wedge should and highlight Membership in this program By actively participating in the IEEE 3
+small companies, gives your business the opportunity Corporate Engagement Program
+be incorporated in all materials, but it should entrepreneurs, startups, t w o h g ic a h in w g i r ll e h a e te lp r p a u tt b ra li c c t e b x u p s o in su e r s e s , y w o il u l r h c a o ve m t p h a e n y o p a p n o d r t y u o n u it r y e t m o p n l e o t y w e o e r s k ,
+be done so sparingly. a gr n e d a t i e n r c I u E b E a E t o w r o s r i l n d . the o ac p c p e o s r s t u to n it a ie n s e , t fi w n o d r k ta o le f n c t o , m an p d a n ga ie in s b w r i a th in l s ik to e r - m m , i n a d n e d d p c o o s m sib p l a y n p ie a s r tn an e d r Thank You for Your Membership!
+(large and small). experts around the globe.
+The wedge must be at an angle of either 45° INCREASE your PROMOTE your business ENCOURAGE volunteerism You are a Member of the
+technical knowledge among young talent among employees [Princeton/Central Jersey] Section.
+or 135°. The dimensions of the wedge should IEEE offers a wide variety of Attract the next generation to your IEEE supports a number of different To the right is your membership card. You can
+increase or decrease in proportion to the size e A th L s r e e a a e r m n o i e f n m t g h b c e o e se u r, r y c s o o e u u p r c r s o a e g n p r a s ro m e g le s r . c a t m u s p t o to b c c o h u n o si f o n e s e r e e s n s to c w e s i s t p . h o A n t s h s e a o r s m p e e o it m h n e s b o r e r o s r, u h y r ip o IE u o E f c E a I E n E E v g y o o lo l u u b , n e y t . o e Y u e o r r u c p r o r m o m g e p r m a a m n b y s e , r a a s r n h o d ip u n y p o d r u o t r v h i e d es a C l o so n a n c e c c e t s s & a P d a ig r it t a i l c v ip er a s t io e n in your IEEE profile. Your [ 1 m 2 e 3 m 4 b 5 er 6 n 7 u 8 m 9 b ] er is
+offer to your employees and help Rising Stars conference or our IEEE employees a chance to participate Complete your technical and personal profile
+of the page layout. them grow their expertise. Young Professionals Congress. Gold in activities and initiatives in your to personalize your member experience.
+Level Sponsorship is also available community and target markets. Be certain your education and address profiles
+to you for the IEEE-Eta Kappa Nu are up to date. ieee.org/profile
+Student Leadership Conference.
+The wedge can be used in different ways:
+Make the Most of Your Membership.
+Other program benefits to help elevate your business
+1 as a design accent • IEEE product discounts 1 L G o et c a in l v o IE lv E e E d w Se ith c t c i o o l n le agues P Bu ro ild f e a s p s r i o o f n es a s l i o N na e l t n w e o tw rk or k M IEE e E m m b e e m r b D er i s s c e o n u jo n y t r s e duced
+• Exclusive 10% discount to enroll in the IEEE/Rutgers Mini-MBA for Engineers and Technical Professionals. at your local IEEE Section, from the wealth of diversity, rates on IEEE eBooks, journals,
+Company Cohort option available: Enroll 10 learners and receive one for free. who can help connect you to expertise, and connections articles, conferences, standards,
+2 3 t a o s a a n b c a h c o k r g t r h o e u n p d a g p e a n as e l a footer • • • E C D Fo x u is c r s m c l t u o o a s u m i l v n R i e t z s e e 1 c d A 0 o v % C g a n o i l i d m a ti b i o s p l c n e a o n f a u o y s n r C t a I E n o to E h I E E o e E r n X t E r p o o l C p l o l o t r i i e r n o p ® n t o h P r a e r a v o t a I e d E i u l E E a c E n b t g L l F e a e i . r g a s e d t m i T n i e m g n T e t e M S ch u e n b m i s c c b a r e l i b r T e e r a s m fo s r t t r h ai e n i fi n r g st . year Incl C u m U d o m e S e s m D t e s m o b f $ o f e 1 b u a r 5 e r n s , r h 0 n I s E i h 0 u p E i 0 a s p E l . . p y I W E o r a o u E t f r c E e h g s .t s o l v i i a o v l e n s . a s l t s r e w a h m o i n c g a n c o a v d e v r a a n g c e e T T fo a e u k c e n h d a n d w i v c i a t a h n l i t n a P g I u E e E b o E l f . i c d a is t c i o o u n n s ts S p i I I n E E o e s E E c r u E s i E e r o a m t n n y C a e c o m l e m s n ) e e b , f m r a e e v n r b i r s c d e e e r r n s e m s h c c ( o e e i s p r i u s v e s c e , . h c d o a e u s e r p se ly s , 2
+from IEEE events and IEEE and access to cutting-edge discounted access to technical
+conferences and learn from journals, magazines, and seminars, IEEE conferences,
+4 as a wedge box that holds text or the Contact IEEE-CorpEngage@ieee.org to learn more. t t h o o d u ay s ’ a s n t d e s c h o n f o p lo ro g g ie ra s, m a s n d a b m ou o t r e. other publications. and conference papers.
+IEEE Master Brand, keeping in mind
+2 Learn about these and all IEEE member benefits at ieee.org/benefits
+minimum size and clear space
+5 within the frame of an image to hold text
+1
+5
+IEEE Kite IEEE Wedge
+2
+4
+Branded design elements, as well as various IEEE wedge options, are available for download at brand-experience.ieee.org.
+Q1 2025 | brand-experience.ieee.org | 12
+=== Page 13 ===
+Notebook Postcard Promotional Item Flyer
+IEEE Master Brand Placement
+Print Collateral
+Follow these guidelines for placing the IEEE One Platform.
+Master Brand correctly and consistently. Focused Results.
+IEEE DiscoveryPoint for Communications is an all-in-one platform built for engineers in industry to design
+and develop technology solutions. Put your trust in the platform that brings subject-focused information
+Multi-page Files together from hundreds of vetted sources. Quickly find the technical information you need and extract key
+insights from your results with machine learning.
+Easily find solutions to real-world engineering challenges in communications
+Brochures • Books • Publications Practicing engineers face complex projects that require fast problem-solving to meet market demands. The
+information needed is typically scattered across various sources, and finding relevant and trustworthy results
+is often frustrating and time-consuming.
+• T he IEEE Master Brand may be placed in IEEE DiscoveryPoint supports practicing engineers by providing:
+the bottom right corner of the cover or
+Engineering
+front page. On inside pages, it may also Trusted Sources All-in-One Search Focused Communications Practical Industry Data
+Content
+be positioned in the bottom right corner, NOTEBOOK F q i u n e d s t a io n n sw s e b r y s r t e o f e te re c n h c n i i n c g a l A se v a o r i c d h t i i n m g e m w u a lt s ip te le d E in a f s o i r ly m fi a n ti d o n p r b o y je s c e t- a s r p ch ec in ifi g c D re i a s l c - o w v o e r r ld s o d l e u s ti i o gn n s for
+relevant content from databases and find all the expertly curated content challenges with resources
+multiple high-quality information you need— that covers every aspect tailored to support
+provided there is sufficient space. sources, including full-text cutting-edge research, of communications engineers in industry.
+IEEE publications. industry standards, parts & technology, including
+components, and more—in trending topics such as 5G,
+a single platform. edge computing, big data,
+and more.
+Single page or Double-sided
+Print Ads • Postcards • Flyers • Posters
+Cube Table Tent Brochure Print Ad
+Table Tents • Stationery
+• T he IEEE Master Brand is preferred in the
+top or bottom right corner of the front page
+and, if space permits, on the back page.
+Limited Space
+Promotional items
+• T he IEEE Master Brand can be as large as
+possible within the given imprint area.
+Q1 2025 | brand-experience.ieee.org | 13
+=== Page 14 ===
+IEEE Master Brand Placement
+Table Top Banner Exhibit Booth Display Pull Up Banner
+Large Format
+Follow these guidelines for placing the IEEE
+Master Brand correctly and consistently.
+Exhibit Booth Displays • Pull Up
+Banners • Table Top Banners
+• T he IEEE Master Brand may be placed
+in the top left or right corner for pull up
+banners.
+• F or table-top banners, the IEEE Master
+Brand may be positioned in the top or
+bottom right corner.
+• F or exhibit displays, the IEEE Master Brand
+should appear in a prominent location.
+Step & Repeat Banner Exhibit Booth Display
+Step & Repeat Banners
+MOCKUP
+• T he IEEE Master Brand may be used in a
+pattern on a step-and-repeat banner, but it
+IEEE at UKSG 2024
+must always maintain 100% opacity.
+Copyright © 2023 GES. All rights reserved.
+Need help?
+The IEEE Brand team
+is here to help you
+understand the brand
+and create successful
+communications.
+Reminder:
+To be brand compliant,
+adhere to minimum size,
+clear space, background control,
+and usage guidelines.
+Q1 2025 | brand-experience.ieee.org | 14
+=== Page 15 ===
+IEEE Master Brand Placement
+Website Slide Presentation
+Digital Collateral
+Follow these guidelines for placing the IEEE
+Master Brand correctly and consistently.
+IEEE Websites • HTML Emails
+Online Newsletters
+• T he IEEE Master Brand may be placed in the
+top right corner of HTML emails and online
+newsletters and can be repeated in the footer.
+For website usage, please refer to the
+digital guidelines.
+Digital Banners • Digital Ads
+Social Media Posts • Virtual
+Backgrounds • Infographics
+• T he IEEE Master Brand may be placed in the
+Infographic Digital Ad Video Virtual Background
+bottom right position. For areas with limited
+space, please refer to the digital guidelines.
+PowerPoint and Google Slide
+Presentations
+• T he IEEE Master Brand may be placed in
+the bottom right corner of every slide.
+Templates are available—view them here.
+Videos
+• T he IEEE Master Brand may appear in the
+opening and closing frames, either locked up
+with another logo or standalone in the top right
+corner. It can also be used as a watermark in
+the top right throughout the video.
+Social Media
+• T he IEEE Master Brand should be placed
+in a preferred position and scaled to be as
+large as possible within the available space.
+Q1 2025 | brand-experience.ieee.org | 15
+=== Page 16 ===
+IEEE Master Brand Placement
+1 2
+Video
+1
+1 The IEEE Master Brand must
+appear in the beginning and
+ending frames of videos. It does not
+have to appear for the entire duration
+of a video.
+2 If a sub-brand or other logo is present,
+use a vertical line to separate the
+sub-brand or logo from the IEEE
+Master Brand.
+3 The IEEE Master Brand may be used
+as a ghosted/translucent watermark
+for video applications only. 2
+The watermark should never have 3 4
+an opacity lower than 25%.
+4 If the IEEE.tv logo is present, the
+IEEE Master Brand can appear at
+the top right.
+5 Consider using a branded ‘wedge’
+accent color bar along the bottom of 4
+the screen with the IEEE Master Brand
+for the opening and closing frames. 6
+This can be done in IEEE blue or any
+IEEE color from the approved color
+palette.
+Need help?
+6 Make sure to allow proper clear space
+The IEEE Brand team
+for a video control bar that may appear
+is here to help you
+below the watermark during playback.
+understand the brand
+and create successful
+communications.
+Reminder:
+To be brand compliant,
+5 adhere to minimum size,
+clear space, background control,
+and usage guidelines.
+Q1 2025 | brand-experience.ieee.org | 16
+=== Page 17 ===
+IEEE Master Brand Placement
+Social Media
+IEEE encourages the use of social media to
+engage our target audiences. When using
+an IEEE brand on social media, ensure
+the following:
+• M ake sure that the IEEE Master Brand,
+sub-brand logos, and/or tagline (if used)
+are legible when resized for mobile
+optimization.
+• M ake sure that any Bio/About information
+for IEEE is consistent across all platforms.
+Be sure to review the IEEE Social Media
+Policy and Guidelines, which pertain to
+any IEEE employees, volunteers, vendors,
+consultants, and/or contract workers when
+using social media for, on behalf of, or
+when it could be perceived to be on behalf
+of or affiliated with IEEE.
+Additional social media resources are
+Social Media Post Examples
+available, including toolkits, training
+materials, and profile registry.
+Follow IEEE on social:
+Q1 2025 | brand-experience.ieee.org | 17
+=== Page 18 ===
+We help when
+disaster strikes.
+Our emergency relief team of IEEE volunteers and IIEEEEEE || RRuuttggeerrss OOnnlliinnee MMiinnii--MMBBAA ffoorr EEnnggiinneeeerrss
+MOVE vehicles are equipped and ready to assist
+disaster victims by providing short-term
+communications and power solutions.
+Learn more at move.ieee.org
+Who should participate in this program?
+IEEE | Rutgers Online Mini-MBA for Engineers
+IEEE subject matter experts partnered with Rutgers Business
+School to develop a Mini-MBA program specifically for EXPERIENCE
+engineers and technical professionals. • Manager or director
+One Platform. I l f e E o a E r r E g n r e | o r R w s u t b h tg r i e i d n r g t s o e O m th n e a lin n g e a a g p M e m b in e i e - t M n w t e B r e o A n l e f o b s r . u I E s t i n n is g e i t s n h s e e e a o n rs n d l w y e a n o s g n c i l n i r n e e e a e t r M e in d i g n t i o - a M s h B t e h A l e p y p c r p o o r r g e p r p a o a m ra re t e • • • I T M n e d i a d i m v -c id a l u e re a a e l d r c e o r ntributor
+specifically designed for engineers and technical professionals.
+Focused Results. KNOWLEDGE / PREVIOUS EXPERIENCE
+WHAT IS A MINI-MBA? • Generally 5 to 15 years of experience
+A Mini-MBA is a training regimen focused on the fundamentals of business • Previous experience largely focused on the technology
+IEEE DiscoveryPoint for Communications is an all-in-one platform built for engineers in industry to design m pre an p a a g ri e n m g l e e n a t r . n T e h rs e f p o r r o a g r f a o m un p d r a o t v io id n e a s l u a n n d i e n r t s ro ta d n u d c i t n o g ry o i f n t s r i a g d h i t t io in n to al b M u B si A n ess, s b i u d s e i , n n e o ss w o l p o e o r k a in ti g o n fo s r a broader understanding of
+and develop technology solutions. Put your trust in the platform that brings subject-focused information content such as accounting, business communication, business ethics, finance,
+together from hundreds of vetted sources. Quickly find the technical information you need and extract key managerial economics, management, entrepreneurship, marketing, operations,
+insights from your results with machine learning. and strategic management but in shorter introductory modules.
+Easily find solutions to real-world engineering challenges in communications
+Practicing engineers face complex projects that require fast problem-solving to meet market demands. The Contact us to learn more about this program:
+information needed is typically scattered across various sources, and finding relevant and trustworthy results Mini-MBA@ieee.org | innovate.ieee.org/rutgers-mini-mba-for-engineers
+is often frustrating and time-consuming. 2 3
+IEEE DiscoveryPoint supports practicing engineers by providing: IEEE | Rutgers Online
+Mini-MBA for Engineers
+Trusted Sources All-in-One Search Focused Communications Practical Industry Data Empower your workforce
+Content
+Find answers to technical Avoid time wasted Easily find project-specific Discover solutions for with trusted executive education.
+questions by referencing searching multiple information by searching real-world design
+relevant content from databases and find all the expertly curated content challenges with resources
+multiple high-quality information you need— that covers every aspect tailored to support
+sources, including full-text cutting-edge research, of communications engineers in industry.
+IEEE publications. industry standards, parts & technology, including
+components, and more—in trending topics such as 5G,
+a single platform. edge computing, big data,
+and more.
+Print Collateral
+GALLERY
+The IEEE brand works best when applied thoughtfully and cohesively. When creating print collateral,
+make sure all font weights are readable and follow the background control requirements.
+Q1 2025 | brand-experience.ieee.org | 18
+=== Page 19 ===
+Insert additional text about
+funded project in this
+Insert support information
+or url here.
+CALL FOR PROPOSALS
+The proposal title goes in here.
+Focus title goes in the space.
+DEADLINE: JUNE 24, 2024
+LEARN MORE
+PARTNER PARTNER
+LOGO LOGO
+Digital Collateral
+GALLERY
+When creating digital collateral, make sure all web accessibility standards are met
+and follow IEEE social media guidelines where appropriate.
+Q1 2025 | brand-experience.ieee.org | 19
+=== Page 20 ===
+1.0 IEEE Brand Identity Guidelines
+2.0 IEEE Sub-Brand Architecture
+Overview
+OVERVIEW
+2.1 Architecture and Alignment Groups
+The IEEE Brand relies on the structure of its brand architecture to:
+Corporate Branding
+IEEE Sub-Brand • B uild a solid foundation for the IEEE family of brands
+Endorsed Branding
+• D efine the relationships of tangible assets
+In-Name Endorsement Architecture Standards • P romote consistent visual relationships throughout IEEE
+Prefix Endorsement • P rotect the equity of IEEE and its brand identity
+Geographic Communities
+Regions/Sections/Chapters
+Student Branches/Chapters
+Corporate Branding Endorsed Branding Individual Branding
+Individual Branding
+These entities use the IEEE Design System There is a visual association with IEEE, Entities may have limited oversight by
+to create a customized look and feel for but the product, service, or group may IEEE and may rely on another legal
+2.2 Taglines & IEEE Sub-Brands
+their communications. also have unique, differentiating aspects entity with its own guidelines. These
+2.3 Incorrect Usage that require a separate logo or visual products, services, or groups have their
+They represent the IEEE’s core operational
+treatment. Endorsed branding consists own identities, logos, and possibly
+functions. They do not have a unique
+2.4 Sub-Brand Design Requirements
+of three subcategories: branding standards. If the IEEE Master
+logo and display the IEEE Master Brand.
+Brand is displayed on materials, follow
+3.0 File Format Reference 1. In-Name Endorsement
+the placement guidelines.
+2. Prefix Endorsement
+4.0 Contact & Resources
+3. Geographic Communities
+Reminder:
+The IEEE Sub-Brand Guidelines,
+designed for the IEEE family of brands,
+ensure consistency within the overall IEEE
+system while allowing for individuality and
+creative expression in your communications.
+Q1 2025 | brand-experience.ieee.org | 20
+=== Page 21 ===
+Sub-Brand ENDORSED BRANDING
+CORPORATE Geographic Communities INDIVIDUAL
+Architecture In-Name Prefix
+BRANDING BRANDING
+Regions, Sections, Student
+Endorsement Endorsement
+& Chapters Branches/Chapters
+and Alignment
+IEEE Awards Delivery Platforms Affinity Groups IEEE geographically- Student Branches Partnerships &
+Groups Aggregate systems Groups of IEEE members with a based communities of IEEE Student members supported Co-Branding
+Committees and Boards of that house and deliver non-technical interest that connect them. the world. by universities/colleges and IEEE. Arrangements where entities
+the IEEE Board of Directors products and content. and/or individuals agree to
+The intent of this chart is to show IEEE Conferences Student Chapters
+cooperate to advance shared
+the visual association of brands IEEE Corporate Brochures IEEE Level Information Financially sponsored 100% by one or A technical subunit of an IEEE
+interests in which IEEE works
+within the IEEE family. It is not a Products more of the IEEE organizational units. Student Branch with one or more with one or more partners.
+IEEE Foundation Hard and electronically Societies/Technical Councils.
+direct reflection of the organizational delivered knowledge- Organizational Unit Level Information Typically, they do not carry the
+structure of IEEE. IEEE Membership based goods at an IEEE Products IEEE name but show the IEEE
+Endorsed is a branding term level. Hard and electronically delivered Master Brand.
+IEEE.org knowledge-based goods at an
+solely intended to convey the IEEE
+Co-Sponsored Conferences
+OU level.
+presence within a brand, not levels IEEE Organizational Units Conferences where at least
+of compliance or importance. IEEE Standards & Consensus Building one organizer is non-IEEE;
+Groups and not 100% financially
+Instructions:
+Groups of individuals or entities who work sponsored by IEEE.
+1. L ocate your product, group, or towards building consensus.
+service on the chart.
+IEEE Societies
+2. C lick the chart to jump to the Group of individuals who work in a shared
+guidelines provided for that technical field of interest.
+category.
+Services
+Programs managed by IEEE that provide
+benefits to their consumers.
+Technical Councils
+IEEE Societies working together in broad
+areas of technology.
+Vertical Information Portals
+Specialized entry points to a specific
+marketplace and industry niche focused
+on one functional area.
+Reminder:
+The IEEE Sub-Brand Guidelines,
+designed for the IEEE family of brands,
+ensure consistency within the overall IEEE
+system while allowing for individuality and
+creative expression in your communications.
+Q1 2025 | brand-experience.ieee.org | 21
+=== Page 22 ===
+Digital Ad Presentation Slide Video
+Corporate
+Branding
+These entities should use the IEEE design
+system (IEEE Master Brand, fonts, color
+palette, imagery, and the wedge) to create a
+custom look for communications.
+IEEE Organizational Units (OUs) do not have
+their own marks. OUs are not sub-brands, so
+sub-brand rules do not apply. They can have
+Pull Up Banner
+a look/feel on their communications, but the
+IEEE Master Brand is the only thing they can
+use as “their” logo when facing the outside
+world.
+All IEEE Committees and Major Boards: By
+default, all committees and major boards
+should use these guidelines. However, if a
+committee produces a product or service
+Exhibit Booth Display Flyer
+with its own logo, the committee can
+leverage that logo as its own. The logo of
+the product or service the committee offers
+should also align with the guidelines that
+apply to that type of product or service.
+See Sub-brand Design Requirements Discover why
+IEEE is your
+professional home
+Inspiration, passion, creativity, collaboration. Whether you are starting out or at the
+very height of your career, these are the stepping stones of your professional path.
+No matter where you are in your journey, IEEE can help you find your path.
+This is why IEEE is your professional home.
+Students/ Industry: Academic:
+Young Professionals: Advancing your career, Supporting research
+Launching careers. advancing technology. and teaching.
+Public Service: Retiree Community:
+Delivering technological Sharing experiences,
+innovation. staying connected.
+To learn more, visit
+ieee.org/professional-home
+The professional home for the engineering
+and technology community worldwide
+22-MSD-3-054 09/2022
+Q1 2025 | brand-experience.ieee.org | 22
+=== Page 23 ===
+Brochure Table Top Banner Website
+Endorsed Branding
+In-Name
+Endorsement Where Ideas
+& Technology
+Come Alive
+Consists of sub-brands that are most
+closely tied to the IEEE Brand. In this group,
+icons are avoided or not as prominent, and
+the letters I-E-E-E are a prominent part
+of the name.
+Brand Alignment
+• A major product, service, or component Discover award-winning programming about
+technology and engineering with IEEE.tv
+that serves the entire IEEE
+It’s all here on IEEE.tv. Just click play.
+RESEARCH hundreds of current technology topics
+• A major part of how IEEE is perceived Improve ROI Through EXPLORE the history of engineering and computing technology
+DEEPEN classroom learning with engaging original content
+around the world Smarter Research P liv A e R s T t I r C ea IP m A T e E v e in n ts the scientific/industrial community via
+CELEBRATE the innovators and leaders shaping our future
+Based on surveys with more than 400 technology professionals
+In-Name Endorsement includes:
+TUNE IN AT IEEE.TV
+• IEEE Level Information Products
+• Delivery Platforms
+See Sub-brand Design Requirements Website Digital Ad Newsletter Graphic
+Q1 2025 | brand-experience.ieee.org | 23
+=== Page 24 ===
+Publication Website Digital Graphic
+Endorsed Branding
+Prefix
+IEEE
+Endorsement PHOTONICS
+TECHNOLOGY LETTERS
+A Publication of the IEEE Photonics Society
+Includes sub-brands with the letters I-E-E-E
+NOVEMBER 2024 VOLUME 34 NO. 21 IPTEL (ISSN 1041-1135)
+in the name or above the name, but less
+prominently than the In-Name Endorsement
+category. This category allows differentiating
+elements for a distinctive look between our
+various sub-brands.
+Brand Alignment Digital Graphic
+• D elivers core IEEE services
+• I s owned by IEEE, sometimes in
+conjunction with another IEEE unit
+Prefix Endorsement includes:
+• Affinity Groups
+• Chapters
+• IEEE Conferences Website Website
+• O rganization Unit Level Information Products
+Wordmark
+• Services
+• Societies
+• Standards & Consensus Building Groups
+• Technical Councils
+• Vertical Information Portals
+See Sub-brand Design Requirements
+Wordmark
+Q1 2025 | brand-experience.ieee.org | 24
+=== Page 25 ===
+Section Website Digital Graphic Newsletter
+Endorsed Branding
+Geographic
+Communities
+Regions/Sections/Chapters
+(Includes sub-sections and professional chapters)
+Each sub-brand uses the letters I-E-E-E
+differently, but all communities should
+leverage the IEEE Master Brand in their
+communications.
+The IEEE Master Brand is NOT to be
+used inside or as part of another mark.
+Geographic units are encouraged to use the
+approved sub-brand treatments. The IEEE
+Digital Graphic Digital Graphic Social Post
+wedge element and lockups are permitted.
+IEEE approved sub-brand treatments
+are available for each Region, Section,
+Sub-section, Chapter, and Affinity or Special
+Interest Group.
+Brand Alignment
+• M ember outreach at both the local and
+global level
+Regions/Sections/Chapters includes:
+Digital Graphic
+• IEEE geographically-based communities
+of the world
+See Sub-brand Design Requirements
+Reminder:
+Some examples shown include
+images without the IEEE Master Brand.
+However, the IEEE Master Brand
+should always be present in all IEEE-branded
+printed and digital materials.
+Q1 2025 | brand-experience.ieee.org | 25
+=== Page 26 ===
+Recommendations for how to use the University of Regina in Does not follow the IEEE Master Brand guidelines.
+a IEEE Student Branch identifier.
+Not recommended.
+Options A or B shown below are approved IEEE formats. You
+should contact the University of Regina directly to get approval
+for using their logo in the use case below.
+Font: Formata Family
+Color: IEEE Blue, PMS 3015C
+R0, G98, B155
+C100, M35, Y3, K21
+Formata Medium
+A. University of Regina
+IEEE Student Branch
+Endorsed Branding
+Formata Regular
+Geographic
+Communities
+B. University of Regina
+IEEE Student Branch
+Student Branches/Chapters
+(Includes sub-sections and professional chapters)
+The thousands of IEEE student entities
+worldwide, which connect local professionals,
+academics, and the IEEE organization at large,
+should leverage the IEEE Master Brand in
+their communications.
+Recommendations for how to use the International Institute of Technology (IIT) Student Branch Chapter in an IEEE Student
+Student branches and chapter identifiers Branch identifier.
+Options A, B or C shown below are approved IEEE formats. You should contact the university or institute directly for approval
+may use any approved color from the IEEE and permission to use their logo in the use case (C) below.
+color palette. Icons or symbols are permitted
+for Student Branches/Student Chapter
+treatments but are NOT mandatory. Icons or Option A
+symbols cannot be stock art, must be original, IIT | North American Private University
+Formata Medium in IEEE Blue
+and should not violate any of the university’s
+IEEE Student Branch University Name Here
+logo guidance NOR should include/alter any Formata Regular in IEEE Blue
+place
+parts of the IEEE Master Brand. icon here IEEE Student Branch
+IEEE-approved sub-brand treatments and
+identifiers are available for Student Branches
+Option B
+and Chapters.
+North American Private University
+Brand Alignment IIT | International Institute of Technology
+IEEE Student Branch
+• M ember outreach at both the local
+and global level Need help?
+The IEEE Brand team
+• I EEE geographically-based communities
+is here to help you
+of the world
+Option C
+understand the brand
+Student Branches/Chapters includes: North American Private University and create successful
+Reminder:
+IIT | International Institute of Technology Endorsed Branding signifies communications.
+• S tudent Branches
+IEEE Student Branch a visual association with the IEEE Brand
+• S tudent Branch Chapters while allowing a product, service, or group
+to maintain unique, distinguishing elements
+See Sub-brand Design Requirements
+through a separate wordmark or visual treatment.
+Q1 2025 | brand-experience.ieee.org | 26
+=== Page 27 ===
+Website Publication Publication
+Individual
+Branding
+Entities within the individual branding model
+may have limited oversight by IEEE and
+may rely on another legal entity with its
+own guidelines. These products, services, or
+groups have their own identities, logos, and
+possibly branding standards.
+Individual Branding includes:
+• Partnerships
+• C o-Sponsored Conferences
+Partnerships and sponsorships typically follow
+the established guidelines of the legal owner,
+who may not be IEEE.
+Because these initiatives are owned by
+another entity, the website and logo follow
+Digital Graphic Social Media Profile
+their design system. Any logo developed by
+the other entity may not use or incorporate
+the IEEE name, logo, or IEEE Master Brand.
+If the IEEE Master Brand is used, it must be
+used in accordance with the IEEE Master
+Brand Guidelines, including the policies
+related to size and positioning.
+When IEEE produces the collateral of
+partnerships containing individual brands, the
+standard is to use the partner logo within the Need help?
+context of the IEEE Brand Identity Guidelines. The IEEE Brand team
+This affords the individual brand its unique is here to help you
+identity while aligning the offering with IEEE. understand the brand
+and create successful
+communications.
+See Sub-brand Design Requirements
+Q1 2025 | brand-experience.ieee.org | 27
+=== Page 28 ===
+Taglines & IEEE
+Sub-Brands
+Some IEEE sub-brands carry taglines that
+complement the IEEE tagline. Taglines must
+be developed based on a purposeful and
+unique brand value proposition for each
+particular sub-brand.
+Any tagline added to a sub-brand logo can
+not compete with or replicate the IEEE
+tagline and requires review and approval by
+the IEEE Brand Team. If a sub-brand logo has
+a tagline, the sub-brand must also have a
+version without the tagline.
+See Sub-brand Design Requirements
+Need help?
+The IEEE Brand team
+is here to help you
+understand the brand
+and create successful
+communications.
+Q1 2025 | brand-experience.ieee.org | 28
+=== Page 29 ===
+Incorrect Usage
+IEEE sub-brand architecture, alignment group configurations, and usage outside established specifications • M aintain maximum visibility by keeping a high contrast between the background and the sub-brand logo.
+and guidelines damage the IEEE Brand. Modifications or distortions are strictly prohibited. The IEEE Master • A void darker background values and colors that provide insufficient contrast.
+Brand cannot be used/incorporated into any sub-brand marks.
+• W hen placing the sub-brand logo over an image, adjust the position of the image or retouch the area
+as needed.
+NO ✘ NO ✘ NO ✘ NO ✘ NO ✘ NO ✘
+Do NOT rearrange, reconfigure, Do NOT distort, stretch, Do NOT rotate or place at Do NOT change colors. Do NOT use graphic effects Do NOT add lines above or
+or change the size. or manipulate. an angle. or outlines. below or put in a container shape.
+NO ✘ NO ✘ NO ✘ NO ✘ NO ✘ NO ✘
+Watermarks are only permitted on video A pattern is only permitted on a Do NOT crop out any part Do NOT fill in the inside Do NOT remove the I-E-E-E Do NOT place any brand mark on a back-
+applications. All other step-and-repeat banner. All other of the brand mark. of any icon within a brand mark. from any brand mark. ground with insufficient contrast.
+uses are prohibited. uses are prohibited.
+Need help?
+The IEEE Brand team
+is here to help you
+understand the brand
+and create successful
+Reminder: communications.
+The IEEE Sub-Brand Guidelines,
+designed for the IEEE family of brands,
+ensure consistency within the overall IEEE
+system while allowing for individuality and
+creative expression in your communications.
+Q1 2025 | brand-experience.ieee.org | 29
+=== Page 30 ===
+Sub-Brand Design Requirements Geographic Communities
+Corporate In-Name Prefix Regions/ Student Individual
+Branding Endorsement Endorsement Sections/ Branch/Student Branding
+Chapters Chapter
+I-E-E-E Letters Size
+Letters I-E-E-E must be uppercase ✔ ✔ ✔ ✔ ✔
+Size of letters I-E-E-E must be consistent with the size of the name ✔
+Size of the letters I-E-E-E must be the height of lowercase letters within the name ✔ ✔
+If name is entirely uppercase, the letters I-E-E-E should be 50-75% height of the tallest letter ✔ ✔
+Letters I-E-E-E can be less prominent but must be in the name or above ✔ ✔
+Icon Usage
+Unique icon is not allowed; Type treatment only ✔
+Icon is allowed but cannot make up more than 30% of the whole mark ✔ ✔ ✔ ✔ ✔
+All icons must be original art (not stock) and should be cleared through IEEE legal to ensure there no infringement
+✔ ✔ ✔
+on an existing brand identity
+Only the official logo of the college/university may be used as a logo mark and should not make up more
+✔
+than 30% of the whole mark
+Font Usage
+Only the Formata font family can be used ✔ ✔
+Font of the name can be unique ✔ ✔ ✔
+Acronyms used in the name must be spelled out (excluding the IEEE acronym) ✔ ✔ ✔
+The font weight of the letters I-E-E-E must be equal to or greater than the name ✔ ✔ ✔
+Student chapters descriptor line should be Formata or Calibri ✔
+Student chapters should use the brand/society lock-up template ✔
+Color
+Color of letters I-E-E-E must be black or IEEE blue ✔ ✔ ✔
+Color of letters I-E-E-E and entire mark must be from the approved IEEE color palette ✔ ✔ ✔ ✔
+Overall color must be predominantly black or IEEE blue ✔ ✔
+One accent color from the IEEE approved color palette is allowed ✔ ✔
+No more than four accent colors suggested from the IEEE approved color palette ✔ ✔
+Color of sub-brand should follow both the IEEE and the university brand guidelines ✔
+Q1 2025 | brand-experience.ieee.org | 30
+=== Page 31 ===
+File Format Raster Images
+• Pixel-based graphics
+Reference
+• Resolution dependent
+• Photos and web graphics
+Using the appropriate file format, color mode,
+and proper resolution when utilizing the
+IEEE Master Brand or any sub-brand logos
+in communications ensures the IEEE Master
+Adobe Photoshop (PSD) Photos for web and Static, transparent Transparent web High-resolution, Universal files for
+Brand or any sub-brand logo is legible and is a software application print, small file size web images with animations with large-scale photos, viewing, sharing, and
+high resolution. for editing photos, images, unlimited colors limited color and scans for printing printing
+and artwork.
+Vector Images
+• Curve-based graphics
+• Resolution independent
+• Logos, icons, and fonts
+Adobe Illustrator (AI) is Files for web use Editable file that Universal files for
+a vector graphics editor that can be scaled can be opened and viewing, sharing, and
+that allows users to create without pixelating previewed in printing
+illustrations, logos, patterns, non-Adobe programs
+and other design elements.
+Print Digital
+Need help?
+The IEEE Brand team
+Image Color Mode is here to help you
+understand the brand
+and create successful
+RGB has a wider color gamut and is CMYK is designed for print media and has a communications.
+optimal for web and digital graphics. more limited color range compared to RGB.
+Q1 2025 | brand-experience.ieee.org | 31
+=== Page 32 ===
+Contact & Resources
+These guidelines are extremely important to IEEE and its entities—adding The IEEE Brand Assets & Guidelines Templates
+more value, consistency, and organization to the IEEE Brand.
+IEEE is the world’s most trusted Guidance on managing and creating Templates and sample documents
+Thank you for being a productive part of One IEEE. source for engineering, computing, IEEE websites and print collateral. featuring correct use of the IEEE
+and technology professionals. Brand can be customized for
+a variety of uses in print and
+digital mediums.
+Toolkits Promo Library Get Started
+Provide marketing and Web and print promotional Looking to build or revamp an
+communications toolkits for various messages representing dozens existing experience? Partner
+IEEE entities and programs. of IEEE products and services, with us to create successful
+available to you at no charge.
+communications.
+Use them in your marketing
+communications to extend the
+IEEE messages of value, quality,
+and service to the profession.
+Q1 2025 | brand-experience.ieee.org | 32
+52021Q
+150-3-DSM-42
+Questions or Comments:
+branding@ieee.org
