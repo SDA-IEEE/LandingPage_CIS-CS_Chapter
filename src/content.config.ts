@@ -25,7 +25,7 @@ const team = defineCollection({
     order: z.number().default(99),
     category: z.enum(['Liderazgo', 'Desarrollo & IA', 'Asesoría']).default('Liderazgo'),
     focus: z.array(z.string()).default([]),
-    image: z.string().default('/images/member-1.jpg'),
+    image: z.string().default('/images/usuario_ieee.webp'),
     linkedin: z.string().url().optional(),
     github: z.string().url().optional(),
     featured: z.boolean().default(false),
@@ -75,7 +75,7 @@ const lines = defineCollection({
     icon: z.string(),
     tagline: z.string(),
     // Imagen de fondo para la tarjeta de "Investigación" (acordeón). Opcional.
-    image: z.string().default('/images/about-research.jpg'),
+    image: z.string().default('/images/about-research.webp'),
     order: z.number().default(99),
   }),
 });

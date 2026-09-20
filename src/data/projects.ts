@@ -13,7 +13,7 @@ export const projectsData: ProjectCaseStudy[] = [
     technologies: ['PyTorch', 'YOLOv8', 'FastAPI', 'React', 'Docker', 'PostgreSQL'],
     team: ['Mariana Rojas (Líder IA)', 'David Gómez (Software)', 'Camilo Peña (Hardware)'],
     status: 'Desarrollo Activo',
-    image: '/images/project-vision.jpg',
+    image: '/images/project-vision.webp',
     demoUrl: '#',
     repoUrl: '#'
   },
@@ -29,7 +29,7 @@ export const projectsData: ProjectCaseStudy[] = [
     technologies: ['Golang', 'Apache Kafka', 'Next.js', 'Prometheus', 'Grafana', 'Redis'],
     team: ['Sebastián Mora', 'Valeria Castillo'],
     status: 'Completado',
-    image: '/images/project-platform.jpg',
+    image: '/images/project-platform.webp',
     demoUrl: '#',
     repoUrl: '#'
   },
@@ -45,7 +45,7 @@ export const projectsData: ProjectCaseStudy[] = [
     technologies: ['TensorFlow', 'GDAL', 'GeoPandas', 'Python', 'FastAPI', 'TailwindCSS'],
     team: ['Andrés Martínez', 'Elena Fuentes'],
     status: 'Investigación',
-    image: '/images/project-satellite.jpg',
+    image: '/images/project-satellite.webp',
     demoUrl: '#',
     repoUrl: '#'
   }

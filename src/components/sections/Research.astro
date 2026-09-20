@@ -19,6 +19,7 @@ const lines = (await getCollection('lines'))
     title: entry.data.title,
     desc: entry.data.tagline,
     image: entry.data.image,
+    imageSm: entry.data.image ? entry.data.image.replace('.webp', '-sm.webp') : entry.data.image,
     active: index === 0,
   }));
 ---
@@ -43,9 +44,12 @@ const lines = (await getCollection('lines'))
         >
           <img
             src={item.image}
+            srcset={`${item.imageSm} 500w, ${item.image} 750w`}
+            sizes="(max-width: 860px) 100vw, 750px"
             alt={item.title}
             class="item-bg"
             loading="lazy"
+            decoding="async"
           />
           <div class="item-overlay"></div>
 

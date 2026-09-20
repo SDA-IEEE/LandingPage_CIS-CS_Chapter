@@ -21,12 +21,12 @@ const statusLabels: Record<string, string> = {
 };
 
 const fallbackImageByType: Record<string, string> = {
-  Workshop: '/images/event-workshop.jpg',
-  'Tech Talk': '/images/event-tech-talk.jpg',
-  Hackathon: '/images/event-hackathon.jpg',
-  Bootcamp: '/images/about-devs.jpg',
-  Panel: '/images/about-research.jpg',
-  'Demo Day': '/images/hero-community.jpg',
+  Workshop: '/images/event-workshop.webp',
+  'Tech Talk': '/images/event-tech-talk.webp',
+  Hackathon: '/images/event-hackathon.webp',
+  Bootcamp: '/images/about-devs.webp',
+  Panel: '/images/about-research.webp',
+  'Demo Day': '/images/hero-community.webp',
 };
 
 const events = rawEvents.map((entry, index) => {
@@ -40,7 +40,7 @@ const events = rawEvents.map((entry, index) => {
     index,
     date: formatMonth(d.date),
     status: { text: statusLabels[d.status] ?? 'Próximo', type: d.status },
-    image: d.image || fallbackImageByType[d.type] || '/images/hero-community.jpg',
+    image: d.image || fallbackImageByType[d.type] || '/images/hero-community.webp',
     alt: `Imagen del evento ${d.title}`,
     tags,
     title: d.title,

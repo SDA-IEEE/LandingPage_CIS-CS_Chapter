@@ -8,7 +8,7 @@ export const teamData: TeamMember[] = [
     category: 'Liderazgo',
     focus: ['Computer Vision', 'Deep Learning', 'Liderazgo Comunitario'],
     bio: 'Estudiante de Ingeniería de Sistemas con énfasis en Inteligencia Artificial. Apasionada por liderar proyectos de investigación aplicada y articular la comunidad estudiantil.',
-    image: '/images/member-1.jpg',
+    image: '/images/presidente.webp',
     linkedin: '#',
     github: '#'
   },
@@ -19,7 +19,7 @@ export const teamData: TeamMember[] = [
     category: 'Liderazgo',
     focus: ['Arquitectura de Software', 'FastAPI', 'Sistemas Distribuidos'],
     bio: 'Desarrollador backend e investigador en pipelines de datos. Coordina los estándares de calidad de código y mentoría técnica para nuevos integrantes.',
-    image: '/images/member-2.jpg',
+    image: '/images/vicepresidente.webp',
     linkedin: '#',
     github: '#'
   },
@@ -30,7 +30,7 @@ export const teamData: TeamMember[] = [
     category: 'Desarrollo & IA',
     focus: ['Machine Learning', 'NLP', 'Data Science'],
     bio: 'Investigadora en modelos de procesamiento de lenguaje natural y organizadora de bootcamps técnicos en el campus UTB.',
-    image: '/images/member-3.jpg',
+    image: '/images/usuario_ieee.webp',
     linkedin: '#',
     github: '#'
   },
@@ -41,7 +41,7 @@ export const teamData: TeamMember[] = [
     category: 'Asesoría',
     focus: ['Sistemas Complejos', 'Optimización', 'Investigación Académica'],
     bio: 'Profesor e investigador titular en la Facultad de Ingeniería UTB. Guía metodológica y enlace institucional entre IEEE y la universidad.',
-    image: '/images/member-4.jpg',
+    image: '/images/usuario_ieee.webp',
     linkedin: '#'
   }
 ];
