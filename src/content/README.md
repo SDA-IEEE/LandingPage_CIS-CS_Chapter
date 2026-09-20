@@ -30,7 +30,7 @@ role: Cargo (p. ej. "Presidente")
 order: 1            # posición en la grilla (1 = primero)
 category: Liderazgo  # Liderazgo | Desarrollo & IA | Asesoría
 focus: ["Área 1", "Área 2"]
-image: /images/member-1.jpg
+image: /images/usuario_ieee.webp
 linkedin: https://linkedin.com/in/usuario   # opcional
 github: https://github.com/usuario          # opcional
 featured: true       # true solo para la tarjeta destacada (presidencia)
@@ -49,7 +49,7 @@ tagline: Una frase resumen
 status: "Desarrollo Activo"     # Desarrollo Activo | Completado | Investigación
 technologies: ["Python", "Docker"]
 team: ["Nombre 1", "Nombre 2"]  # o el nombre del equipo/organización
-image: /images/project-vision.jpg
+image: /images/project-vision.webp
 demoUrl: https://...            # opcional
 repoUrl: https://github.com/...  # opcional
 order: 1
@@ -72,7 +72,7 @@ location: Lugar            # opcional
 modality: Presencial       # Presencial | Híbrido | Virtual
 status: upcoming           # upcoming | featured | past
 registrationUrl: https://formulario-ieee-utb.vercel.app/  # opcional
-image: /images/event-workshop.jpg  # opcional
+image: /images/event-workshop.webp  # opcional
 order: 1
 ---
 Resumen del evento (Markdown libre).

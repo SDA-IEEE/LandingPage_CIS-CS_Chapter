@@ -14,7 +14,7 @@ export const eventsData: EventItem[] = [
     speaker: 'Ing. David Gómez',
     speakerRole: 'Investigador en NLP & Miembro Senior CS',
     registrationUrl: '#',
-    image: '/images/event-workshop.jpg'
+    image: '/images/event-workshop.webp'
   },
   {
     id: 'hackathon-caribe-ai',
@@ -27,7 +27,7 @@ export const eventsData: EventItem[] = [
     status: 'upcoming',
     summary: 'La competencia anual de desarrollo del capítulo: 48 horas resolviendo retos de optimización urbana, visión artificial y plataformas seguras con mentoría especializada.',
     registrationUrl: '#',
-    image: '/images/event-hackathon.jpg'
+    image: '/images/event-hackathon.webp'
   },
   {
     id: 'talk-systems-architecture',
@@ -42,6 +42,6 @@ export const eventsData: EventItem[] = [
     speaker: 'Ing. Mateo Arango',
     speakerRole: 'Staff Software Engineer & Alumno Destacado',
     registrationUrl: '#',
-    image: '/images/event-tech-talk.jpg'
+    image: '/images/event-tech-talk.webp'
   }
 ];

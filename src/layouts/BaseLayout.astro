@@ -14,7 +14,7 @@ interface Props {
 const {
   title = "IEEE CS & CIS UTB | Capítulo estudiantil UTB",
   description = siteConfig.description,
-  image = "/images/hero-community.jpg",
+  image = "/images/hero-community.webp",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? siteConfig.url);
@@ -43,11 +43,28 @@ const organizationJsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/webp" href="/logos/ieee-mb-blue.webp" />
     <link rel="icon" type="image/png" href="/logos/ieee-mb-blue.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content="index, follow" />
+
+    <!-- Preload LCP Hero Image (Aceleración de carga Mobile & Desktop) -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/hero-community-sm.webp"
+      media="(max-width: 768px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/hero-community.webp"
+      media="(min-width: 769px)"
+      fetchpriority="high"
+    />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -71,13 +88,26 @@ const organizationJsonLd = {
       is:inline
     />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Carga asíncrona no bloqueante recomendada por Web Vitals) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <Header />
@@ -159,6 +189,7 @@ const organizationJsonLd = {
         );
         timelineItems.forEach((item) => timelineObserver.observe(item));
 
+        let timelineTicking = false;
         function updateTimelineProgress() {
           const timeline = document.querySelector(".events-timeline");
           if (!timeline || !timelineProgress) return;
@@ -175,11 +206,17 @@ const organizationJsonLd = {
           }
           progress = Math.max(0, Math.min(1, progress));
           timelineProgress.style.height = progress * 100 + "%";
+          timelineTicking = false;
         }
-        window.addEventListener("scroll", updateTimelineProgress, {
+        window.addEventListener("scroll", () => {
+          if (!timelineTicking) {
+            window.requestAnimationFrame(updateTimelineProgress);
+            timelineTicking = true;
+          }
+        }, {
           passive: true,
         });
-        updateTimelineProgress();
+        window.requestAnimationFrame(updateTimelineProgress);
 
         // Interactive Research Map
         const researchNodes = document.querySelectorAll(".research-node");
@@ -223,19 +260,19 @@ const organizationJsonLd = {
           const dots = heroShowcase.querySelectorAll(".hero-dot");
           const slides = [
             {
-              image: "/images/hero-community.jpg",
+              image: "/images/hero-community.webp",
               alt: "Estudiantes colaborando en proyecto tecnológico",
               kicker: "Próxima generación",
               title: "Tecnología con propósito",
             },
             {
-              image: "/images/about-research.jpg",
+              image: "/images/about-research.webp",
               alt: "Equipo trabajando en investigación",
               kicker: "Investigación aplicada",
               title: "IA para resolver desafíos reales",
             },
             {
-              image: "/images/about-devs.jpg",
+              image: "/images/about-devs.webp",
               alt: "Desarrolladores construyendo soluciones colaborativas",
               kicker: "Construcción colaborativa",
               title: "Código que transforma ideas",
@@ -244,9 +281,13 @@ const organizationJsonLd = {
           let currentIndex = 0;
           let transitioning = false;
 
-          slides.forEach((slide) => {
-            const im = new Image();
-            im.src = slide.image;
+          const deferPreload =
+            window.requestIdleCallback || ((cb) => setTimeout(cb, 2000));
+          deferPreload(() => {
+            slides.forEach((slide) => {
+              const im = new Image();
+              im.src = slide.image;
+            });
           });
 
           function setCardContent(card, slide) {

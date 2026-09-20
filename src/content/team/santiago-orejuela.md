@@ -4,7 +4,7 @@ role: Secretario Investigador
 order: 5
 category: Liderazgo
 focus: ["Secretaría de investigación"]
-image: /images/presidente.png
+image: /images/presidente.webp
 ---
 
 Encargado de la secretaría de investigación y el seguimiento de las líneas académicas del capítulo.

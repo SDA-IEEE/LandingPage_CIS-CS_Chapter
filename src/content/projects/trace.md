@@ -7,7 +7,7 @@ tagline: "Sistema multiagente que abstrae convocatorias IEEE y produce entregabl
 status: "Desarrollo Activo"
 technologies: ["Python", "Docker", "HTML/CSS", "JavaScript"]
 team: ["VerbaNexAI"]
-image: /images/project-platform.jpg
+image: /images/project-platform.webp
 repoUrl: "https://github.com/VerbaNexAI/TRACE"
 order: 1
 ---

@@ -139,7 +139,13 @@ ul {
 
 @media (min-width: 1024px) {
   .header .container {
-    padding: 0 64px;
+    padding: 0 28px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header .container {
+    padding: 0 48px;
   }
 }
 
@@ -155,7 +161,7 @@ ul {
   align-items: center;
   gap: 16px;
   min-width: 0;
-  flex-shrink: 1;
+  flex-shrink: 0;
 }
 
 .logo-group a {
@@ -218,8 +224,14 @@ ul {
   .nav-desktop {
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-left: 64px;
+    gap: 18px;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .nav-desktop {
+    gap: 32px;
   }
 }
 
