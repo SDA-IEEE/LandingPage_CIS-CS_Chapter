@@ -16,7 +16,7 @@ import { join } from 'node:path';
 const modulepreloadSections = () => ({
   name: 'modulepreload-sections',
   hooks: {
-    'astro:build:done': ({ dir }) => {
+    'astro:build:done': (/** @type {{ dir: URL }} */ { dir }) => {
       const outDir = dir.pathname.replace(/^\/+([A-Za-z]:)/, '$1');
       const astroDir = join(outDir, '_astro');
       const files = readdirSync(astroDir).filter((f) => f.endsWith('.js'));
