@@ -95,8 +95,8 @@ const { Content: FeaturedContent } = featured ? await render(featured) : { Conte
           </div>
         )}
 
-        <p class="project-desc reveal" style="text-align:center; margin-top: 32px; opacity: 0.75;">
-          Más proyectos del capítulo próximamente. <a href="#join">Únete</a> para conocerlos primero.
+        <p class="project-desc reveal" style="text-align:center; margin-top: 32px;">
+          Más proyectos del capítulo próximamente. <a href="#join" class="project-desc-link">Únete</a> para conocerlos primero.
         </p>
       </div>
     ) : (
@@ -104,3 +104,18 @@ const { Content: FeaturedContent } = featured ? await render(featured) : { Conte
     )}
   </div>
 </section>
+
+<style>
+  /* Enlace dentro de texto corrido: subrayado para distinguirlo sin
+     depender solo del color (WCAG 1.4.1) y contraste AA garantizado */
+  .project-desc-link {
+    color: var(--ieee-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+  }
+
+  .project-desc-link:hover {
+    color: var(--ieee-blue-dark, #00456e);
+  }
+</style>

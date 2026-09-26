@@ -6,15 +6,24 @@
   <div class="about-sticky">
     <!-- Fondo cinematográfico interactivo -->
     <div class="about-bg-container">
-      <img
-        src="/images/about_student.webp"
-        srcset="/images/about_student-sm.webp 640w, /images/about_student.webp 1200w"
-        sizes="100vw"
-        alt="Estudiantes trabajando colaborativamente en el laboratorio de tecnología"
-        class="about-bg-image"
-        loading="lazy"
-        decoding="async"
-      />
+      <picture>
+        <source
+          type="image/avif"
+          srcset="/images/about_student-sm.avif 640w, /images/about_student-md.avif 768w, /images/about_student.avif 1200w"
+          sizes="100vw"
+        />
+        <img
+          src="/images/about_student.webp"
+          srcset="/images/about_student-sm.webp 640w, /images/about_student-md.webp 768w, /images/about_student.webp 1200w"
+          sizes="100vw"
+          alt="Estudiantes trabajando colaborativamente en el laboratorio de tecnología"
+          class="about-bg-image"
+          loading="lazy"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </picture>
       <div class="about-overlay"></div>
     </div>
 
@@ -88,12 +97,9 @@
 </section>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  function initAboutScrollPin() {
+  // La carga de GSAP es DINÁMICA para sacarlo de la ruta crítica de red
+  // y el registro/configuración se hace solo cuando la sección va a usarse.
+  function initAboutScrollPin(gsap: typeof import("gsap").gsap) {
     const aboutSection = document.getElementById("manifiesto");
     if (!aboutSection) return;
 
@@ -202,7 +208,45 @@
     tl.to({}, { duration: 0.3 });
   }
 
-  // Inicializar en carga y soportar navegación SPA/Astro
-  initAboutScrollPin();
-  document.addEventListener("astro:page-load", initAboutScrollPin);
+  // Inicializar en IDLE: temprano (antes de que el usuario llegue) pero fuera
+  // del LCP. La carga dinámica mantiene a GSAP fuera de la ruta crítica de red.
+  let aboutInitialized = false;
+
+  const initAboutDeferred = async () => {
+    if (aboutInitialized) return;
+    aboutInitialized = true;
+
+    const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+      import("gsap"),
+      import("gsap/ScrollTrigger"),
+    ]);
+    gsap.registerPlugin(ScrollTrigger);
+    // En móvil, evita reflows forzados repetidos al mostrarse/ocultarse la
+    // barra de direcciones del navegador durante el scroll.
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
+    initAboutScrollPin(gsap);
+
+    // Re-medir cuando las fuentes web terminen de cargar (el font-swap cambia
+    // métricas del texto y deja obsoletas las posiciones medidas por GSAP).
+    const refreshTriggers = () => ScrollTrigger.refresh();
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(refreshTriggers);
+    }
+    if (document.readyState === "complete") {
+      refreshTriggers();
+    } else {
+      window.addEventListener("load", refreshTriggers, { once: true });
+    }
+  };
+
+  window.addEventListener("scroll", initAboutDeferred, { passive: true, once: true });
+  window.addEventListener("load", initAboutDeferred, { once: true });
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(initAboutDeferred, { timeout: 2000 });
+  } else {
+    setTimeout(initAboutDeferred, 400);
+  }
+
+  document.addEventListener("astro:page-load", initAboutDeferred);
 </script>

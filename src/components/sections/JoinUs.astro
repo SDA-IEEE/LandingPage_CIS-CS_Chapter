@@ -21,7 +21,7 @@ import { siteConfig } from '../../data/site';
   <div class="join-right-col">
     <div class="join-action-panel">
       <h2 class="join-title">
-        Un lugar donde nunca construyes <span class="highlight">en solitario</span>.
+        Un lugar donde nunca construyes <span class="highlight rotating-word" id="rotatingWord">en solitario</span>.
       </h2>
 
       <a
@@ -55,8 +55,8 @@ import { siteConfig } from '../../data/site';
     --stipple-tone: #f1f5f9;
     --bg-pure-white: #ffffff;
     --text-main: #0f172a;
-    --join-blue: #0284c7;
-    --join-blue-hover: #0369a1;
+    --join-blue: #0369a1; /* WCAG AA: 5.93:1 con texto blanco */
+    --join-blue-hover: #075985;
 
     position: relative;
     min-height: 100vh;
@@ -257,6 +257,90 @@ import { siteConfig } from '../../data/site';
 
   .join-title .highlight {
     color: var(--join-blue);
+  }
+
+  /* ====== ROTATING WORD — ENHANCED WORD MORPHING ====== */
+  .rotating-word {
+    display: inline-block;
+    position: relative;
+    transition:
+      filter 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Decorative underline accent */
+  .rotating-word::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.06em;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--join-blue), #38bdf8, var(--join-blue));
+    background-size: 200% 100%;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: underline-shimmer 3s ease infinite;
+  }
+
+  @keyframes underline-shimmer {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .rotating-word.is-animating::after {
+    animation: underline-pulse 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @keyframes underline-pulse {
+    0%   { transform: scaleX(1); opacity: 1; }
+    30%  { transform: scaleX(0); opacity: 0; }
+    65%  { transform: scaleX(0); opacity: 0; }
+    100% { transform: scaleX(1); opacity: 1; }
+  }
+
+  /* Leaving: word slides up with blur + scale down */
+  .rotating-word.is-leaving {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(-0.4em) scale(0.92);
+  }
+
+  /* Entering: start from below, blurred */
+  .rotating-word.is-entering {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(0.4em) scale(0.92);
+    transition: none; /* posición inicial instantánea */
+  }
+
+  /* Shimmer flash on word reveal */
+  @keyframes word-shimmer {
+    0%   { color: var(--join-blue); text-shadow: 0 0 0 transparent; }
+    35%  { color: #38bdf8; text-shadow: 0 0 20px rgba(56, 189, 248, 0.45); }
+    100% { color: var(--join-blue); text-shadow: 0 0 0 transparent; }
+  }
+
+  .rotating-word.is-revealed {
+    animation: word-shimmer 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rotating-word.is-leaving,
+    .rotating-word.is-entering {
+      filter: none;
+      transform: none;
+    }
+    .rotating-word.is-revealed {
+      animation: none;
+    }
+    .rotating-word::after {
+      animation: none;
+    }
   }
 
   .join-cta {
