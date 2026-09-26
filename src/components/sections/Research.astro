@@ -50,6 +50,8 @@ const lines = (await getCollection('lines'))
             class="item-bg"
             loading="lazy"
             decoding="async"
+            width="750"
+            height="500"
           />
           <div class="item-overlay"></div>
 
@@ -84,7 +86,7 @@ const lines = (await getCollection('lines'))
     --bg-section: #f8fafc;
     --text-main: #0f172a;
     --text-muted: #64748b;
-    --accent-blue: #0284c7;
+    --accent-blue: #0369a1; /* WCAG AA: 5.93:1 sobre fondos claros */
     --accent-light: #e0f2fe;
 
     /* Curva fluida ultra suave */

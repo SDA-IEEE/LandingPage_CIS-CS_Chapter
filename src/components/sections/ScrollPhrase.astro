@@ -215,6 +215,14 @@
       line-height: 1;
       text-transform: uppercase;
     }
+
+    /* Sombra ligera en móvil: la versión de escritorio (doble sombra
+       con blur de 28px/50px por carácter) repinta en cada frame y
+       provoca tirones/"trabado" durante la animación. */
+    :global(.scroll-phrase-section .phrase-line.highlight .char),
+    :global(.scroll-phrase-section .word.highlight .char) {
+      text-shadow: 0 2px 12px rgba(0, 163, 224, 0.3) !important;
+    }
   }
 
   /* Accesibilidad */
@@ -235,11 +243,8 @@
 </style>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
+  // La carga de GSAP es DINÁMICA para sacarlo de la ruta crítica de red
+  // y el registro/configuración se hace solo cuando la sección va a usarse.
   function setupLinesAndCharacters(container: HTMLElement) {
     const lines = Array.from(
       container.querySelectorAll<HTMLElement>(".phrase-line"),
@@ -289,12 +294,10 @@
     return index % 2 === 0 ? -1 : 1;
   }
 
-  function initResponsiveAnimation() {
+  function initResponsiveAnimation(gsap: typeof import("gsap").gsap) {
     const phrase = document.getElementById("target-phrase");
     const track = document.getElementById("phrase-track");
     const section = document.getElementById("phrase-section");
-    const team = document.getElementById("team");
-    const stage = document.getElementById("team-phrase-stage");
 
     if (!phrase || !track || !section) return;
 
@@ -371,22 +374,17 @@
     });
 
     // ========================================================
-    // 2. MÓVIL (<= 768px): CONSERVA TU CONFIGURACIÓN ACTUAL
+    // 2. MÓVIL (<= 768px): ENTRA AL BAJAR / SE RECOGE AL SUBIR
+    // Se usa IntersectionObserver (geometría en vivo) en lugar de
+    // posiciones de ScrollTrigger: en móvil esas mediciones quedan
+    // obsoletas cuando el contenido de arriba termina de cargar,
+    // y la animación "ya había pasado" al llegar a la sección.
+    // Sin pin-spacer -> sin saltos/"trabado" de layout.
     // ========================================================
     mm.add("(max-width: 768px)", () => {
       gsap.set(track, { x: 0 });
 
-      const mobileTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: "+=1200",
-          pin: true,
-          scrub: 0.5,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
+      const mobileTl = gsap.timeline({ paused: true });
 
       lines.forEach((line, idx) => {
         const lineChars = line.querySelectorAll<HTMLElement>(".char");
@@ -411,17 +409,72 @@
         );
       });
 
-      mobileTl.to({}, { duration: 0.4 });
+      // Según la dirección del scroll: al bajar con el texto entrando
+      // (>=30% visible) se reproduce; al subir, en cuanto empieza a
+      // salir por el borde inferior (<80% visible pero aún en pantalla)
+      // las letras "se recogen" de forma visible.
+      let lastScrollY = window.scrollY;
+      const io = new IntersectionObserver(
+        (entries) => {
+          const goingUp = window.scrollY < lastScrollY;
+          lastScrollY = window.scrollY;
+          for (const entry of entries) {
+            if (goingUp && entry.intersectionRatio < 0.8) {
+              mobileTl.timeScale(0.50).reverse();
+            } else if (!goingUp && entry.intersectionRatio >= 0.3) {
+              mobileTl.timeScale(0.5).play();
+            }
+          }
+        },
+        { threshold: [0, 0.3, 0.8] },
+      );
+      io.observe(phrase);
+
+      return () => io.disconnect();
     });
-
-    ScrollTrigger.refresh();
   }
 
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(initResponsiveAnimation);
+  // Inicializar en IDLE: temprano (antes de que el usuario llegue) pero fuera
+  // del LCP. La carga dinámica mantiene a GSAP fuera de la ruta crítica de red.
+  let phraseInitialized = false;
+
+  const initPhraseDeferred = async () => {
+    if (phraseInitialized) return;
+    phraseInitialized = true;
+
+    const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+      import("gsap"),
+      import("gsap/ScrollTrigger"),
+    ]);
+    gsap.registerPlugin(ScrollTrigger);
+    // En móvil, evita reflows forzados repetidos al mostrarse/ocultarse la
+    // barra de direcciones del navegador durante el scroll.
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
+    window.requestAnimationFrame(() => {
+      initResponsiveAnimation(gsap);
+
+      // Re-medir cuando las fuentes web terminen de cargar (el font-swap cambia
+      // métricas del texto y deja obsoletas las posiciones medidas por GSAP).
+      const refreshTriggers = () => ScrollTrigger.refresh();
+      if (document.fonts?.ready) {
+        document.fonts.ready.then(refreshTriggers);
+      }
+      if (document.readyState === "complete") {
+        refreshTriggers();
+      } else {
+        window.addEventListener("load", refreshTriggers, { once: true });
+      }
+    });
+  };
+
+  window.addEventListener("scroll", initPhraseDeferred, { passive: true, once: true });
+  window.addEventListener("load", initPhraseDeferred, { once: true });
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(initPhraseDeferred, { timeout: 2500 });
   } else {
-    window.addEventListener("DOMContentLoaded", initResponsiveAnimation);
+    setTimeout(initPhraseDeferred, 500);
   }
 
-  document.addEventListener("astro:page-load", initResponsiveAnimation);
+  document.addEventListener("astro:page-load", initPhraseDeferred);
 </script>

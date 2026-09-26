@@ -51,10 +51,14 @@ const organizationJsonLd = {
     <meta name="robots" content="index, follow" />
 
     <!-- Preload LCP Hero Image (Aceleración de carga Mobile & Desktop) -->
+    <!-- Móvil: imagesrcset hace que el preload coincida con lo que el -->
+    <!-- navegador elegirá del srcset (768w en DPR 1.75 tipo Moto G Power). -->
     <link
       rel="preload"
       as="image"
-      href="/images/hero-community-sm.webp"
+      imagesrcset="/images/hero-community-sm.webp 640w, /images/hero-community-md.webp 768w"
+      imagesizes="100vw"
+      href="/images/hero-community-md.webp"
       media="(max-width: 768px)"
       fetchpriority="high"
     />
@@ -248,9 +252,12 @@ const organizationJsonLd = {
           });
         });
 
-        // Hero Showcase Rotator
+        // Hero Showcase Rotator (solo desktop ≥1025px; en móvil/tablet el
+        // showcase está oculto con CSS, así que se evita precargar las
+        // imágenes pesadas y el setInterval permanente).
         const heroShowcase = document.getElementById("heroShowcase");
-        if (heroShowcase) {
+        const showcaseDesktopMedia = window.matchMedia("(min-width: 1025px)");
+        if (heroShowcase && showcaseDesktopMedia.matches) {
           const frontCard = heroShowcase.querySelector(
             "[data-hero-card='front']",
           );
@@ -327,6 +334,138 @@ const organizationJsonLd = {
             currentIndex = (currentIndex + 1) % slides.length;
             renderShowcase();
           }, 5000);
+        }
+
+        // Hero Background Rotator (solo móvil/tablet ≤1024px): el fondo del
+        // hero rota cinematográficamente por crossfade entre 3 fotos.
+        // En desktop el showcase de tarjetas ya ofrece ese dinamismo.
+        const heroBgSlides = document.querySelectorAll(".hero-bg-slide");
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        );
+        if (
+          heroBgSlides.length >= 2 &&
+          !showcaseDesktopMedia.matches &&
+          !reducedMotion.matches
+        ) {
+          const slideSourcesWebp = [
+            "/images/about-research-sm.webp",
+            "/images/about-devs-sm.webp",
+          ];
+          const slideSourcesAvif = [
+            "/images/about-research-sm.avif",
+            "/images/about-devs-sm.avif",
+          ];
+          // Detección real de soporte AVIF (decodificación de imagen 2x2).
+          // Canvas.toDataURL no sirve: prueba codificación, no decodificación.
+          const supportsAvif = () =>
+            new Promise((resolve) => {
+              const t = new Image();
+              t.onload = () => resolve(t.width > 0);
+              t.onerror = () => resolve(false);
+              t.src =
+                "data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A=";
+            });
+          let slideSources = slideSourcesWebp;
+          let bgIndex = 0;
+          let bgTimer = null;
+          let bgImagesLoaded = false;
+          let heroVisible = false;
+
+          function maybeStartBgRotation() {
+            if (bgTimer || !bgImagesLoaded || !heroVisible) return;
+            bgTimer = window.setInterval(() => {
+              bgIndex = (bgIndex + 1) % (slideSources.length + 1);
+              // El índice 0 muestra la imagen base (sin capa activa)
+              heroBgSlides.forEach((img, i) => {
+                img.classList.toggle("is-active", i === bgIndex - 1);
+              });
+            }, 5000);
+          }
+
+          function stopBgRotation() {
+            if (bgTimer) {
+              window.clearInterval(bgTimer);
+              bgTimer = null;
+            }
+          }
+
+          // Asignar src solo cuando el navegador está inactivo (fuera del LCP)
+          const deferBgPreload =
+            window.requestIdleCallback || ((cb) => setTimeout(cb, 2000));
+          deferBgPreload(async () => {
+            if (await supportsAvif()) slideSources = slideSourcesAvif;
+            heroBgSlides.forEach((img, i) => {
+              img.src = slideSources[i];
+            });
+            bgImagesLoaded = true;
+            maybeStartBgRotation();
+          });
+
+          // Rotar solo cuando el hero está visible (ahorro de batería/CPU)
+          const heroEl = document.getElementById("hero");
+          if (heroEl) {
+            const bgRotationObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  heroVisible = entry.isIntersecting;
+                  if (entry.isIntersecting) maybeStartBgRotation();
+                  else stopBgRotation();
+                });
+              },
+              { threshold: 0.2 },
+            );
+            bgRotationObserver.observe(heroEl);
+          }
+        }
+
+        // Rotating Highlighted Word (sección Únete): palabra desaparece
+        // y aparece otra con blur + scale + shimmer mejorado
+        const rotatingWord = document.getElementById("rotatingWord");
+        if (rotatingWord && !reducedMotion.matches) {
+          const words = ["en solitario", "sin rumbo", "sin guía", "a oscuras"];
+          let wordIndex = 0;
+          let wordTimer = null;
+
+          function rotateWord() {
+            // PHASE 1 — Leave: palabra sube con blur y escala
+            rotatingWord.classList.add("is-leaving", "is-animating");
+
+            window.setTimeout(() => {
+              // PHASE 2 — Swap: cambiar texto y posicionar abajo
+              wordIndex = (wordIndex + 1) % words.length;
+              rotatingWord.textContent = words[wordIndex];
+              rotatingWord.classList.remove("is-leaving");
+              rotatingWord.classList.add("is-entering");
+
+              // Force reflow para aplicar posición inicial
+              void rotatingWord.offsetWidth;
+
+              // PHASE 3 — Enter: animar a posición final con shimmer
+              rotatingWord.classList.remove("is-entering");
+              rotatingWord.classList.add("is-revealed");
+
+              // Limpiar clases después de la animación
+              window.setTimeout(() => {
+                rotatingWord.classList.remove("is-revealed", "is-animating");
+              }, 850);
+            }, 500);
+          }
+
+          const wordObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !wordTimer) {
+                  wordTimer = window.setInterval(rotateWord, 3200);
+                } else if (!entry.isIntersecting && wordTimer) {
+                  window.clearInterval(wordTimer);
+                  wordTimer = null;
+                }
+              });
+            },
+            { threshold: 0.3 },
+          );
+          wordObserver.observe(rotatingWord);
         }
 
         // Active Nav Observer
