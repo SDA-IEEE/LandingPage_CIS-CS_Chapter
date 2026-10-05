@@ -1,0 +1,37 @@
+version: 2
+updates:
+  # Dependencias de Node (el proyecto usa pnpm, que pertenece al ecosistema "npm")
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    groups:
+      astro:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
+          - "*lucide*"
+      dev-tools:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "vitest"
+    labels:
+      - "dependencies"
+      - "security"
+    commit-message:
+      prefix: "chore(deps)"
+
+  # GitHub Actions usadas en los workflows (actions/checkout, setup-node, etc.)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "ci"
+    commit-message:
+      prefix: "chore(ci)"
