@@ -3,3 +3,10 @@ packages:
 
 allowBuilds:
   esbuild: true
+
+overrides:
+  undici: ^8.10.2
+  devalue: ^5.9.3
+  http-cache-semantics: ^4.2.1
+  fast-uri: ^3.1.8
+  '@astrojs/compiler-rs': 0.4.0
