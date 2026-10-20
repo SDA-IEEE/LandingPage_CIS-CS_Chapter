@@ -89,7 +89,7 @@ const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'rev
     margin-bottom: 14px;
   }
 
-  /* Grilla responsive de los 5 integrantes */
+  /* Grilla responsive del comité (7 integrantes) */
   .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -116,18 +116,19 @@ const delayClasses = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'rev
   }
 
   @media (min-width: 1100px) {
+    /* Distribución 4 + 3: flex centrado. En una grilla de 4 columnas no se
+       puede centrar una fila de 3 con el mismo ancho; con flex sí:
+       fila 1: 4 × calc(25% - 15px) + 3 gaps de 20px = 100% exacto,
+       fila 2: las 3 restantes se centran solas con justify-content. */
     .team-grid {
-      grid-template-columns: repeat(5, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
     }
 
-    /* Segunda fila centrada: 5 arriba + 2 abajo (columnas 2 y 3) */
-    .team-grid > :nth-child(6) {
-      grid-column-start: 2;
-    }
-
-    .team-grid > :nth-child(7) {
-      grid-column-start: 3;
+    .team-speaker-card {
+      flex: 0 0 calc(25% - 15px);
     }
   }
 
