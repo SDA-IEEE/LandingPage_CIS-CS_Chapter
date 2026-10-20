@@ -93,3 +93,8 @@ Los textos que no son "una lista de elementos" (misión, visión, tagline,
 redes sociales, enlace de inscripción) viven en `src/data/site.ts`, en la
 constante `siteConfig`. Es un único archivo, simple de editar: cada campo es
 una línea de texto entre comillas.
+
+En ese mismo archivo (`src/data/site.ts`) también vive el arreglo
+`pageCreators`: la lista de nombres de los **creadores de la página web**,
+mostrados como créditos (sin foto) al final de la sección Equipo. Para
+agregar, quitar o corregir un nombre, edita ese arreglo — no los componentes.

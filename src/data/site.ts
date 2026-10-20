@@ -21,6 +21,16 @@ export const siteConfig: SiteConfig = {
   }
 };
 
+// Creadores de la página web del capítulo (sección de créditos en Equipo).
+// No usan foto: se muestran como lista tipo créditos.
+export const pageCreators: string[] = [
+  'Jesús David Velásquez Mercado',
+  'William David Lozano Julio',
+  'Jorge Mario Benavides Angulo',
+  'Alejandro Pedro Steinman Cuesta',
+  'Andrés Felipe Rubiano Marrugo'
+];
+
 // Nota: Header.astro define su propia navegación en HTML y no importa este
 // arreglo todavía. Se mantiene sincronizado con los id= reales de cada
 // sección por si se conecta más adelante.
