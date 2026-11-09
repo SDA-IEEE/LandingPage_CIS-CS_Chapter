@@ -24,8 +24,8 @@
     "esbuild": true
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.4",
     "tailwindcss": "^4.3.3",
-    "vitest": "^5.0.0"
+    "vitest": "^5.1.0"
   }
 }
